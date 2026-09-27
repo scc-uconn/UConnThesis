@@ -1,0 +1,39 @@
+Hello!
+
+My name is Greg and I am writing this brief introduction to this UConn thesis
+template developed by Marcos Prates '11.
+
+The general structure of a thesis is a single document that is broken up into
+several sections. The first few sections cover various "house keeping" tasks,
+things like the title, abstract, dedication, acknowledgments, table of
+contents, etc... Then there are several chapters that each cover different
+parts of the thesis. Typically, the first chapter is a literature review,
+the next 2-3 chapters cover the major topics of the thesis, and then there
+is usually a concluding chapter discussing the findings and future directions
+of the work contained in the thesis.
+
+This template gives you the basic structure for constructing all of the main
+components using LaTeX. The thesis.tex file lays out the general structure of
+the thesis, while the main parts of each section (i.e. the chapters, the
+abstract, etc..) are contained in separate files. When you call LaTeX to
+compile thesis.tex, LaTeX will include the details from the separate files
+using the "\input" and "\include{}" commands.
+
+If you are using a Linux or Mac machine, to compile the thesis document, all
+you will have to do is use the Makefile (which is included) by typing "make"
+into the bash shell. If you'd like to remove all of the extra files (including
+thesis.pdf), you can call "make clean". For more information on Makefiles and
+how they work, please consult online tutorials.
+If you are using a Windows machine, any normal latex editor should work.
+Simply open up thesis.tex and run the compilation command.
+
+This concludes my little introduction to this Thesis template. If you have
+more questions about using LaTeX, using natbib (the citation/bibliography
+handler), using Makefiles, or compiling multiple files with LaTeX, don't
+forget to search for resources online. These tools have been around for a
+while now, so there are some great tutorials out there to show you how to use
+them.
+
+Happy Writing and Good Luck!
+
+- Greg

@@ -1,0 +1,17 @@
+# LaTeX build output
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.lof
+*.lot
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.backup
+/thesis.pdf
+
+# macOS metadata
+.DS_Store

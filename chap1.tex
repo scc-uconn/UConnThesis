@@ -1,0 +1,372 @@
+%%%
+%%% This is the beginning of the actual thesis.  If you don't know latex
+%%% then start with the LaTeX manual by Lamport and another easy
+%%% reference, like the paperback by Jane Hahn, LaTeX for Everyone, PTI,
+%%% 1991. See also $TEX/latex/sample.tex and $TEX/doc/story.tex, where
+%%% $TEX==/usr/local/lib/tex
+%%%
+% Start this dissertation....
+%
+\chapter{Introduction}\label{introduction}   % level 1
+%
+%% Stolen from the sample.tex file.  There have been a few
+%% modifications to fit in the thesis here.
+%
+% This is a sample LaTeX input file.  (Version of 28 May 1985)
+%
+% A '%' character causes TeX to ignore all remaining text on the line,
+% and is used for comments like this one.
+%
+% \author{Leslie Lamport} % For this section Lamport is the author.
+% \title{A Sample Document}
+% \date{December 12, 1984}
+%
+%
+%\fixchapterheading % Use this if section follows chapter immediately
+\section{The Sample.tex file}  % Produces section heading.  % level 2
+%
+    % Lower -level sections are begun with similar
+    % \subsection and \subsubsection commands.
+
+
+\subsection{Ordinary Text}   % level 3
+
+The ends of words and sentences are marked by spaces. It doesn't matter
+how many spaces you type; one is as good as 100.  The end of a line
+counts as a space.\footnote{
+This is a sample input file.  Comparing it with the output it
+generates can show you how to produce a simple document of
+your own.
+}
+
+One or more blank lines denote the end of a paragraph.
+
+Since any number of consecutive spaces are treated like a single one,
+the formatting of the input file makes no difference to \LaTeX,
+but it makes a difference to you. When you use
+\LaTeX,       % The \LaTeX command generates the LaTeX logo.
+making your input file as easy to read as possible will be a great help
+as you write your document and when you change it.  This sample file
+shows how you can add comments to your own input file.
+
+Because printing is different from typewriting, there are a number of
+things that you have to do differently when preparing an input file than
+if you were just typing the document directly.
+Quotation marks like
+       ``this''
+have to be handled specially, as do quotes within quotes:
+       ``\,`this'                  % \, separates the double and single quote.
+        is what I just
+        wrote, not  `that'\,.''
+
+Dashes come in three sizes: an
+       intra-word
+dash, a medium dash for number ranges like
+       1--2,
+and a punctuation
+       dash---like
+this.
+
+A sentence-ending space should be larger than the space between words
+within a sentence.  You sometimes have to type special commands in
+conjunction with punctuation characters to get this right, as in the
+following sentence.
+       Gnats, gnus, etc.\    % `\ ' makes an inter-word space.
+       all begin with G\@.   % \@ marks end-of-sentence punctuation.
+You should check the spaces after periods when reading your output to
+make sure you haven't forgotten any special cases.
+Generating an ellipsis
+       \ldots\    % `\ ' needed because TeX ignores spaces after
+                  % command names like \ldots made from \ + letters.
+                  %
+                  % Note how a `%' character causes TeX to ignore the
+                  % end of the input line, so these blank lines do not
+                  % start a new paragraph.
+with the right spacing around the periods
+requires a special  command.
+
+\LaTeX\ interprets some common characters as commands, so you must type
+special commands to generate them.  These characters include the
+following:
+       \$ \& \% \# \{ and \}.
+
+In printing, text is emphasized by using an
+       {\em italic\/}  % The \/ command produces the tiny extra space that
+                       % should be added between a slanted and a following
+                       % unslanted letter.
+type style.
+
+\begin{em}
+   A long segment of text can also be emphasized in this way.  Text within
+   such a segment given additional emphasis
+          with\/ {\em Roman}
+   type.  Italic type loses its ability to emphasize and become simply
+   distracting when used excessively.
+\end{em}
+
+It is sometimes necessary to prevent \LaTeX\ from breaking a line where
+it might otherwise do so.  This may be at a space, as between the
+``Mr.'' and ``Jones'' in
+       ``Mr.~Jones,''        % ~ produces an unbreakable interword space.
+or within a word---especially when the word is a symbol like
+       \mbox{\em itemnum\/}
+that makes little sense when hyphenated across
+       lines.
+
+Footnotes\footnote{This is an example of a footnote.}
+pose no problem.
+
+\LaTeX\ is good at typesetting mathematical formulas like
+       $ x-3y = 7 $
+or
+       $$ a_{1} > x^{2n} / y^{2n} > x'. $$
+Remember that a letter like
+       $x$        % $ ... $  and  \( ... \)  are equivalent
+is a formula when it denotes a mathematical symbol, and should
+be treated as one.
+
+\subsection{Displayed Text}
+
+Text is displayed by indenting it from the left margin.
+
+\subsubsection{Quotations}
+
+Quotations are commonly displayed.  There are short quotations
+\begin{quote}
+   This is a short a quotation.  It consists of a
+   single paragraph of text.  There is no paragraph
+   indentation.
+\end{quote}
+and longer ones.
+\begin{quotation}
+   This is a longer quotation.  It consists of two paragraphs
+   of text.  The beginning of each paragraph is indicated
+   by an extra indentation.
+
+   This is the second paragraph of the quotation.  It is just
+   as dull as the first paragraph.
+\end{quotation}
+
+\subsubsection{Lists}
+
+Another frequently-displayed structure is a list.
+
+\paragraph{Itemize.}
+The following is an example of an {\em itemized} list.
+
+%\minusline % Part of uuthesis.sty to remove extra vertical space.
+
+\begin{quote}
+\begin{itemize}
+   \item  This is the first item of an itemized list.  Each item
+          in the list is marked with a ``tick''.  The document
+          style determines what kind of tick mark is used.
+
+   \item  This is the second item of the list.  It contains another
+          list nested inside it.  The inner list is an {\em enumerated}
+          list.
+          \begin{enumerate}
+              \item This is the first item of an enumerated list that
+                    is nested within the itemized list.
+
+              \item This is the second item of the inner list.  \LaTeX\
+                    allows you to nest lists deeper than you really should.
+          \end{enumerate}
+          This is the rest of the second item of the outer list.  It
+          is no more interesting than any other part of the item.
+   \item  This is the third item of the list.
+\end{itemize}
+\end{quote}
+
+\paragraph{Verse.}
+You can even display poetry.
+
+%\minusline % Part of uuthesis.sty to kill one line
+
+\begin{quote}
+\begin{quote}
+\begin{verse}
+   There is an environment for verse \\    % The \\ command separates lines
+   Whose features some poets will curse.   % within a stanza.
+
+                           % One or more blank lines separate stanzas.
+
+   For instead of making\\
+   Them do {\em all\/} line breaking, \\
+   It allows them to put too many words on a line when they'd
+   rather be forced to be terse.
+\end{verse}
+\end{quote}
+\end{quote}
+
+\subsubsection{Mathematics}
+Mathematical formulas may also be displayed.  A displayed formula is
+one-line long; multiline formulas require special formatting
+instructions.
+   \[  x' + y^{2} = z_{i}^{2}\]
+Don't start a paragraph with a displayed equation, nor make
+one a paragraph by itself.
+
+\section{More examples: Jeff McGough's Thesis}
+
+Equations like
+$\gamma = 0$ that don't need numbering may
+be
+set inline by the coding \verb"$\gamma = 0$" or displayed by
+\par
+%\begin{singlespace}
+\begin{verbatim}
+$$
+\gamma = 0.
+$$
+\end{verbatim}
+%\end{singlespace}
+\par
+Numbered equations are set as shown in the next paragraph. They use the
+theorem environments defined in \verb"thesis.sty":
+\par
+%\begin{singlespace}
+\begin{verbatim}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\end{verbatim}
+%\end{singlespace}
+\par
+
+The Gelfand problem is the following elliptic boundary value problem:
+%
+% The equation-array feature in LaTeX is a bad idea.  For centered
+% numbers you should set your own equations and arrays as follows:
+%
+\def\dd{\displaystyle}
+\begin{equation}\label{gelfand}
+\begin{array}{rl}
+\dd \Delta u + \lambda e^u = 0, &
+\dd u\in \Omega,\\[8pt] % add 8pt extra vertical space. 1 line=23pt
+\dd u=0, & \dd u\in\partial\Omega.
+\end{array}
+\end{equation}
+The previous equation had a label.  It may be referenced as
+equation~(\ref{gelfand}).
+
+%
+%
+\section{History of the Gelfand problem}
+%
+%
+
+According to Bebernes and Eberly \cite[p.46]{bebernes:mpc89},
+Gelfand was ``the first to make an in-depth
+study'' of (\ref{gelfand}). Following this statement they briefly
+outline the history of the Gelfand problem.
+\par
+% Quotes need to forced single space:
+%\begin{singlespace}
+\begin{quote}
+For dimension $n=1$, Liouville~\cite{liouville:edp53} first studied and
+found an explicit solution in 1853. For $n=2$, Bratu~\cite{bratu:ein14}
+found an explicit solution in 1914.  Frank-Kamenetski~\cite{frank:dhe55}
+rediscovered these results in his development of thermal explosion
+theory.  Joseph and Lundgren~\cite{joseph:qdp73} gave an elementary
+proof via phase plane analysis of the multiple existence of solutions
+for dimensions $n\geq 3$.
+\end{quote}
+%\end{singlespace}
+\par
+
+% Several things to note here.  Latex sometimes breaks equations, this
+% can be restricted by the samepage command.  The spacing in the array
+% mode is also important for some structures.
+
+From Zeidler~\cite{zeidler:nfa88IIa}:
+{\samepage
+\begin{equation}\label{station}
+\begin{array}{rcll}
+\dd\mbox{div } j& = &\dd f, &\dd x\in\Omega ,\\[8pt]
+\dd u& = & \dd g_1, & \dd x\in\partial\Omega_1 , \\[8pt]
+\dd j\nu & = & \dd g_2, & \dd x\in\partial\Omega_2 ,
+\end{array}
+\end{equation} }
+where
+\begin{equation}\label{current}
+j =  h(|\nabla u|^2)\nabla u
+\end{equation}
+and $\Omega$ is a bounded domain in ${\Bbb R}^n$ with
+smooth boundary $\partial\Omega = \overline{\partial\Omega_1}\cup
+\overline{\partial\Omega_2}$, $\partial\Omega_1 \cap
+\partial\Omega_2 = \emptyset$ and $\nu$ is the normal vector to
+$\partial\Omega$.
+
+% There is a lot of shorthand set up for structures, for example a
+% lemma:
+\begin{lemma}
+Assuming that $\partial\Omega_2 = \emptyset$ and that $h(t) = 1$, we
+have $$
+\begin{array}{lr}
+\dd\Delta u = f, & \dd x\in\Omega ,\\[8pt]
+\dd u =  g_1, & \dd x\in\partial\Omega .
+\end{array}
+$$
+\end{lemma}
+
+% another ...
+\begin{corollary}
+If $g_2 = 0$ then
+$$
+\begin{array}{lr}
+\dd \Delta u = f, & \dd x\in\Omega ,\\[8pt]
+\dd u =  0, & \dd x\in\partial\Omega .
+\end{array}
+$$
+\end{corollary}
+
+% Look in thesis.sty for more structures.
+
+\section{Fundamental results}
+The investigation of the Gelfand problem begins with examining the
+..... (this paragraph continues for many lines).
+
+%
+% This is an example of a big ugly technical theorem.  It has two
+% levels of lists, referencing, citations and names.
+%
+\begin{theorem}[Joseph-Lundgren~\cite{joseph:qdp73}]
+Boundary value problem (\ref{gelfand}) has positive radial
+solutions $u$ on the unit ball which depend on $n$ and $\lambda$
+in the following manner.
+\begin{enumerate}
+\item For $n=1,2$, there exists $\lambda^* >0$ such that
+\begin{enumerate}
+\item for $0< \lambda < \lambda^*$ there are two positive
+solutions,
+\item for $\lambda =\lambda^*$ there is a unique solution, and
+\item for $\lambda > \lambda^*$ there are no solutions.
+\end{enumerate}
+\item For $3\leq n \leq 9$, let $\overline{\lambda}=2(n-2)$; then
+there exist positive constants $\lambda_*$, $\lambda^*$ with
+$0< \lambda_* < \overline{\lambda} < \lambda^*$, such that
+\begin{enumerate}
+\item for $\lambda = \lambda^*$ there is a unique solution,
+\item for $\lambda > \lambda^*$ there are no solutions,
+\item for $\lambda = \overline{\lambda}$ there is a countably infinite number
+of solutions,
+\item for $\lambda \in (\lambda_*,\lambda^*)$, $\lambda \neq
+\overline{\lambda}$, there is a finite number of solutions,
+\item for $\lambda < \lambda_*$ there is a unique solution.
+\end{enumerate}
+\item For $n\geq 10$, let $\lambda^* = 2(n-2)$ then
+\begin{enumerate}
+\item for $\lambda \geq \lambda^*$ there are no solutions,
+\item for $\lambda \in (0,\lambda^*)$ there is a unique solution.
+\end{enumerate}
+\end{enumerate}
+\end{theorem}

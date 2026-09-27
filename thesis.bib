@@ -1,0 +1,3522 @@
+
+%%
+%%%  example thesis bib file
+%%%
+
+%%%
+%%%  Books appear first in the list.  Inproceedings next,
+%%%  then articles, unpublished appears last.
+%%%  Each section appears in alphabetical order.
+%%%  To skip to the r-section of books (for example), search for:
+%%%  book-r
+%%%
+
+%%%
+%%% Tags or the citation label have a very simple system here
+%%% if:
+%%% author =       R. L. Devaney
+%%% title =        An Introduction to Chaotic Dynamical
+%%%	            Systems
+%%% year =         1986
+%%% then:
+%%% tag = devaney:icd86
+%%% 
+%%% use all lowercase!!
+%%% last-name-first-author:first-three-significant-word-initials_year
+%%%
+%%%     (read some examples below before adding to this database)
+
+%%%
+%%%  If you are using a local (Utah) version of emacs, then some
+%%%  bindings are set up for the formatting.  For a complete list
+%%%  type c-h m
+%%%  Example: C-c C-e C-b	bibtex-Book
+%%%           C-c C-e C-a	bibtex-Article
+%%%           C-c C-e C-u	bibtex-Unpublished
+%%%           
+
+%%%
+%%%      FOR YOUR SANITY: KEEP IN ALPHABETICAL ORDER
+%%%
+
+%%%
+%%%  defns
+%%%
+
+@String{ACPR            = "Academic Press"}
+
+@String{AP              = "Acta Physica"}
+
+@String{AdvAplMath      = "Advances in Applied Mathematics"}
+
+@String{ARCH            = "Arch. Rat. Mech. Anal."}
+
+@String{BAMS            = "Bulletin of the AMS"}
+
+@String{BIOPJ           = "Biophys. Jour."}
+
+@String{BMB             = "Bull. Math. Biol."}
+
+@String{Bfz             = "Biofizika"}
+
+@String{Bph             = "Biophysics"}
+
+@String{CoCh            = "J. of Comp. Chem."}
+
+@String{CMP             = "Communications on Mathematical Physics"}
+
+@String{DIE             = "Diff. Int. Eqns."}
+
+@String{JDE             = "J. Diff. Eqns."}
+
+@String{JMB             = "J. Math. Biol."}
+
+@String{JTB             = "J. Theor. Biol."}
+
+@String{JSTP            = "J. Stat. Phys."}
+
+@String{LNM             = "Lecture Notes in Mathematics"}
+
+@String{LNBM            = "Lecture Notes in Biomathematics"}
+
+@String{MGHILL          = "McGraw-Hill"}
+
+@String{NAT             = "Nature"}
+
+@String{PHYD            = "Physica D"}
+
+@String{PHYLA           = "Phys. Rev. Letts. A"}
+
+@String{PHYsrevlet      = "Phys. Rev. Letts. A"}
+
+@String{ProgTPhys       = "Prog. of Theor. Phys"}
+
+@String{SCI             = "Science"}
+
+@String{SJAM            = "SIAM J. Appl. Math."}
+
+@String{SJSS            = "SIAM J. Sci. Stat. Comput."}
+
+@String{Srev            = "SIAM Rev."}
+
+@String{SPR             = "Springer-Verlag"}
+
+@String{TChem           = "Theoretical Chemistry"}
+
+@String{WILEY           = "John Wiley and Sons"}
+
+
+%%%
+%%% Publishers
+%%%
+
+@String{pub-AHV         = "Dr. Alfred H{\"u}thing Verlag"}
+
+@String{pub-AHV:adr     = "Heidelberg, Germany"}
+
+@String{pub-AMS         = "American Mathematical Society"}
+
+@String{pub-AP          = "Academic Press"}
+
+@String{pub-ASCII       = "ASCII Corporation"}
+
+@String{pub-AW          = "Ad{\-d}i{\-s}on-Wes{\-l}ey"}
+
+@String{pub-AW:adr      = "Reading, MA, USA"}
+
+@String{pub-AWE         = "Ad{\-}di{\-}son-Wes{\-}ley Europe"}
+
+@String{pub-AWE:adr     = "Amsterdam, The Netherlands"}
+
+@String{pub-AWV         = "Ad{\-}di{\-}son-Wes{\-}ley Verlag"}
+
+@String{pub-AWV:adr     = "Bonn, Germany"}
+
+@String{pub-BOWK        = "R. R. Bowker Company"}
+
+@String{pub-BOWK:adr    = "1180 Avenue of the Americas, New York, NY
+                           10036, USA"}
+
+@String{pub-BP          = "Boole Press"}
+
+@String{pub-BP:adr      = "Dublin, Ireland"}
+
+@String{pub-CHARTWELL   = "Chartwell Books, Inc."}
+
+@String{pub-CHARTWELL:adr = "110 Enterprise Avenue, Secaucus, New
+                           Jersey 07094, USA"}
+
+@String{pub-CIAOCO      = "Editions Ciaoco"}
+
+@String{pub-CIAOCO:adr  = "Artel, Bruxelles, Belgium"}
+
+@String{pub-CUP         = "Cambridge University Press"}
+
+@String{pub-CUP:adr     = "New York"}
+
+@String{pub-DP          = "Digital Press"}
+
+@String{pub-EH          = "Ellis Horwood"}
+
+@String{pub-EH:adr      = "Chichester, England"}
+
+@String{pub-EUH         = "Editore Ulrico Hoepli"}
+
+@String{pub-EUH:adr     = "Ulrico Hoepli Editore S.p.A., via Hoepli 5,
+                           20121 Milano, Italy"}
+
+@String{pub-FCGCC       = "F{\'e}d{\'e}ration C. G. C. de la Communication"}
+
+@String{pub-FCGCC:adr   = ""}
+
+@String{pub-GP          = "Graphics Press"}
+
+@String{pub-GP:adr      = "Box 430, Cheshire, CT 06410, USA"}
+
+@String{pub-IE          = "InterEditions"}
+
+@String{pub-IST         = "Imaging Science \& Technology"}
+
+@String{pub-KLUWER      = "Kluwer Academic Publishers Group"}
+
+@String{pub-KLUWER:adr  = "Norwell, MA, USA"}
+
+@String{pub-MH          = "McGraw-Hill"}
+
+@String{pub-MASSON      = "Masson Editeur"}
+
+@String{pub-MASSON:adr  = "Paris, France"}
+
+@String{pub-MIT         = "MIT Press"}
+
+@String{pub-MIT:adr     = "Cambridge, MA, USA"}
+
+@String{pub-NH          = "North-Holland Publishing Company"}
+
+@String{proc-NIPT91     = "IS\&T's Seventh International Congress on
+                           Advances in Non-impact Printing
+                           Technologies, October 6--11, Portland, OR, USA."}
+
+@String{pub-PEACHPIT    = "Peachpit Press, Inc."}
+
+@String{pub-PEACHPIT:adr = "1085 Keith Avenue, Berkeley, CA 94708, USA"}
+
+@String{pub-PTI         = "Personal {\TeX} Inc."}
+
+@String{pub-PTI:adr     = "12 Madrona Street, Mill Valley, CA 94941, USA"}
+
+@String{pub-OLDENBOURG  = "R. Oldenbourg Verlag"}
+
+@String{pub-OLDENBOURG:adr = "Munich, Germany and Vienna, Austria"}
+
+@String{pub-RISO        = "Ris{\o} National Laboratory"}
+
+@String{pub-RISO:adr    = "Roskilde, Denmark"}
+
+@String{pub-SF          = "Scott, Foresman and Company"}
+
+@String{pub-SILICON     = "Silicon Press"}
+
+@String{pub-SILICON:adr = "25 Beverly Road, Summit, NJ 07901, USA"}
+
+@String{pub-STA         = "Society of Typographic Arts"}
+
+@String{pub-STA:adr     = "Chicago, IL, USA"}
+
+@String{pub-SV          = "Spring{\-}er-Ver{\-}lag"}
+
+@String{pub-SV:adr      = "Berlin, Germany~/ Heidelberg, Germany~/ London,
+                           England~/ etc."}
+
+@String{pub-SYBEX       = "Sybex"}
+
+@String{pub-TEXPLORATOR = "The {\TeX}plorators Corporation"}
+
+@String{pub-TEXPLORATOR:adr = "3701 W. Alabama, Suite 450-273,
+                           Houston, TX 77027, USA"}
+
+@String{pub-UNIC        = "UNI{$\bullet$}C"}
+
+@String{pub-UNIC:adr    = "Danmarks EDB-Center for Forskning og
+                           Uddannelse, Copenhagen, Denmark"}
+
+@String{pub-URW         = "URW Verlag"}
+
+@String{pub-URW:adr     = "Hamburg, Germany"}
+
+@String{pub-VNR         = "Van Nostrand Reinhold"}
+
+@String{pub-W           = "Wiley"}
+
+@String{pub-WGP         = "Wat{\-}son-Gup{\-}till Publications"}
+
+@String{pub-WWS         = "The Wynkyn de Worde Society and Bund Deutscher
+                           Buchk{\"u}nstler"}
+
+@String{pub-WWS:adr     = "London, England and Offenbach, Germany"}
+
+%%%
+%%%  books  90 volumes as of [Jan- 9-1993]
+%%%
+
+
+
+%
+% book-a
+%
+
+@Book{adams:ss75,
+  author =       "R. Adams",
+  title =        "Sobolev {S}paces",
+  publisher =    "Academic Press",
+  year =         "1975",
+  address =      "New York",
+}
+
+@Book{allgower:ncm90,
+  author =       "E. L. Allgower and K. Georg",
+  title =        "Numerical Continuation Methods, An Introduction",
+  publisher =    "Springer-Verlag",
+  year =         "1990",
+  address =      "New York",
+  annote =       "bifurcation",
+}
+
+@Book{amann:gd83,
+  author =       "H. Amann",
+  title =        "Ordinary {D}ifferential {E}quations",
+  publisher =    "de Gruyter",
+  year =         "1990",
+  address =      "Berlin",
+  annote =       "",
+}
+
+@Book{ambrosetti:anl73,
+  author =       "A. Ambrosetti and G. Prodi",
+  title =        "Analisis {N}on {L}ineare",
+  publisher =    "Scuola Normale Superiore Pisa",
+  year =         "1973",
+  annote =       "BIF",
+}
+
+@Book{arnold:gmt83,
+  author =       "V. I. Arnold",
+  title =        "Geometrical {M}ethods in the {T}heory of {O}rdinary
+                 {D}ifferential {E}quations",
+  publisher =    "Springer-Verlag",
+  year =         "1983",
+  address =      "New York",
+  annote =       "ode",
+}
+
+%
+% book-b
+%
+
+@Book{bandle:iia80,
+  author =       "C. Bandle",
+  title =        "Isoperimetric {I}nequalities and {A}pplications",
+  publisher =    "Pitman",
+  year =         "1980",
+  address =      "London",
+  annote =       "PDE",
+}
+
+@Book{bebernes:mpc89,
+  author =       "J. Bebernes and D. Eberly",
+  title =        "Mathematical {P}roblems from {C}ombustion {T}heory",
+  publisher =    "Springer Verlag",
+  year =         "1989",
+  volume =       "83",
+  address =      "New York",
+  series =       "Applied Math. Sci.",
+  annote =       "PDE",
+}
+
+@Book{berger:nfa77,
+  author =       "M. S. Berger",
+  title =        "Nonlinearity and {F}unctional {A}nalysis",
+  publisher =    "Academic Press",
+  address =      "New York",
+  year =         "1977",
+  annote =       "BIF",
+}
+
+@Book{berger:pn68,
+  author =       "M. S. Berger and M. S. Berger",
+  title =        "Perspectives in {N}onlinearity",
+  publisher =    "Benjamin",
+  address =      "",
+  year =         "1968",
+  annote =       "BIF",
+}
+
+%
+% book-c
+%
+
+@Book{carr:acm81,
+  author =       "J. Carr",
+  title =        "Applications of {C}entre {M}anifold {T}heory",
+  publisher =    "Springer Verlag",
+  year =         "1981",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{chandrasekhar:iss57,
+  author =       "S. Chandrasekhar",
+  title =        "An Introduction to the Study of Stellar Structures",
+  publisher =    "Dover",
+  year =         "1957",
+  address =      "Chicago",
+  annote =       "stellar equilibrium",
+}
+
+@Book{chow:mbt82,
+  author =       "S. N. Chow and J. K. Hale",
+  title =        "Methods of {B}ifurcation {T}heory",
+  publisher =    "Springer Verlag",
+  year =         "1982",
+  address =      "Berlin",
+  annote =       "BIF",
+}
+
+@Book{collett:imi80,
+  author =       "J. P. Collett and J. P. Eckmann",
+  title =        "Iterated maps of the interval as dynamical systems",
+  publisher =    "Birkhauser-Verlag",
+  year =         "1980",
+  address =      "Boston",
+  annote =       "1D maps",
+}
+
+%
+% book-d
+%
+
+@Book{davis:ind62,
+  author =       "H. Davis",
+  title =        "Introduction to {N}onlinear {D}ifferential and
+                 {I}ntegral {E}quations",
+  publisher =    "Dover",
+  year =         "1962",
+  address =      "New York",
+  annote =       "Emden equation",
+}
+
+@Book{deimling:nga74,
+  author =       "K. Deimling",
+  title =        "Nichtlineare Gleichungen und Abbildungsgrade",
+  publisher =    "Springer Verlag",
+  year =         "1974",
+  address =      "Berlin",
+}
+
+@Book{deimling:nfa87,
+  author =       "K. Deimling",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1987",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{dennis:mmu83,
+  author =       "J. Dennis and R. Schnabel",
+  title =        "Numerical {M}ethods for {U}nconstrained
+                 {O}ptimization and {N}onlinear {E}quations",
+  publisher =    "Prentice-Hall",
+  year =         "1983",
+  address =      "Englewood Cliffs, N.J.",
+  annote =       "newtons's method",
+}
+
+@Book{devaney:icd86,
+  author =       "R. L. Devaney",
+  title =        "An {I}ntroduction to {C}haotic {D}ynamical
+		 {S}ystems", 
+  publisher =    "Benjamin-Cummings",
+  year =         "1986",
+}
+
+@Book{dieudonne:fma64,
+  author =       "J. Dieudonn{\'e}",
+  title =        "Foundations of Modern Analysis",
+  publisher =    "Academic Press",
+  year =         "1964",
+  address =      "New York",
+  annote =       "Analysis",
+}
+
+@Book{doedel:obp87a,
+  author =       "E. J. Doedel and J. P. Kern\'evez",
+  title =        "Optimization in bifurcation problems, Part~{I} :
+                 Theory and illustration",
+  publisher =    "Springer Verlag",
+  year =         "1987",
+  series =       "Lecture Notes in Control and Information Sciences",
+  address =      "New York",
+  note =         "in press",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Book{doedel:obp87b,
+  author =       "E. J. Doedel and J. P. Kern\'evez",
+  title =        "Optimization in bifurcation problems, Part~{II} :
+                 Numerical method and applications",
+  publisher =    "Springer Verlag",
+  year =         "1987",
+  series =       "Lecture Notes in Control and Information Sciences",
+  address =      "New York",
+  note =         "in press",
+  annote =       "bifurcation",
+}
+
+@Book{dongarra:sls91,
+  author =       "J. Dongarra and I. Duff and D. Sorensen and H. van
+                 der Vorst",
+  title =        "Solving Linear Systems on Vector and Shared Memory
+                 Computers",
+  publisher =    "SIAM",
+  year =         "1991",
+  address =      "Philadelphia",
+  annote =       "parallel",
+}
+
+@Book{dugundji:t73,
+  author =       "J. Dugundji",
+  title =        "Topology",
+  publisher =    "Allyn and Bacon",
+  year =         "1973",
+  address =      "Boston",
+  annote =       "Topology",
+}
+
+%
+% book-f
+%
+
+@Book{fife:mar79,
+  author =       "P. Fife",
+  title =        "Mathematical Aspects of Reacting and Diffusing
+                 Systems",
+  publisher =    "Springer Verlag",
+  year =         "1979",
+  volume =       "28",
+  series =       "Springer Lecture Notes in Biomathematics",
+  address =      "Berlin",
+  annote =       "PDE",
+}
+
+
+
+@Book{fink:apd74,
+  author = 	"A. M. Fink",
+  title = 	"Almost Periodic Differential Equations",
+  publisher = 	"Springer Verlag",
+  year = 	"1974",
+  volume = 	"377",
+  address = 	"Berlin",
+  annote = 	"DE"
+}
+
+@Book{frank:dhe55,
+  author =       "D. A. Frank-Kamanetski",
+  title =        "Diffusion and Heat Exchange in Chemical Kinetics",
+  publisher =    "Princeton University Press",
+  year =         "1955",
+  address =      "Princeton",
+  annote =       "Gelfand example",
+}
+
+@Book{fucik:sne81,
+  author =       "S. Fucik",
+  title =        "Solvability of Nonlinear Equations and Boundary Value
+                 problems",
+  publisher =    "Reidel",
+  year =         "1981",
+  address =      "Boston",
+  annote =       "PDE",
+}
+
+@Book{fucik:san73,
+  author =       "S. Fucik and J. Necas and V. Soucets",
+  title =        "Spectral {A}nalysis of {N}onlinear {O}perators",
+  publisher =    "Springer Verlag",
+  year =         "1973",
+  volume =       "343",
+  series =       "Lecture Notes in Math",
+  address =      "Berlin",
+  annote =       "BIF",
+}
+
+%
+% book-g
+%
+
+@Book{gaines:cdn77,
+  author =       "R. Gaines and J. Mawhin",
+  title =        "Coincidence Degree and Nonlinear Differential
+                 Equations",
+  publisher =    "Springer Verlag",
+  year =         "1977",
+  volume =       "568",
+  series =       "Springer Lecture Notes in Math",
+  address =      "Berlin",
+  annote =       "degree",
+}
+
+@Book{gilbarg:epd83,
+  author =       "D. Gilbarg and N. Trudinger",
+  title =        "Elliptic Partial Differential Equations of Second
+                 Order",
+  publisher =    "Springer Verlag",
+  year =         "1983",
+  address =      "Berlin",
+  annote =       "PDE",
+}
+
+@Book{golub:mc89,
+  author =       "G. Golub and C. van Loan",
+  title =        "Matrix Computations",
+  publisher =    "Johns Hopkins Univ. Press",
+  year =         "1989",
+  address =      "Baltimore",
+  annote =       "numerical linear algebra",
+}
+
+@Book{guckenheimer:nod83,
+  author =       "J. Guckenheimer and P. Holmes",
+  title =        "Nonlinear {O}scillations, {D}ynamical {S}ystems and
+                 {B}ifurcations of {V}ector {F}ields",
+  publisher =    "Springer Verlag",
+  year =         "1983",
+  volume =       "42",
+  series =       "Applied Mathematical Sciences",
+  institution =  "SPR",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+%
+% book-h
+%
+
+@Book{hahn:sm67,
+  author =       "W. Hahn",
+  title =        "Stability of Motion",
+  publisher =    "Springer Verlag",
+  year =         "1967",
+  address =      "Berlin",
+  annote =       "Stability",
+}
+
+@Book{hale:tdb80,
+  author =       "J. Hale",
+  title =        "Topics in dynamic bifurcation theory",
+  publisher =    "AMS",
+  year =         "1980",
+  annote =       "bifurcation theory",
+}
+
+@Book{hale:tfd67,
+  author =       "J. Hale",
+  title =        "Theory of Functional Differential Equations",
+  publisher =    "Springer Verlag",
+  year =         "1977",
+  address =      "Berlin",
+  annote =       "FDE",
+}
+
+@Book{hartman:ode82,
+  author =       "P. Hartman",
+  title =        "Ordinary Differential Equations",
+  publisher =    "Birkhauser",
+  year =         "1982",
+  address =      "Boston",
+  edition =      "second~ed.",
+  annote =       "ODE",
+}
+
+@Book{hassard:tah81,
+  author =       "B. D. Hassard and N. D. Kazarinoff and Y.-H. Wan",
+  title =        "Theory and Applications of Hopf Bifurcation",
+  publisher =    "Cambridge University Press",
+  year =         "1981",
+  address =      "Cambridge",
+  annote =       "Hopf bifurcation",
+}
+
+
+@Book{hirsch:ded74,
+  author = 	"M. Hirsch and S. Smale",
+  title = 	"Differential Equations, Dynamical Systems and Linear
+		 Algebra",
+  publisher = 	"Academic Press",
+  year = 	"1974",
+  address = 	"New York",
+  annote = 	"ODE"
+}
+
+@Book{holmes:nan80,
+  author =       "P. Holmes",
+  title =        "New approaches to nonlinear problems in dynamics",
+  publisher =    "SIAM",
+  year =         "1980",
+  annote =       "bifurcation",
+}
+
+
+@Book{horn:ma85,
+  author = 	"R.A. Horn and C.R. Johnson",
+  title = 	"Matrix {A}nalysis",
+  publisher = 	"Cambridge University Press",
+  year = 	"1985",
+  address = 	"New York",
+  annote = 	"numerical"
+}
+
+%
+% book-i
+%
+
+@Book{iooss:esb80,
+  author =       "G. Iooss and D. D. Joseph",
+  title =        "Elementary {S}tability and {B}ifurcation {T}heory",
+  publisher =    "Springer Verlag",
+  year =         "1980",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{ize:btf76,
+  author =       "J. Ize",
+  title =        "Bifurcation {T}heory for {F}redholm {O}perators",
+  publisher =    "Memoires AMS",
+  year =         "1976",
+  volume =       "174",
+  annote =       "BIF",
+}
+
+%
+% book-j
+%
+
+@Book{jeggle:nf79,
+  author =       "H. Jeggle",
+  title =        "Nichtlineare {F}unktionalanalysis",
+  publisher =    "Teubner",
+  year =         "1979",
+  annote =       "BIF",
+}
+
+@Book{john:pws55,
+  author =       "F. John",
+  title =        "Plane {W}aves and {S}herical {M}eans Applied to
+                 {P}artial {D}ifferential {E}quations",
+  publisher =    "Interscience",
+  year =         "1955",
+  volume =       "2",
+  series =       "Tracts in Pure and Applied Mathematics",
+  address =      "New York",
+  annote =       "PDE",
+}
+
+@Book{john:pde82,
+  author =       "F. John",
+  title =        "Partial Differential Equations",
+  publisher =    "Springer-Verlag",
+  year =         "1982",
+  volume =       "1",
+  series =       "Applied Mathematical Sciences",
+  address =      "New York",
+  annote =       "PDE",
+}
+
+%
+% book-k
+%
+
+@Book{kato:ptl66,
+  author =       "T. Kato",
+  title =        "Perturbation {T}heory for {L}inear {O}perators",
+  publisher =    "Springer Verlag",
+  year =         "1966",
+  address =      "Berlin",
+  annote =       "BIF",
+}
+
+@Book{kawohl:rcl85,
+  author =       "B. Kawohl",
+  title =        "Rearrangements and {C}onvexity of {L}evel {S}ets in
+                 {PDE}",
+  publisher =    "Springer Verlag",
+  year =         "1985",
+  volume =       "1150",
+  series =       "Lecture Notes in Math.",
+  address =      "Berlin",
+  annote =       "PDE",
+}
+
+@Book{keller:btn69,
+  author =       "J. B. Keller and S. Antmaun",
+  title =        "Bifurcation {T}heory and {N}onlinear {E}igenvalue
+                 {P}roblems",
+  publisher =    "Benjamin",
+  year =         "1969",
+  annote =       "BIF",
+}
+
+@Book{kellog:fpt53,
+  author =       "O. D. Kellog",
+  title =        "Foundations of Potential Theory",
+  publisher =    "Dover",
+  year =         "1953",
+  annote =       "PDE",
+}
+
+@Book{kesavan:tfa89,
+  author =       "S. Kesavan",
+  title =        "Topics in Functional Analysis and Applications",
+  publisher =    "Wiley Eastern",
+  year =         "1989",
+  address =      "New Deli, India",
+  annote =       "PDE",
+}
+
+@Book{krasnoselskii:tmt64,
+  author =       "M. A. Krasnosel'skii",
+  title =        "Topological {M}ethods in the {T}heory of {N}onlinear
+                 {I}ntegral {E}quations",
+  publisher =    "Pergamon",
+  year =         "1964",
+  annote =       "BIF",
+}
+
+@Book{krasnoselskii:pso64,
+  author =       "M. A. Krasnosel'skii",
+  title =        "Positive {S}olutions of {O}perator {E}quations",
+  publisher =    "Noordhoff",
+  year =         "1964",
+  address =      "Groningen",
+  annote =       "BIF",
+}
+
+@Book{krasnoselskii:gmn84,
+  author =       "M. Krasnosel'skii and P. Zabreiko",
+  title =        "Geometrical Methods of Nonlinear Analysis",
+  publisher =    "Springer",
+  year =         "1984",
+  address =      "Berlin",
+  annote =       "Nonlinear Analysis",
+}
+
+@Book{krasnoselskii:ott68,
+  author =       "M. Krasnosel'skii",
+  title =        "The Operator of Translation Along Trajectories of
+                 Ordinary Differential Equations",
+  publisher =    "AMS",
+  year =         "1968",
+  address =      "Providence",
+  annote =       "ODE",
+}
+
+@Book{kubicek:cmb83,
+  author =       "M. Kubicek and M. Marek",
+  title =        "Computational methods in bifurcation theory and
+                 dissipative structures",
+  publisher =    "Springer Verlag",
+  year =         "1983",
+  address =      "New York",
+  annote =       "bifurcation, numerical analysis",
+}
+
+%
+% book-l
+%
+
+
+@Book{ladyzhenskaya:lqe68,
+  author =       "O. A. Ladyzhenskaya and N. N. Ural'tseva",
+  title =        "Linear and {Q}uasilinear {E}lliptic {E}quations",
+  publisher =    "Academic Press",
+  year =         "1968",
+  volume =       "46",
+  series =       "Math. in Sci. and Eng.",
+  address =      "New York",
+  annote =       "PDE",
+}
+
+@Book{ladyzhenskaya:bvp85,
+  author =       "O. A. Ladyzhenskaya",
+  title =        "The Boundary Value Problems of Mathematical Physics",
+  publisher =    "Springer Verlag",
+  year =         "1985",
+  volume =       "49",
+  series =       "App. Math. Sci.",
+  annote =       "PDE",
+}
+
+@Book{lloyd:dt78,
+  author =       "N. Lloyd",
+  title =        "Degree Theory",
+  publisher =    "Cambridge Univ. Press",
+  year =         "1978",
+  address =      "Cambridge",
+  annote =       "degree",
+}
+
+@Book{luenberger:iln73,
+  author =       "D. G. Luenberger",
+  title =        "Introduction to {L}inear and {N}onlinear
+                 {P}rogramming",
+  publisher =    "Addison-Wesley",
+  year =         "1973",
+  address =      "New York",
+  annote =       "numerics",
+}
+
+%
+% book-m
+%
+
+@PhdThesis{mcgough:scq93,
+  author = 	"J. S. Mc{G}ough",
+  title = 	"On {S}olution {C}ontinua in {Q}uasilinear {E}lliptic
+		 {P}roblems",
+  school = 	"University of Utah",
+  year = 	"1993",
+  address = 	"Salt Lake City, Utah",
+  annote = 	"pde"
+}
+
+@Book{marsden:hba76,
+  author =       "J. E. Marsden and M. F. McCracken",
+  title =        "the {H}opf {B}ifurcation and its {A}pplications",
+  publisher =    "Springer Verlag",
+  year =         "1976",
+  annote =       "BIF",
+}
+
+@Book{martin:mte81,
+  author =       "N. Martin and J. W. England",
+  title =        "Mathematical {T}heory of {E}ntropy",
+  publisher =    "Addison-Wesley",
+  year =         "1981",
+  series =       "Encyclopedia of Mathematics and Its Applications",
+  volume =       "12",
+}
+
+@Book{mawhin:tdm77,
+  author =       "J. Mawhin",
+  title =        "Topological Degree Methods in Nonlinear Boundary
+                 Value problems",
+  publisher =    "AMS",
+  year =         "1977",
+  volume =       "40",
+  series =       "CBMS Lecture Notes",
+  address =      "Providence",
+  annote =       "degree",
+}
+
+@Book{munkres:tfc75,
+  author =       "J. R. Munkres",
+  title =        "Topology: {A} First Course",
+  publisher =    "Prentice-Hall",
+  year =         "1975",
+  address =      "Englewood Cliffs, New Jersey",
+  annote =       "Top",
+}
+
+@Book{murray:mb89,
+  author =       "J. D. Murray",
+  title =        "Mathematical Biology",
+  publisher =    "Springer-Verlag",
+  year =         "1989",
+  volume =       "19",
+  series =       "Biomathematics",
+  address =      "New York",
+  annote =       "BIO",
+}
+
+%
+% book-n
+%
+
+@Book{nirenberg:tnf74,
+  author =       "L. Nirenberg",
+  title =        "Topics in {N}onlinear {F}unctional {A}nalysis",
+  publisher =    "Courant Institute Lecture Notes",
+  year =         "1974",
+  annote =       "BIF",
+}
+
+%
+% book-o
+%
+
+@Book{olver:alg86,
+  author =       "P. Olver",
+  title =        "Applications of {L}ie {G}roups to {D}ifferential
+                 {E}quations",
+  publisher =    "Springer-Verlag",
+  year =         "1986",
+  address =      "New York",
+  annote =       "Lie Groups, DE",
+}
+
+@Book{ortega:ipv88,
+  author = 	"J.M. Ortega",
+  title = 	"Introduction to {P}arallel and {V}ector {S}olution of
+    {L}inear {S}ystems",
+  publisher = 	"Plenum Press",
+  year = 	"1988",
+  address = 	"New York",
+  annote = 	"numerical"
+}
+
+%
+% book-p
+%
+
+@Book{parlett:sep80,
+  author = 	"B. N. Parlett",
+  title = 	"The {S}ymmetric {E}igenvalue {P}roblem",
+  publisher = 	"Prentice Hall",
+  year = 	"1980",
+  address = 	"Englewood Cliffs, NJ",
+  annote = 	"eigenvalues"
+}
+
+@Book{pimbley:ebn69,
+  author =       "G. H. Pimbley",
+  title =        "Eigenfunction {B}ranches of {N}onlinear {O}perators
+                 and {T}heir {B}ifurcation",
+  publisher =    "Springer Verlag",
+  year =         "1969",
+  volume =       "104",
+  series =       "Lecture Notes in Math",
+  annote =       "BIF",
+}
+
+@Book{poincare:mnm92,
+  author =       "H. Poincar\'e",
+  title =        "Les m\'ethodes nouvelles de la m\'ecanique celeste",
+  publisher =    "Gauthier-Villars",
+  year =         "1892",
+  volume =       "1-3",
+}
+
+@Book{preston:imi83,
+  author =       "C. Preston",
+  title =        "Iterates of {M}aps on an {I}nterval",
+  publisher =    "Springer-Verlag",
+  year =         "1983",
+  series =       "Lecture Notes in Mathematics",
+  volume =       "999",
+}
+
+%
+% book-r
+%
+
+@Book{rabinowitz:apt77,
+  author =       "P. H. Rabinowitz",
+  title =        "Applications of {B}ifurcation {T}heory",
+  publisher =    "Academic Press",
+  year =         "1977",
+  annote =       "BIF",
+}
+
+@Book{roseau:vms84,
+  author =       "M. Roseau",
+  title =        "Vibrations in Mechanical Systems",
+  publisher =    "Springer",
+  year =         "1984",
+  address =      "Berlin",
+}
+
+%
+% book-s
+%
+
+@Book{sattinger:tsb73,
+  author =       "D. H. Sattinger",
+  title =        "Topics in stability and bifurcation theory",
+  publisher =    "Springer Verlag",
+  year =         "1973",
+  volume =       "309",
+  series =       "Lecture Notes in Math.",
+  annote =       "bifurcation",
+}
+
+@Book{sattinger:gtm79,
+  author =       "D. H. Sattinger",
+  title =        "Group {T}heoretic {M}ethods in {B}ifurcation
+                 {T}heory",
+  publisher =    "Springer Verlag",
+  year =         "1979",
+  volume =       "762",
+  series =       "Lecture Notes in Math.",
+  annote =       "BIF",
+}
+
+@Book{schechter:pfa71,
+  author =       "M. Schechter",
+  title =        "Principles of Functional Analysis",
+  publisher =    "Academic Press",
+  year =         "1971",
+  address =      "New York",
+}
+
+@Book{schwartz:nfa69,
+  author =       "J. T. Schwartz",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Gordon and Breach",
+  year =         "1969",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{smoller:swr82,
+  author =       "J. Smoller",
+  title =        "Shock {W}aves and {R}eaction-{D}iffusion {E}quations",
+
+  publisher =    "Springer Verlag",
+  year =         "1982",
+  address =      "Berlin",
+  annote =       "BIF",
+}
+
+@Book{sparrow:leb82,
+  author =       "C. Sparrow",
+  title =        "The Lorenz Equations: Bifurcation, Chaos and Strange
+                 Attractors",
+  publisher =    "SPR",
+  year =         "1982",
+  volume =       "41",
+  series =       "Appl. Math. Sci.",
+  annote =       "bifurcation, strange attractors",
+}
+
+@Book{sperb:mpa81,
+  author =       "R. Sperb",
+  title =        "Maximum {P}rinciples and {T}heir {A}pplications",
+  publisher =    "Springer Verlag",
+  year =         "1981",
+  volume =       "157",
+  series =       "Math. in Sci. and Eng.",
+  address =      "New York",
+  annote =       "PDE",
+}
+
+%
+% book-t
+%
+
+@Book{taylor:ifa67,
+  author =       "A. Taylor",
+  title =        "Introduction to {F}unctional {A}nalyis",
+  publisher =    "Wiley",
+  year =         "1967",
+  address =      "New York",
+}
+
+@Book{temam:idd88,
+  author =       "R. Temam",
+  title =        "Infinite-{D}imensional {D}ynamical {S}ystems in
+                 {M}echanics and {P}hysics",
+  publisher =    "Springer-Verlag",
+  year =         "1988",
+  volume =       "68",
+  series =       "Appl. Math. Sci.",
+  address =      "New York",
+  annote =       "PDE",
+}
+
+@Book{timoshenko:hsm83,
+  author =       "S. Timoshenko",
+  title =        "History of the {S}trength of {M}aterials",
+  publisher =    "Dover",
+  year =         "1983",
+  address =      "New York",
+}
+
+%
+% book-v
+%
+
+@Book{vanderbauwhede:lbs82,
+  author =       "A. Vanderbauwhede",
+  title =        "Local {B}ifurcation and {S}ymmetry",
+  publisher =    "Pitman",
+  year =         "1982",
+  address =      "London",
+  series =       "Research Notes in Math.",
+  annote =       "BIF",
+}
+
+%
+% book-w
+%
+
+@Book{wiggins:gbc88,
+  author =       "S. Wiggins",
+  title =        "Global {B}ifurcations and {C}haos",
+  publisher =    "Springer-Verlag",
+  year =         "1988",
+  volume =       "73",
+  series =       "Applied Mathematical Sciences",
+  address =      "New York",
+  annote =       "Bif",
+}
+
+@Book{whyburn:at42,
+  author =       "G. Whyburn",
+  title =        "Analytic {T}opolgy",
+  publisher =    "AMS",
+  year =         "1942",
+  OPTaddress =   "Providence",
+}
+
+%
+% book-x
+%
+
+
+%
+% book-y
+%
+
+@Book{yosida:fa80,
+  author =       "K. Yosida",
+  title =        "Functional {A}nalysis",
+  publisher =    "Springer-Verlag",
+  year =         "1980",
+  address =      "Berlin",
+  annote =       "Functional Analysis",
+}
+
+%
+% book-z
+%
+
+@Book{zeidler:nfa84I,
+  author =       "E. Zeidler",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1984",
+  volume =       "I",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{zeidler:nfa88IIa,
+  author =       "E. Zeidler",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1988",
+  volume =       "IIa",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{zeidler:nfa88IIb,
+  author =       "E. Zeidler",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1988",
+  volume =       "IIb",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{zeidler:nfa89III,
+  author =       "E. Zeidler",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1989",
+  volume =       "III",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+@Book{zeidler:nfa89IV,
+  author =       "E. Zeidler",
+  title =        "Nonlinear {F}unctional {A}nalysis",
+  publisher =    "Springer Verlag",
+  year =         "1989",
+  volume =       "IV and V",
+  address =      "New York",
+  annote =       "BIF",
+}
+
+%%%
+%%%  inproceedings
+%%%
+
+@InProceedings{allgower:bac84,
+  author =       "E. L. Allgower",
+  title =        "Bifurcations arising in the calculation of critical
+                 points via homotopy methods",
+  booktitle =    "Numerical Methods for Bifurcation Problems, INSM 70",
+  year =         "1984",
+  editor =       "T. K\@upper and H. D. Mittelmann and H. Weber",
+  publisher =    "Birkh\@auser Verlag",
+  annote =       "bifurcations, homotopy",
+}
+
+ @InProceedings{amann:pss78,
+   author = 	"H. Amann",
+   title = 	"Periodic solutions of semilinear parabolic equations",
+   booktitle = 	"Nonlinear Analysis",
+   year = 	"1978",
+   editor = 	"L.Cesari, R. Kannan, H. Weinberger",
+   pages = 	"",
+   publisher = 	"Academic Press",
+   address = 	"New York",
+
+ }
+ 
+@InProceedings{aronson:rfp88,
+  author =       "D. G. Aronson",
+  title =        "Regularity of Flows in Porus Media: {A} Survey",
+  booktitle =    "Nonlinear Diffusion Equations and Their Equilibrium
+                 States I",
+  year =         "1988",
+  editor =       "W. M. Ni and L. A. Peletier and J. Serrin",
+  pages =        "35--49",
+  publisher =    "Springer-Verlag",
+  address =      "New York",
+}
+
+@InProceedings{beyn:dbp80,
+  author =       "W.-J. Beyn",
+  title =        "On discretization of bifurcation problems",
+  booktitle =    "Bifurcation Problems and Their Numerical Treatment",
+  year =         "1980",
+  editor =       "H. D. Mittelmann and H. Weber",
+  publisher =    "Birkh\@{a}user Verlag",
+  note =         "ISNM 54",
+  annote =       "bifurcation",
+}
+
+@InProceedings{beyn:des84,
+  author =       "W.-J. Beyn",
+  title =        "Defining equations for singular solutions and
+                 numerical applications",
+  booktitle =    "Numerical Methods for Bifurcation Problems",
+  year =         "1984",
+  editor =       "T. K\@upper and H. D. Mittelmann and H. Weber",
+  publisher =    "Birkh\@auser Verlag",
+  note =         "INSM 70",
+  annote =       "bifurcation",
+}
+
+@InProceedings{brezis:nee87,
+  author = 	"H. Brezis",
+  title = 	"Nonlinear elliptic equations involving the critical
+                 {S}obolev exponent - survey and perspectives",
+  booktitle = 	"Directions in partial differential equations",
+  year = 	"1987",
+  editor = 	"M. Crandall and P. Rabinowitz and R. Turner",
+  pages = 	"17--36",
+  publisher = 	"Academic Press",
+  address = 	"Boston",
+  annote = 	"PDE"
+}
+
+@InProceedings{busse:stp81,
+  author =       "F. H. Busse",
+  title =        "Symmetry and transitions in patterns of cellular
+                 convection",
+  booktitle =    "Symmetries and Broken Symmetries",
+  year =         "1981",
+  editor =       "N. Boccara",
+  address =      "Idset-Paris",
+  annote =       "bifurcation analysis, two dimensional pattern",
+}
+
+@InCollection{cullum:ppc86,
+  author = 	"J. Cullum and R. Willoughby",
+  title = 	"A practical procedure for computing eigenvalues of
+		 large sparse nonsymmetric matrices",
+  booktitle = 	"Large-Scale Eigenvalue Problems",
+  publisher = 	"North Holland",
+  year = 	"1986",
+  editor = 	"J. Cullum and R. Willoughby",
+  pages = 	"193-240",
+  address = 	"Amsterdam",
+  annote = 	"eigenvalues"
+}
+
+@InProceedings{doedel:cbb80,
+  author =       "E. J. Doedel and G. W. Reddien",
+  title =        "Computation of bifurcation branches using projection
+                 methods",
+  booktitle =    "Proc. 1980 U. S. Army Numerical Analysis and
+                 Computers Conference",
+  year =         "1980",
+  pages =        "223--231",
+  organization = "ARO Report",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@InProceedings{doedel:aut81,
+  author =       "E. J. Doedel",
+  title =        "{AUTO}: {A} program for the automatic bifurcation and
+                 analysis of autonomous systems",
+  booktitle =    "Proc. 10th Manitoba Conf. Num. Anal. and Comp.",
+  year =         "1981",
+  pages =        "265--284",
+  annote =       "bifurcation",
+}
+
+@InProceedings{doedel:nmh84,
+  author =       "E. J. Doedel and A. D. Jepson and H. B. Keller",
+  title =        "Numerical methods for {H}opf bifurcation and
+                 continuation of periodic solution paths",
+  booktitle =    "Computing Methods in Applied Sciences and Engineering
+                 VI",
+  year =         "1984",
+  editor =       "R. Glowinski and J. L. Lions",
+  pages =        "127--136",
+  publisher =    "North Holland Press",
+  address =      "Amsterdam",
+  annote =       "Hopf bifurcation, numerical analysis",
+}
+
+@InProceedings{keller:nsb77,
+  author =       "H. B. Keller",
+  title =        "Numerical solution of bifurcation and nonlinear
+                 eigenvalue problems",
+  booktitle =    "Applications of Bifurcation Theory",
+  year =         "1977",
+  editor =       "P. H. Rabinowitz",
+  pages =        "359--384",
+  publisher =    "Academic Press",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@InProceedings{mawhin:qbs87,
+  author = 	"J. Mawhin",
+  title = 	"Qualitative behavior of the solutions
+      of periodic first order scalar differential equations
+      with strictly convex coercive nonlinearity",
+  booktitle = 	"Dynamics of Infinite Dimensional Systems",
+  year = 	"1987",
+  editor = 	"Silhow and J. Hale",
+  pages = 	"151-159",
+  publisher = 	"Springer Verlag",
+  address = 	"Berlin",
+  annote = 	"DE"
+}
+
+@InProceedings{mittelmann:nmb80,
+  author =       "H. D. Mittelmann and H. Weber",
+  title =        "Numerical methods for bifurcation problems - {A}
+                 survey and classification",
+  booktitle =    "Bifurcation Problems and Their Numerical Solution",
+  year =         "1980",
+  pages =        "1--45",
+  publisher =    "Birkh\@{a}user Verlag",
+  note =         "ISNM 54",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@InProceedings{rheinboldt:nap86,
+  author =       "W. C. Rheinboldt",
+  title =        "Numerical analysis of parametrized nonlinear
+                 equations",
+  booktitle =    "University of Arkansas Lecture Notes in the
+                 Mathematical Sciences",
+  year =         "1986",
+  publisher =    "Wiley-Interscience",
+  annote =       "numerical analysis, bifurcation",
+}
+
+@InProceedings{seydel:cas84,
+  author =       "R. Seydel",
+  title =        "A continuation algorithm with step control",
+  booktitle =    "Proc. Conf. on Numerical methods for bifurcation
+                 problems, Dortmund 1983",
+  year =         "1984",
+  publisher =    "Birkh\@{a}user Verlag",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@InProceedings{weber:smb80,
+  author =       "H. Weber",
+  title =        "Shooting methods for bifurcation problems in ordinary
+                 differential equations",
+  booktitle =    "Bifurcation Problems and Their Numerical Solution",
+  year =         "1980",
+  editor =       "H. D. Mittelmann and H. Weber",
+  pages =        "185--210",
+  publisher =    "Birkh\@{a}user Verlag",
+  note =         "ISNM 54",
+  annote =       "bifurcation, numerical analysis",
+}
+
+%%%
+%%%  articles
+%%%
+
+%
+% article-a
+%
+
+
+@Article{adler:te65,
+  author =       "R. L. Adler and A. G. Konheim and M. H. McAndrew",
+  title =        "Topological Entropy",
+  journal =      "Trans. Amer. Math. Soc.",
+  year =         "1965",
+  volume =       "114",
+  month =        feb,
+  pages =        "309--319",
+}
+
+@Article{alexandrov:uts56,
+  author =       "A. D. Alexandrov",
+  title =        "Uniqueness theorems for surfaces in the large {I}",
+  journal =      "Vestnik Leningrad Univ. Math. (Amer. Math. Soc.
+                 Translations)",
+  year =         "1956 (1962)",
+  volume =       "11 (21)",
+  number =       "19",
+  pages =        "5--17(341--354)",
+  annote =       "MC",
+}
+
+@Article{allgower:scm80,
+  author =       "E. Allgower and K. Georg",
+  title =        "Simplicial and continuation methods for approximating
+                 fixed points and solutions to systems of equations",
+  journal =      Srev,
+  year =         "1980",
+  volume =       "22",
+  pages =        "28--85",
+  annote =       "simplicial",
+}
+
+@Article{altman:fpt55,
+  author =       "M. Altman",
+  title =        "A fixed point theorem for completely continuous
+                 operators in {Banach} spaces",
+  journal =      "Bull. Acad. Polon. Sci. cl. III",
+  year =         "1955",
+  volume =       "3",
+  number =       "3",
+  pages =        "409--413",
+}
+
+@TechReport{amann:lsf74,
+  author =       "H. Amann",
+  title =        "Lectures on Some Fixed Point Theorems, Monografias de
+                 Matematica",
+  institution =  "IMPA",
+  year =         "1974",
+  address =      "Rio de Janeiro",
+}
+
+@Article{amann:fpe76,
+  author =       "H. Amann",
+  title =        "Fixed point equations and nonlinear eigenvalue
+                 problems in ordered {B}anach spaces",
+  journal =       Srev,
+  year =         "1976",
+  volume =       "18",
+  pages =        "620--709",
+  annote =       "BIF",
+}
+
+@Article{amann:smi76,
+  author =       "H. Amann",
+  title =        "Supersolutions, Monotone Iterations, and Stability",
+  journal =      "J. Diff. Eq.",
+  year =         "1976",
+  volume =       "21",
+  pages =        "363--377",
+  annote =       "PDE",
+}
+
+@Article{amann:utd73,
+  author =       "H. Amann and S. Weiss",
+  title =        "On the uniqueness of the topological degree",
+  journal =      "Math. Z.",
+  year =         "1973",
+  volume =       "130",
+  pages =        "39--54",
+  annote =       "Degree",
+}
+
+@Article{aronson:bic82,
+  author =       "D. G. Aronson and M. A. Chory and G. R. Hall and R.
+                 P. McGehee",
+  title =        "Bifurcations from an invariant circle for
+                 two-parameter families of maps of the plane: {A}
+                 computer-assisted study",
+  journal =      CMP,
+  volume =       "83",
+  pages =        "303--354",
+  year =         "1982",
+  annote =       "maps",
+}
+
+@Article{arnold:sdm61,
+  author =       "V. I. Arnold",
+  title =        "Small denominators {I}, {M}appings of the
+                 circumference onto itself",
+  journal =      "AMS Transl. Ser. 2",
+  year =         "1961",
+  volume =       "46",
+  pages =        "213--284",
+  annote =       "1D maps",
+}
+
+@Article{auchmuty:ban75,
+  author =       "J. F. G. Auchmuty and G. Nicolis",
+  title =        "Bifurcation analysis of nonlinear reaction-diffusion
+                 equations. - {I}. {E}volution equations and the steady
+                 state solutions",
+  journal =      "Bull. Math. Biol.",
+  year =         "1975",
+  volume =       "37",
+  pages =        "323--365",
+  annote =       "bifurcation analysis",
+}
+
+@Article{auchmuty:bar76,
+  author =       "J. F. G. Auchmuty and G. Nicolis",
+  title =        "Bifurcation analysis of reaction diffusion equations.
+                 - {III}. {C}hemical oscillations",
+  journal =      "Bull. Math. Biol.",
+  year =         "1976",
+  volume =       "38",
+  pages =        "325--350",
+  annote =       "bifurcation analysis",
+}
+
+%
+% article-b
+%
+
+@Article{bahri:een85,
+  author =       "A. Bahri and J. M. Coron",
+  title =        "Sur une \'{e}quation elliptique nonlin\'{e}aire avec
+                 l'exposant critique de {S}obolev",
+  journal =      "C. R. Acad. Sci. Paris",
+  year =         "1985",
+  volume =       "301",
+  pages =        "345--348",
+  annote =       "critical exponent",
+}
+
+@Article{bauer:abh77,
+  author =       "L. Bauer and H. B. Keller and E. L. Reiss",
+  title =        "Axisymmetric buckling of hollow spheres and
+                 hemispheres",
+  journal =      "Comm. Pure Appl. Math.",
+  year =         "1977",
+  volume =       "23",
+  pages =        "529--668",
+  annote =       "bifurcation",
+}
+
+@Article{bear:shb86,
+  author =       "S. Bear and T. Erneux",
+  title =        "Singular {H}opf bifurcation to relaxation
+                 oscillations",
+  journal =      SJAM,
+  year =         "1986",
+  volume =       "46",
+  number =       "5",
+  pages =        "721--739",
+  annote =       "Hopf bifurcation, relaxation oscillations",
+}
+
+@Article{bellout:sss90,
+  author =       "H. Bellout",
+  title =        "On some singular solutions of the equation {$\Delta u
+                 = -\lambda e^u$}",
+  journal =      "Comm. in PDE",
+  year =         "1990",
+  volume =       "15",
+  number =       "4",
+  pages =        "525--539",
+  annote =       "PDE",
+}
+
+@Article{benjamin:utc71,
+  author =       "T. Benjamin",
+  title =        "A unified theory of conjugate flows",
+  journal =      "Phil. Trans. Roy. Soc",
+  year =         "1971",
+  volume =       "269",
+  number =       "269",
+  pages =        "587--643",
+}
+
+@Article{boa:mss75,
+  author =       "J. A. Boa",
+  title =        "Multiple steady states in a model biochemical
+                 reaction",
+  journal =      "Stud. Appl. Maths.",
+  year =         "1975",
+  volume =       "54",
+  pages =        "9--15",
+  annote =       "bifurcation analysis",
+}
+
+@Article{boa:bld76,
+  author =       "J. A. Boa and D. S. Cohen",
+  title =        "Bifurcation of localised disturbances in a model
+                 biochemical reaction",
+  journal =      SJAM,
+  year =         "1976",
+  volume =       "30",
+  pages =        "123--135",
+  annote =       "bifurcation analysis",
+}
+
+@Article{bohme:lvn70,
+  author =       "R. B{\"o}hme",
+  title =        "Die {L}{\"o}sungen der {V}erzweigungsgleichungen
+                 f{\"u}r nichtlineare {E}igenwertprobleme",
+  journal =      "Math. Z.",
+  year =         "1970",
+  volume =       "127",
+  pages =        "105--126",
+  annote =       "PDE",
+}
+
+@Article{bona:fpt72,
+  author =       "J. Bona",
+  title =        "Fixed point theorems for Frechet spaces",
+  journal =      "Springer Lecture Notes in Math",
+  year =         "1972",
+  volume =       "280",
+  number =       "280",
+  pages =        "219--222",
+}
+
+@Article{bowen:ege71,
+  author =       "R. Bowen",
+  title =        "Entropy for Group Endomorphisms and Homogeneous
+                 Spaces",
+  journal =      "Trans.\ Amer.\ Math.\ Soc.",
+  year =         "1971",
+  volume =       "153",
+  month =        jan,
+  pages =        "401--414",
+}
+
+@Article{bowen:ten73,
+  author =       "R. Bowen",
+  title =        "Topological Entropy for Noncompact Sets",
+  journal =      "Trans.\ Amer.\ Math.\ Soc.",
+  year =         "1973",
+  volume =       "184",
+  month =        oct,
+  pages =        "125--136",
+}
+
+@Article{bratu:ein14,
+  author =       "G. Bratu",
+  title =        "Sur les equations integrales non lineares",
+  journal =      "Bull. Soc. Math. de France",
+  year =         "1914",
+  volume =       "42",
+  pages =        "113--142",
+  annote =       "Gelfand or Bratu problem",
+}
+
+@Article{brezis:ueb91,
+  author =       "H. Brezis and F. Merle",
+  title =        "Uniform estimates and blow-up behavior for solutions
+                 of {$-\Delta u = V(x)e^u$} in two dimensions",
+  journal =      "Comm. in PDE",
+  year =         "1991",
+  volume =       "16",
+  number =       "8 \&9",
+  pages =        "1223--1253",
+  annote =       "PDE",
+}
+
+@Article{brezis:psn83,
+  author =       "H. Brezis and L. Nirenberg",
+  title =        "Positive solutions of nonlinear elliptic equations
+                 involving critical {S}obolev exponents",
+  journal =      "Comm. Pure. Appl. Math.",
+  year =         "1983",
+  volume =       "41",
+  pages =        "437--477",
+  annote =       "PDE",
+}
+
+@TechReport{brown:hkm87,
+  author =       "P. Brown and Y. Saad",
+  title =        "Hybrid {K}rylov methods for nonlinear systems of
+                 equations",
+  institution =  "LLNL",
+  year =         "1987",
+  number =       "ucrl-97645",
+  month =        nov,
+  annote =       "conjugate gradient",
+}
+
+@Article{budd:see87,
+  author =       "C. Budd and J. Norbury",
+  title =        "Semilinear elliptic equations and supercritical
+                 growth",
+  journal =      "J. Diff. Eq.",
+  year =         "1987",
+  volume =       "68",
+  pages =        "169--197",
+  annote =       "PDE",
+}
+
+@Article{busse:sfa67,
+  author =       "F. H. Busse",
+  title =        "The stability of finite amplitude cellular convection
+                 and its relation to an extremum principle",
+  journal =      "J. Fluid Mech.",
+  year =         "1967",
+  volume =       "30",
+  pages =        "625--649",
+  annote =       "bifurcation analysis, two dimensional pattern",
+}
+
+@Article{busse:pcs75,
+  author =       "F. H. Busse",
+  title =        "Patterns of convection in spherical shells",
+  journal =      "J. Fluid Mech.",
+  year =         "1975",
+  volume =       "72",
+  pages =        "67--85",
+  annote =       "bifurcation analysis, two dimensional pattern",
+}
+
+%
+% article-c
+%
+
+@Article{caffarelli:asl89,
+  author =       "L. Caffarelli and B. Gidas and J. Spruck",
+  title =        "Asymptotic symmetry and local behavior of semilinear
+                 elliptic equations with critical Sobolev growth",
+  journal =      "Comm. Pure Appl. Math.",
+  year =         "1989",
+  volume =       "42",
+  pages =        "271--297",
+  annote =       "PDE",
+}
+
+@Article{chaundy:csd36,
+  author =       "T. W. Chaundy and E. Phillips",
+  title =        "The convergence of sequences defined by quadratic
+                 recurrence-formulae",
+  journal =      "Quart. J. Math.",
+  year =         "1936",
+  pages =        "74--80",
+  annote =       "1D maps",
+}
+
+@Article{cosner:gls88,
+  author =       "C. Cosner and K. Schmitt",
+  title =        "On the geometry of level sets of positive solutions
+                 of semilinear elliptic equations",
+  journal =      "Rocky Mountain J. of Math.",
+  year =         "1988",
+  volume =       "18",
+  number =       "2",
+  pages =        "277--286",
+  annote =       "PDE",
+}
+
+@Article{crandall:bse71,
+  author =       "M. G. Crandall and P. H. Rabinowitz",
+  title =        "Bifurcation from simple eigenvalues",
+  journal =      "J. Func. Anal.",
+  year =         "1971",
+  volume =       "8",
+  pages =        "231--340",
+  annote =       "bifurcation",
+}
+
+@Article{crandall:cvm75,
+  author =       "M. G. Crandall and P. H. Rabinowitz",
+  title =        "Some continuation and variation methods for positive
+                 solutions of nonlinear elliptic eigenvalue problems",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1975",
+  volume =       "58",
+  number =       "3",
+  pages =        "208--218",
+  annote =       "bifurcation",
+}
+
+@Article{crandall:hbt76,
+  author =       "M. G. Crandall and P. H. Rabinowitz",
+  title =        "The {H}opf bifurcation theorem",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1976",
+  annote =       "Hopf bifurcation",
+}
+
+@InProceedings{cronin:fpt64,
+  author =       "J. Cronin",
+  title =        "Fixed Points and Topological Degree in Nonlinear
+                 Analysis",
+  booktitle =    "Math. Surveys No. 11",
+  year =         "1964",
+  organization = "Amer. Math. Soc.",
+  address =      "Providence",
+}
+
+@Article{cullum:gnl89,
+  author = 	"J. Cullum and W. Kerner and R. Willoughby",
+  title = 	"A generalized nonsymmetric {L}anczos procedure",
+  journal = 	"Computer Physics Comm.",
+  year = 	"1989",
+  volume = 	"53",
+  pages = 	"19-48",
+  annote = 	"eigenvalues"
+}
+
+%
+% article-d
+%
+
+@Article{dancer:pss87,
+  author =       "N. Dancer and K. Schmitt",
+  title =        "On positive solutions of semilinear elliptic
+                 equations",
+  journal =      "PAMS",
+  year =         "1987",
+  volume =       "101",
+  pages =        "445--452",
+  annote =       "PDE",
+}
+
+@Article{defigueiredo:aee82,
+  author =       "D. G. de Figueiredo and P. L. Lions and R. D.
+                 Nussbaum",
+  title =        "A priori estimates and existence of positive
+                 solutions of semilinear elliptic equations",
+  journal =      "J. Math. pures et appl.",
+  year =         "1982",
+  volume =       "61",
+  pages =        "41--63",
+  annote =       "PDE",
+}
+
+@Article{dellwo:bi82,
+  author =       "D. Dellwo and H. B. Keller and B. J. Matkowsky and E.
+                 L. Reiss",
+  title =        "On the birth of isolas",
+  journal =      SJAM,
+  year =         "1982",
+  volume =       "42",
+  number =       "5",
+  pages =        "956--963",
+  annote =       "isolas, bifurcation",
+}
+
+@Article{dickey:bpn76,
+  author =       "R. W. Dickey",
+  title =        "Bifurcation {P}roblems in {N}onlinear {E}lasticity",
+  journal =      "Pitman Research Notes in Math.",
+  year =         "1976",
+  address =      "London",
+  annote =       "BIF",
+}
+
+@Article{doedel:ntb82,
+  author =       "E. J. Doedel and P. C. Leung",
+  title =        "Numerical techniques for bifurcation problems in
+                 delay equations",
+  journal =      "Cong. Num.",
+  year =         "1982",
+  volume =       "34",
+  pages =        "225--237",
+  note =         "Proc. 11th Manitoba Conf. on Num. Math. and Comp.,
+                 Univ. of Manitoba, Winnipeg, Canada",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{doedel:ncp83,
+  author =       "E. J. Doedel and R. F. Heinemann",
+  title =        "Numerical computation of periodic solution branches
+                 and oscillatory dynamics of the stirred tank reactor
+                 with ${A} \rightarrow {B} \rightarrow {C}$ reactions",
+  journal =      "Chem. Eng. Sci.",
+  year =         "1983",
+  volume =       "38",
+  number =       "9",
+  pages =        "1493--1499",
+  annote =       "Numerical bifurcation",
+}
+
+@TechReport{doedel:aut86, 
+  author = 	"E. J. Doedel and J. P. Kernevez", 
+  title = 	"{AUTO}: Software for continuation and bifurcation
+		 problems in ordinary differential equations with
+		 applications", 
+  institution = "Caltech", 
+  year = 	"1986", 
+  type =        "Applied Math", 
+  annote = 	"auto"
+}
+
+@Article{doedel:bvh87,
+  author =       "E. J. Doedel and J. F. Magnan and E. L. Reiss",
+  title =        "Bending of vertical {H}opf bifurcation branches in
+                 rotating thermal convection with an imperfection",
+  journal =      "Phys. Rev. A.",
+  year =         "1987",
+  note =         "in press",
+  annote =       "Hopf bifurcation",
+}
+
+@Article{doedel:nac91,
+  author = 	"E. J. Doedel and H. Keller and J. P. Kernevez",
+  title = 	"Numerical analysis and control of bifurcation
+		 problems {I}, bifurcation in finite dimensions ",
+  journal = 	"International journal of bifurcation and chaos",
+  year = 	"1991",
+  volume = 	"1",
+  number = 	"3",
+  pages = 	"493-520",
+  annote = 	"auto"
+}
+
+@Article{dugundji:ett51,
+  author =       "J. Dugundji",
+  title =        "An extension of {Tietze's Theorem}",
+  journal =      "Pac. J. Math",
+  year =         "1951",
+  volume =       "1",
+  pages =        "353--367",
+  annote =       "Topology",
+}
+
+%
+% article-e
+%
+
+@Article{erneux:bdm79,
+  author =       "T. Erneux and M. Herchkowitz-Kaufman",
+  title =        "The bifurcation diagram of a model chemical reaction.
+                 {II}. 2-dimensional time periodic patterns",
+  journal =      "Bull. Math. Biol.",
+  year =         "1979",
+  volume =       "41",
+  pages =        "767--790",
+  annote =       "bifurcation analysis, two dimensional pattern",
+}
+
+%
+% article-f
+%
+
+@TechReport{fournier:sfp76,
+  author =       "F. Fournier and H. O. Peitgen",
+  title =        "On some fixed point principles for cones in linear
+                 spaces",
+  institution =  "Universit{\"{a}}t",
+  year =         "1976",
+  number =       "86",
+}
+
+@TechReport{freund:qmr90,
+  author = 	"R. W. Freund and N. M. Nachtigal",
+  title = 	"QMR: a Quasi-Minimal Residual Method for
+		 Non-Hermitian Linear System",
+  institution =  "NASA Ames Research Center",
+  year =         "December 1990",
+  number =       "90.15",
+}
+
+@TechReport{freund:ila91,
+  author = 	"R. W. Freund and Martin H. Gutknecht and N. M. Nachtigal",
+  title = 	"An Implementation of the Look-Ahead Lanczos Algorithm
+		 for Non-Hermitian Matrices", 
+  institution = "NASA Ames Research Center",
+  year = 	"April 1991",
+  number = 	"91.09",
+  annote = 	"QMR"
+}
+
+%
+% article-g
+%
+
+@Article{garaizar:epr87,
+  author =       "X. Garaizar",
+  title =        "Existence of positive radial solutions for semilinear
+                 elliptic equations in the annulus",
+  journal =      "J. Diff. Eq.",
+  year =         "1987",
+  volume =       "70",
+  pages =        "69--92",
+  annote =       "PDE",
+}
+
+@Article{gelfand:spt63,
+  author =       "I. M. Gelfand",
+  title =        "Some problems in the theory of quasilinear equations",
+
+  journal =      "Amer. Math. Soc. Transl.",
+  year =         "1963",
+  volume =       "29",
+  pages =        "295--381",
+  annote =       "gelfand problem",
+}
+
+@Article{gidas:srp79,
+  author =       "B. Gidas and W. Ni and L. Nirenberg",
+  title =        "Symmetry and related properties via the maximum
+                 principle",
+  journal =      "Comm. Math. Phys.",
+  year =         "1979",
+  volume =       "68",
+  pages =        "209--243",
+  annote =       "Symmetry, PDE",
+}
+
+@Article{gidas:abp81,
+  author =       "B. Gidas and J. Spruck",
+  title =        "A priori bounds for positive solutions of nonlinear
+                 elliptic equations",
+  journal =      "Comm. in PDE",
+  year =         "1981",
+  volume =       "6",
+  number =       "8",
+  pages =        "883--901",
+  annote =       "PDE",
+}
+
+@Article{glowinski:ccg85,
+  author =       "R. Glowinski and H. B. Keller and L. Reinhart",
+  title =        "Continuation-conjugate gradient methods for the least
+                 square solution of nonlinear boundary value problems",
+  journal =      SJSS,
+  year =         "1985",
+  volume =       "6",
+  number =       "4",
+  pages =        "793--832",
+  month =        oct,
+  annote =       "conjugate gradient",
+}
+
+@Article{golubitsky:cud81,
+  author =       "M. Golubitsky and W. F. Langford",
+  title =        "Classification and unfoldings of degenerate {H}opf
+                 bifurcations",
+  journal =      JDE,
+  year =         "1981",
+  volume =       "41",
+  number =       "3",
+  pages =        "375--415",
+  annote =       "Hopf bifurcations",
+}
+
+@Article{gossez:pss91,
+  author = 	"J. P. Gossez and P. P. Omari",
+  title = 	"Periodic solutions of a second order ordinary
+                 differential equation: a necessary and sufficient
+                 condition for nonresonance",
+  journal = 	JDE,
+  year = 	"1991",
+  volume = 	"94",
+  OPTnumber = 	"",
+  pages = 	"67--82",
+  OPTmonth = 	"",
+  OPTnote = 	"",
+  OPTkeyword = 	"",
+  OPTannote = 	""
+}
+
+@Article{griewank:chp83,
+  author =       "A. Griewank and G. W. Reddien",
+  title =        "The calculation of {H}opf points by a direct method",
+  journal =      "IMA J. Numer. Anal.",
+  year =         "1983",
+  volume =       "3",
+  pages =        "295--303",
+  annote =       "Hopf bifurcation, numerical analysis",
+}
+
+@Article{guckenheimer:sdi79,
+  author =       "J. Guckenheimer",
+  title =        "Sensitive Dependence to Initial Conditions for One
+                 Dimensional Maps",
+  journal =      "Commun. Math. Phys.",
+  year =         "1979",
+  volume =       "70",
+  pages =        "133--160",
+}
+
+@Article{gustafson:nsb72,
+  author =       "G. B. Gustafson and K. Schmitt",
+  title =        "Nonzero solutions of boundary value problems for
+                 second order ordinary and delaying differential
+                 equations",
+  journal =      j-JDE,
+  year =         "1972",
+  volume =       "12",
+  number =       "12",
+  pages =        "125--147",
+}
+
+@Article{glendinning:lgb84,
+  author =       "P. Glendinning and C. Sparrow",
+  title =        "Local and global behavior near homoclinic orbits",
+  journal =      "Jour. Stat. Phys.",
+  volume =       "35",
+  pages =        "645--696",
+  year =         "1984",
+  annote =       "global bifurcation",
+}
+
+%
+% article-h
+%
+
+@Article{hale:cdp74,
+  author =       "J. Hale and J. Mawhin",
+  title =        "Coincidence and degree and periodic solution- of
+                 neutral equations",
+  journal =      j-JDE,
+  year =         "1974",
+  volume =       "15",
+  number =       "15",
+  pages =        "295--307",
+}
+
+@Article{heinemann:mso81,
+  author =       "R. F. Heinemann and A. B. Poore",
+  title =        "Multiplicity, stability, and oscillatory dynamics of
+                 the tubular reactor",
+  journal =      "Chem. Eng. Sci.",
+  year =         "1981",
+  volume =       "36",
+  pages =        "1411",
+  annote =       "bifurcation, nonlinear oscillations",
+}
+
+@Article{heinz:eat59,
+  author =       "E. Heinz",
+  title =        "An elementary analytic theory of the degree of
+                 mapping in n-dimensional Euclidean space",
+  journal =      "J. Math. Mech.",
+  year =         "1959",
+  volume =       "8",
+  pages =        "231--247",
+  annote =       "degree",
+}
+
+@Article{heinz:ebs92,
+  author = 	"H. P. Heinz and T {K\"{u}}pper and C. A. Stuart",
+  title = 	"Existence and bifurcation of solutions for nonlinear
+                 perturbations of the periodic {S}chr{\"{o}}dinger equation",
+  journal = 	"JDE",
+  year = 	"1992",
+  volume = 	"100",
+  pages = 	"341--354",
+  annote = 	"schrodinger"
+}
+
+@Article{hess:mps81,
+  author =       "P. Hess",
+  title =        "On multiple positive solutions of nonlinear
+                 eigenvalue problems",
+  journal =      "Comm. PDE",
+  year =         "1981",
+  volume =       "6",
+  pages =        "951--961",
+  annote =       "PDE",
+}
+
+@Article{hiernaux:cpc79,
+  author =       "J. Hiernaux and T. Erneux",
+  title =        "Chemical patterns in circular morphogenetic fields",
+  journal =      "Bull. Math. Biol.",
+  year =         "1979",
+  volume =       "41",
+  pages =        "461--468",
+  annote =       "bifurcation analysis, two dimensional pattern",
+}
+
+@Article{hlavavcek:msa72,
+  author =       "V. Hlavavcek and M. Kubicek and K. Visnak",
+  title =        "Multiplicity and stability analysis of a continuous
+                 stirred tank reactor with exothermic consecutive
+                 reactions ${A} \rightarrow {B} \rightarrow {C}$",
+  journal =      "Chem. Eng. Sci.",
+  year =         "1972",
+  volume =       "27",
+  pages =        "719--742",
+  annote =       "bifurcation, nonlinear oscillations",
+}
+
+@Article{holmes:bdf78,
+  author =       "P. Holmes and J. Marsden",
+  title =        "Bifurcation to divergence and flutter in flow-induced
+                 oscillations: {A}n infinite dimensional analysis",
+  journal =      "Automatica",
+  year =         "1978",
+  volume =       "14",
+  pages =        "367--384",
+  annote =       "bifurcation",
+}
+
+@Article{holodniok:dac84,
+  author =       "M. Holodniok and M. Kubicek",
+  title =        "{DERPER} - {A}n algorithm for the continuation of
+                 periodic solutions in ordinary differential equations",
+
+  journal =      "J. Comp. Phys.",
+  year =         "1984",
+  volume =       "55",
+  number =       "2",
+  pages =        "254--267",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{hopf:ael42,
+  author =       "E. Hopf",
+  title =        "{A}bzweigung einerperiodischen {L}{\"o}sung von einer
+                 station{\"a}ren {L}{\"o}sung eines
+                 {D}ifferentialsystems",
+  journal =      "Ber. Math. Phys.",
+  year =         "1942",
+  volume =       "94",
+  pages =        "1--22",
+}
+
+%
+% article-i
+%
+
+%
+% article-j
+%
+
+@Article{jepson:fst85,
+  author =       "A. Jepson and A. Spence",
+  title =        "Folds in solutions of two parameter systems and their
+                 calculation: {P}art {I}",
+  journal =      "SIAM J. Numer. Anal.",
+  year =         "1985",
+  volume =       "22",
+  number =       "2",
+  pages =        "347--368",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{joseph:qdp73,
+  author =       "D. D. Joseph and T. S. Lundgren",
+  title =        "Quasilinear {D}irichlet problems driven by positive
+                 sources",
+  journal =      "Arch. Rat. Mech. Appl.",
+  year =         "1973",
+  volume =       "49",
+  pages =        "241--269",
+  annote =       "PDE",
+}
+
+@Article{joseph:ndi70,
+  author =       "D. D. Joseph and E. M. Sparrow",
+  title =        "Nonlinear diffusion induced by nonlinear sources",
+  journal =      "Quart. Appl. Math.",
+  year =         "1970",
+  volume =       "28",
+  pages =        "327--342",
+  annote =       "nonlinear heat flow",
+}
+
+%
+% article-k
+%
+
+@Article{kazdan:cfc74,
+  author =       "J. L. Kazdan and F. W. Warner",
+  title =        "Curvature functions for compact 2-manifolds",
+  journal =      "Ann. of Math.",
+  year =         "1974",
+  volume =       "99",
+  pages =        "14--47",
+  annote =       "Riemannian Geometry",
+}
+
+@Article{keller:ipm72,
+  author =       "H. B. Keller and W. F. Langford",
+  title =        "Iterations, perturbations and multiplicities for
+                 nonlinear bifurcation problems",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1972",
+  volume =       "48",
+  pages =        "83--108",
+  annote =       "bifurcation",
+}
+
+@Article{kevrekidis:nci85,
+  author =       "I. G. Kevrekidis and R. Aris and L. D. Schmidt and S.
+                 Pelikan",
+  title =        "Numerical computation of invariant circles of maps",
+  journal =      "Physica",
+  year =         "1985",
+  volume =       "16D",
+  pages =        "243--251",
+  annote =       "maps, discrete dynamical systems",
+}
+
+@Article{krein:lol62,
+  author =       "M. Krein and M. Rutman",
+  title =        "Linear operators leaving invariant a cone in a Banach
+                 space",
+  journal =      "AMS Transl.",
+  year =         "1962",
+  volume =       "10",
+  pages =        "199--325",
+  annote =       "Functional",
+}
+
+@Article{korevaar:csc87,
+  author =       "N. J. Korevaar and J. L. Lewis",
+  title =        "Convex solutions of certain elliptic equations have
+                 constant rank hessians",
+  journal =      "Arch. Rat. Mech. and Anal.",
+  year =         "1987",
+  volume =       "97",
+  number =       "1",
+  pages =        "19--32",
+  annote =       "PDE",
+}
+
+@Article{korevaar:cls90,
+  author =       "N. J. Korevaar",
+  title =        "Convexity of level sets for solutions to elliptic
+                 ring problems",
+  journal =      "Comm. in PDE",
+  year =         "1990",
+  volume =       "15",
+  number =       "4",
+  pages =        "541--556",
+  annote =       "PDE",
+}
+
+@TechReport{kubicek:nth79,
+  author =       "M. Kubicek",
+  title =        "The numerical treatment of {H}opf bifurcation
+                 problems for {ODE}'s",
+  institution =  "where",
+  year =         "1979",
+  type =         "Technical Report",
+  annote =       "Hopf bifurcation, numerical analysis",
+}
+
+@Article{kubicek:ehb84,
+  author =       "M. Kubicek and M. Holodniok",
+  title =        "Evaluation of {H}opf bifurcation points in parabolic
+                 equations describing heat and mass transfer in
+                 chemical reactors",
+  journal =      "Chem. Eng. Sci.",
+  year =         "1984",
+  volume =       "39",
+  number =       "3",
+  pages =        "593--599",
+  annote =       "Hopf bifurcation, numerical analysis",
+}
+
+%
+% article-l
+%
+
+@Article{landesman:npl70,
+  author =       "E. Landesman and A. Lazer",
+  title =        "Nonlinear perturbations of linear elliptic boundary
+                 value problems",
+  journal =      "J. Math. Mech.",
+  year =         "1970",
+  OPTvolume =    "19",
+  OPTpages =     "609-623",
+  OPTannote =    "PDE",
+}
+
+@Article{langford:nsb77,
+  author =       "W. F. Langford",
+  title =        "Numerical solution of bifurcation problems for
+                 ordinary differential equations",
+  journal =      "Numerische Mathematik",
+  year =         "1977",
+  volume =       "28",
+  pages =        "171--190",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{langford:pss79,
+  author =       "W. F. Langford",
+  title =        "Periodic and steady state mode interactions lead to
+                 tori",
+  journal =      SJAM,
+  year =         "1979",
+  volume =       "34",
+  number =       "1",
+  pages =        "22--48",
+  annote =       "bifurcation",
+}
+
+@Article{langford:bps73,
+  author =       "O. Lanford",
+  title =        "Bifurcation of periodic solutions into invariant
+                 tori: the work of {R}uelle and {T}akens",
+  journal =      "Lect. Notes Math.",
+  year =         "1973",
+  volume =       "322",
+  pages =        "159",
+  annote =       "dynamical systems, maps, bifurcation",
+}
+
+@Article{lazer:bpf69,
+  author =       "A. Lazer and D. Leach",
+  title =        "Bounded perturbations of forced harmonic oscillations
+                 at resonance",
+  journal =      "Ann. Mat. Pura Appl.",
+  year =         "1969",
+  volume =       "72",
+  pages =        "49--68",
+  annote =       "perturbation",
+}
+
+@Article{leray:tef34,
+  author =       "J. Leray and J. Schauder",
+  title =        "Topologie et {\'e}quations fonctionelles",
+  journal =      "Ann. Sci. {\'E}cole Norm. Sup.",
+  year =         "1934",
+  volume =       "51",
+  pages =        "45--78",
+  annote =       "degree",
+}
+
+@TechReport{li:srn79,
+  author =       "T.-Y. Li and J. A. Yorke",
+  title =        "A simple reliable numerical algorithm for following
+                 homotopy paths",
+  institution =  "Univ. of Wisc.",
+  year =         "1979",
+  type =         "MRC Report 1984",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{lin:epr89,
+  author =       "S. S. Lin",
+  title =        "On the existence of positive radial solutions for
+                 nonlinear elliptic equations in annular domains",
+  journal =      "J. Diff. Eq.",
+  year =         "1989",
+  volume =       "81",
+  pages =        "221--233",
+  annote =       "PDE",
+}
+
+@Article{lin:prs90,
+  author =       "S. S. Lin",
+  title =        "Positive radial solutions and non-radial bifurcation
+                 for semilinear elliptic equations in annular domains",
+  journal =      "J. Diff. Eq.",
+  year =         "1990",
+  volume =       "86",
+  pages =        "367--391",
+  annote =       "BIF",
+}
+
+@Article{lin:emp91,
+  author =       "S. S. Lin and F. M. Pai",
+  title =        "Existence and multiplicity of positive radial
+                 solutions for semilinear elliptic equations in annular
+                 domains",
+  journal =      SJAM,
+  year =         "1991",
+  volume =       "22",
+  number =       "6",
+  pages =        "1500--1515",
+  annote =       "PDE",
+}
+
+@Article{lions:eps82,
+  author = 	"P. L. Lions",
+  title = 	"On the existence of positive solutions of semilinear
+		 elliptic equations",
+  journal = 	Srev,
+  year = 	"1982",
+  volume = 	"24",
+  number = 	"4",
+  pages = 	"441-467",
+  annote = 	"continua"
+}
+
+@Article{liouville:edp53,
+  author =       "J. Liouville",
+  title =        "Sur l'equation aux d\'{e}riv\'{e}es partielles
+                 {$\frac{\partial^2\ln\lambda}{\partial u\partial v}\pm
+                 2\lambda a^2 =0$}",
+  journal =      "J. de Math",
+  year =         "1853",
+  volume =       "18",
+  pages =        "71--72",
+  annote =       "Gelfand Bratu",
+}
+
+@Article{lorenz:pdc64,
+  author =       "E. N. Lorenz",
+  title =        "The problem of deducing the climate from the
+                 governing equation",
+  journal =      "Tellus",
+  year =         "1964",
+  volume =       "16",
+  pages =        "1--11",
+  annote =       "1D maps",
+}
+
+%
+% article-m
+%
+
+@Article{maini:bsh91,
+  author =       "M. R. Myerscough, K. H. Winters P. K. Maini and J. D.
+                 Murray",
+  title =        "Bifurcating spatially heterogeneous solutions in a
+                 chemotaxis model for biological pattern generation",
+  journal =      "Bulletin of Mathematical Biology",
+  year =         "1991",
+  volume =       "53",
+  pages =        "701--719",
+  annote =       "Bio",
+}
+
+@Article{margolis:bpb80,
+  author =       "S. B. Margolis",
+  title =        "Bifurcation phenomena in burner-stabilized premixed
+                 flames",
+  journal =      "Comb. Sc. and Tech.",
+  year =         "1980",
+  volume =       "22",
+  pages =        "143--169",
+  annote =       "bifurcation, combustion",
+}
+
+@Article{markus:odl56,
+  author = 	"L. Markus and R. Moore",
+  title = 	"Oscillation and
+      disconjugacy for linear differential equations with
+      almost periodic coeficients",
+  journal = 	"Acta Math.",
+  year = 	"1956",
+  volume = 	"96",
+  pages = 	"99-123",
+  annote = 	"DE"
+}
+
+@Article{matkowsky:snd70,
+  author =       "B. J. Matkowsky",
+  title =        "A simple non-linear dynamic stability problem",
+  journal =      "Bull. Amer. Math. Soc.",
+  year =         "1970",
+  volume =       "76",
+  pages =        "620--625",
+  annote =       "bifurcation analysis",
+}
+
+@Article{mawhin:etn72,
+  author =       "J. Mawhin",
+  title =        "Equivalence theorems for nonlinear opoerator
+                 equations and coincidence degree theory for some
+                 mappings in locally convex topological vector spaces",
+  journal =      j-JDE,
+  year =         "1972",
+  volume =       "1",
+  number =       "1",
+  pages =        "610--636",
+}
+
+@Article{mawhin:foo87,
+  author = 	"J. Mawhin",
+  title = 	"First order ordinary differential
+      equations with several periodic solutions",
+  journal = 	"J. Appl. Math.",
+  year = 	"1987",
+  volume = 	"38",
+  pages = 	"257-265",
+  annote = 	"DE"
+}
+
+@Article{mawhin:ltp88,
+  author =       "J. Mawhin and K. Schmitt",
+  title =        "Landesman-Lazer type problems at an eigenvalue of odd
+                 multiplicity",
+  journal =      "Results in Math.",
+  year =         "1988",
+  volume =       "14",
+  pages =        "138--146",
+  annote =       "Landesman-Lazer",
+}
+
+@Article{mawhin:nep90,
+  author =       "J. Mawhin and K. Schmitt",
+  title =        "Nonlinear eigenvalue problems with the parameter near
+                 resonance",
+  journal =      "Ann. Polon. Math.",
+  year =         "1990",
+  volume =       "51",
+  pages =        "241--248",
+  annote =       "de",
+}
+
+ @Article{mawhin:rat77,
+   author =       "J. Mawhin and K. Schmitt",
+   title =        "Rothe and Altman type coincidence theorems and
+                  applications to differential equations",
+   journal =      j-NLA,
+   year =         "1977",
+   volume =       "1",
+   number =       "1",
+   pages =        "151--160",
+ }
+
+@Article{meijerink:ism77,
+  author =       "J. Meijerink and H. A. van der Vorst",
+  year =         "1977",
+  title =        "An iterative solution method for linear systems of
+                 which the coefficient matrix is a symmetric
+                 {M}-matrix",
+  journal =      "Math. Comp.",
+  volume =       "31",
+  pages =        "148--162",
+}
+
+@Article{milnor:ca85,
+  author =       "J. Milnor",
+  title =        "On the Concept of Attractor",
+  journal =      "Comm. Math. Phys.",
+  year =         "1985",
+  volume =       "99",
+  pages =        "177--195",
+}
+
+@Article{milnor:cac85,
+  author =       "J. Milnor",
+  title =        "On the Concept of Attractor: Correction and Remarks",
+  journal =      "Commun. Math. Phys.",
+  year =         "1985",
+  volume =       "102",
+  pages =        "517--519",
+}
+
+@Article{misiurewicz:epm80,
+  author =       "M. Misiurewicz and W. Szlenk",
+  title =        "Entropy of Piecewise Monotone Mappings",
+  journal =      "Studia Math.",
+  year =         "1980",
+  volume =       "67",
+  pages =        "45--63",
+}
+
+@Article{murray:mmg88,
+  author =       "J. D. Murray and P. K. Maini and R. T. Tranquillo",
+  title =        "Mechanochemical models for generating biological
+                 pattern and form in development",
+  journal =      "Physics Reports",
+  year =         "1988",
+  volume =       "171",
+  pages =        "59--84",
+  annote =       "Bio",
+}
+
+@Article{murray:mmm83,
+  author =       "J. D. Murray and G. F. Oster and A. K. Harris",
+  title =        "A mechanichal model for mesenchymal morphogenesis",
+  journal =      "J. Math. Biology",
+  year =         "1983",
+  volume =       "17",
+  pages =        "125--129",
+  annote =       "Bio",
+}
+
+@Article{murray:nag86,
+  author =       "J. D. Murray and P. K. Maini",
+  title =        "A new approach to the generation of pattern and form
+                 in embriology",
+  journal =      "Sci. Prog.",
+  year =         "1986",
+  volume =       "70",
+  pages =        "539--553",
+  annote =       "Bio",
+}
+
+@Article{murray:ctm84,
+  author =       "J. D. Murray and G. F. Oster",
+  title =        "Cell traction models for generating pattern and form
+                 in morphogenesis",
+  journal =      "J. Math. Biol.",
+  year =         "1984",
+  volume =       "19",
+  pages =        "265--279",
+  annote =       "Bio",
+}
+
+@Article{murray:gbp84,
+  author =       "J. D. Murray and G. F. Oster",
+  title =        "Generation of biological pattern and form",
+  journal =      "{I}{M}{A} Journal of Mathematics Applied in Medicine
+                 and Biology",
+  year =         "1984",
+  volume =       "1",
+  pages =        "51--75",
+  annote =       "Bio",
+}
+
+%
+% article-n
+%
+
+@Article{nagumo:tdm51,
+  author =       "M. Nagumo",
+  title =        "A theory of degree of mapping based on infinitesimal
+                 analysis",
+  journal =      "Amer. J. Math.",
+  year =         "1951",
+  volume =       "73",
+  pages =        "485--496",
+  annote =       "degree",
+}
+
+@Article{ni:unp85,
+  author =       "W. M. Ni and R. Nussbaum",
+  title =        "Uniqueness and non-uniqueness for positive radial
+                 solutions of {$\Delta u+f(u,r)=0$}",
+  journal =      "J. Diff. Eq.",
+  year =         "1985",
+  volume =       "50",
+  pages =        "289--304",
+  annote =       "PDE",
+}
+
+%
+% article-o
+%
+
+@Article{opial:spp59,
+  author = 	"Z. Opial",
+  title = 	"Sur les solutions presque--p\'{e}riodiques des
+		 \'{e}quations diff\'{e}r\-entielles du premier et du
+		 second ordre",
+  journal = 	"Ann. Polon. Math.",
+  year = 	"1959",
+  volume = 	"7",
+  pages = 	"51-61",
+  annote = 	"DE"
+}
+
+@Article{oster:mam83,
+  author =       "G. F. Oster and J. D. Murray and A. K. Harris",
+  title =        "Mechanical aspects of mesenchymal morphogenesis",
+  journal =      "J. Embryol. exp. Morph.",
+  year =         "1983",
+  volume =       "78",
+  pages =        "83--125",
+  annote =       "Bio",
+}
+
+@Article{oster:pfm89,
+  author =       "G. F. Oster and J. D. Murray",
+  title =        "Pattern formation models and developmental
+                 constraints",
+  journal =      "The Journal of Experimental Zoology",
+  year =         "1989",
+  volume =       "251",
+  pages =        "186--202",
+  annote =       "Bio",
+}
+
+@Article{ostrowski:crqi57,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {I}",
+  journal = 	ARCH,
+  year = 	"1957/58",
+  volume = 	"1",
+  pages = 	"233-241",
+  annote = 	"RQI"
+}
+
+@Article{ostrowski:crqii58,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {II}",
+  journal = 	ARCH,
+  year = 	"1958/59",
+  volume = 	"2",
+  pages = 	"421-428",
+  annote = 	"RQI"
+}
+
+@Article{ostrowski:crqiii59,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {III}",
+  journal = 	ARCH,
+  year = 	"1959",
+  volume = 	"3",
+  pages = 	"325-340",
+  annote = 	"RQI"
+}
+
+@Article{ostrowski:crqiv59,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {IV}",
+  journal = 	ARCH,
+  year = 	"1959",
+  volume = 	"3",
+  pages = 	"341-347",
+  annote = 	"RQI"
+}
+
+@Article{ostrowski:crqv59,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {V}",
+  journal = 	ARCH,
+  year = 	"1959",
+  volume = 	"3",
+  pages = 	"472-481",
+  annote = 	"RQI"
+}
+
+@Article{ostrowski:crqvi60,
+  author = 	"A. M. Ostrowski",
+  title = 	"On the convergence of the {R}ayleigh quotient iteration
+		 for the computation of the characteristic roots and
+		 vectors. {VI}",
+  journal = 	ARCH,
+  year = 	"1959/60",
+  volume = 	"4",
+  pages = 	"153-165",
+  annote = 	"RQI"
+}
+
+%
+% article-p
+%
+
+@Article{parlett:rqi74,
+  author = 	"B. N. Parlett",
+  title = 	"The {R}ayleigh quotient iteration and some
+		 generalizations for nonnormal matrices",
+  journal = 	"Math. Comp.",
+  year = 	"1974",
+  volume = 	"28",
+  pages = 	"679-693",
+  annote = 	"eigenvalues"
+}
+
+@Article{payne:bsc81,
+  author =       "L. E. Payne",
+  title =        "Bounds for solutions of a class of quasilinear
+                 elliptic boundary value problems in terms of the
+                 torsion function",
+  journal =      "Proc. Roy. Soc. Edinburgh",
+  year =         "1981",
+  volume =       "88A",
+  pages =        "251--265",
+  annote =       "PDE",
+}
+
+@Article{peitgen:tpg82,
+  author =       "H. Peitgen",
+  title =        "Toplogische Perturbationen beim globalen numerischen
+                 Studium nichtlinearer Eigenwert und
+                 Verzweigungsprobleme",
+  journal =      "Jber. Deutsch. Math. Ver.",
+  year =         "1982",
+  volume =       "84",
+  pages =        "107--162",
+}
+
+@Article{peitgen:nep81,
+  author =       "H. Peitgen and D. Saupe and K. Schmitt",
+  title =        "Nonlinear eigenvalue problems versus their finite
+                 difference approximations: Numerically irrelevant
+                 solutions.",
+  journal =      "J. reine angew. Mathematik",
+  year =         "1981",
+  volume =       "322",
+  pages =        "74--117",
+  annote =       "numerical artifacts",
+}
+
+@Article{peitgen:pgt80,
+  author =       "H. Peitgen and K. Schmitt",
+  title =        "Perturbations globales topologiques des problemes
+                 nonlineaires de valeur propre",
+  journal =      "Comptes Rendues Acad. Sc. Paris",
+  year =         "1980",
+  volume =       "291",
+  pages =        "271--274",
+}
+
+@Article{peitgen:gtp83,
+  author =       "H. Peitgen and K. Schmitt",
+  title =        "Global topological perturbations of nonlinear
+                 eigenvalue problems",
+  journal =      "Math. Meth. Appl. Sci.",
+  year =         "1983",
+  volume =       "5",
+  pages =        "376--378",
+}
+
+@Article{peitgen:gae84,
+  author =       "H. Peitgen and K. Schmitt",
+  title =        "Global analysis of elliptic two parameter eigenvalue
+                 problems",
+  journal =      "TAMS",
+  year =         "1984",
+  volume =       "283",
+  number =       "57-95",
+}
+
+@Article{peletier:oe86,
+  author =       "L. A. Peletier and D. Terman and F. B. Weissler",
+  title =        "On the equation {$\Delta u + \frac{1}{2}x\cdot\nabla
+                 u + f(u) = 0$}",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1986",
+  volume =       "94",
+  number =       "1",
+  pages =        "83--99",
+}
+
+@Article{poore:tah76,
+  author =       "A. B. Poore",
+  title =        "On the theory and application of the
+                 {H}opf-{F}riedrichs bifurcation theory",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1976",
+  volume =       "60",
+  pages =        "371--393",
+  annote =       "Hopf bifurcation",
+}
+
+@Article{pohozaev:ee65,
+  author =       "S. I. Pohozaev",
+  title =        "Eigenfunctions of the equation {$\Delta u + \lambda
+                 f(u) = 0$}",
+  journal =      "Soviet Math. Dokl.",
+  year =         "1965",
+  volume =       "6",
+  pages =        "1408--1411",
+  annote =       "PDE",
+}
+
+@Article{pucci:gvi86,
+  author =       "P. Pucci and J. Serrin",
+  title =        "A general variational identity",
+  journal =      "Indiana Univ. Math. J.",
+  year =         "1986",
+  volume =       "35",
+  number =       "3",
+  pages =        "681--703",
+  annote =       "pohozaev",
+}
+
+%
+% article-q
+%
+
+%
+% article-r
+%
+
+@Article{rabinowitz:san73,
+  author =       "P. H. Rabinowitz",
+  title =        "Some aspects of nonlinear eigenvalue problems",
+  journal =      "Rocky Mountain J. Math.",
+  year =         "1973",
+  volume =       "3",
+  pages =        "161--202",
+  annote =       "BIF",
+}
+
+@Article{rellich:der40,
+  author =       "F. Rellich",
+  title =        "Darstellung der {E}igenwerte von {$\Delta u + \lambda
+                 u = 0$} durch ein {R}andintegral",
+  journal =      "Math Z.",
+  year =         "1940",
+  volume =       "46",
+  pages =        "635--636",
+  annote =       "rellich identity",
+}
+
+@Article{rheinboldt:nmc78,
+  author =       "W. C. Rheinboldt",
+  title =        "Numerical methods for a class of finite dimensional
+                 bifurcation problems",
+  journal =      "SIAM J. Numer. Anal.",
+  year =         "1978",
+  volume =       "15",
+  pages =        "1--11",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{rheinboldt:ccb82,
+  author =       "W. C. Rheinboldt",
+  title =        "Computation of critical boundaries on equilibrium
+                 manifolds",
+  journal =      "SIAM J. Numer. Anal.",
+  year =         "1982",
+  volume =       "19",
+  number =       "3",
+  pages =        "653--669",
+  annote =       "numerical analysis, bifurcation",
+}
+
+@Article{rothe:tto37,
+  author =       "E. Rothe",
+  title =        "Fur Theorie der topologischen Ordnung und der
+                 Vektorfelder in {Banach} {R\"{a}}umen",
+  journal =      "Compositio Math",
+  year =         "1937",
+  volume =       "5",
+  number =       "5",
+  pages =        "177--197",
+}
+
+@Article{ruelle:nt69,
+  author =       "D. Ruelle and F. Takens",
+  title =        "On the nature of turbulence",
+  journal =      "Comm. Math. Phys.",
+  year =         "1969",
+  volume =       "20",
+  pages =        "167",
+  annote =       "bifurcation,dynamical systems,turbulence",
+}
+
+%
+% article-s
+%
+
+@Article{saad:gmr86,
+  author =       "Y. Saad and M. H. Schultz",
+  title =        "{GMRES}: {A} generalized minimal residual algorithm
+                 for solving nonsymmetric linear systems",
+  journal =      SJSS,
+  year =         "1986",
+  volume =       "7",
+  pages =        "856--869",
+  annote =       "gmres",
+}
+
+@Article{schaaf:cns88,
+  author =       "R. Schaaf and K. Schmitt",
+  title =        "A class of nonlinear Sturm-Liouville problems with
+                 infinitely many solutions",
+  journal =      "TAMS",
+  year =         "1988",
+  volume =       "306",
+  pages =        "853--859",
+}
+
+@Article{schiaffino:psc84,
+  author =       "A. Schiaffino and K. Schmitt",
+  title =        "Periodic solutions of a class of nonlinear evolution
+                 equations",
+  journal =      "Ann. Mat. Pura Appl.",
+  year =         "1984",
+  volume =       "137",
+  pages =        "265--272",
+}
+
+@Article{schmitt:bvp78,
+  author =       "K. Schmitt",
+  title =        "Boundary value problems for quasilinear elliptic
+                 partial differential equations",
+  journal =      "Nonl. Anal.",
+  year =         "1978",
+  volume =       "2",
+  pages =        "263--309",
+}
+
+@Article{schmitt:bvp86,
+  author =       "K. Schmitt",
+  title =        "Boundary value problems with jumping nonlinearities",
+  journal =      "Rocky Mtn. J. Math.",
+  year =         "1986",
+  volume =       "16",
+  pages =        "481--496",
+}
+
+@Article{schmitt:aps92,
+  author = 	"K. Schmitt and J. Ward",
+  title = 	"Almost periodic solutions
+      of nonlinear second order differential equations",
+  journal = 	"Results in Math.",
+  year = 	"1992",
+  volume = 	"21",
+  pages = 	"190-199",
+  annote = 	"DE"
+}
+
+ @Article{schmitt:aaa93,
+   author = 	"K. Schmitt and J. Ward",
+   title = 	"Attractors and almost periodic solutions of
+                  semilinear parabolic equations",
+   journal = 	"to appear",
+   year = 	"1993",
+   annote =     "PDE"
+} 
+ 
+@Article{segel:qpm62,
+  author =       "L. A. Segel and J. T. Stuart",
+  title =        "On the question of the preferred mode in cellular
+                 thermal convection",
+  journal =      "J. Fluid Mech.",
+  year =         "1962",
+  volume =       "13",
+  pages =        "289--305",
+  annote =       "bifurcation analysis",
+}
+
+@Article{seydel:ncb79a,
+  author =       "R. Seydel",
+  title =        "Numerical computation of branch points in nonlinear
+                 equations",
+  journal =      "Numer. Math.",
+  year =         "1979",
+  volume =       "33",
+  pages =        "339--352",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{seydel:ncb79b,
+  author =       "R. Seydel",
+  title =        "Numerical computation of branch points in ordinary
+                 differential equations",
+  journal =      "Numer. Math.",
+  year =         "1979",
+  volume =       "32",
+  pages =        "51--68",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{seydel:ncp81,
+  author =       "R. Seydel",
+  title =        "Numerical computation of periodic orbits that
+                 bifurcate from stationary solutions of ordinary
+                 differential equations",
+  journal =      "Appl. Math. Comput.",
+  year =         "1981",
+  volume =       "9",
+  pages =        "257--271",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{seydel:bsb83,
+  author =       "R. Seydel",
+  title =        "Branch switching in bifurcation problems for ordinary
+                 differential equations",
+  journal =      "Numer. Math.",
+  year =         "1983",
+  volume =       "41",
+  pages =        "93--116",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{sherrat:mab91,
+  author =       "J. A. Sherrat and J. D. Murray",
+  title =        "Mathematical analysis of a basis model for epidermal
+                 wound healing",
+  journal =      "J. Math. Biol.",
+  year =         "1991",
+  volume =       "29",
+  pages =        "389--404",
+  annote =       "Bio",
+}
+
+@Article{sherrat:mew90,
+  author =       "J. A. Sherrat and J. D. Murray",
+  title =        "Models of epidermal wound healing",
+  journal =      "Proc. R. Soc. Lond. B",
+  year =         "1990",
+  volume =       "241",
+  pages =        "29--36",
+  annote =       "Bio",
+}
+
+@Article{siegberg:shr81,
+  author =       "H. Siegberg",
+  title =        "Some historical remarks concerning degree theory",
+  journal =      "Amer. Math. Monthly",
+  year =         "1981",
+  volume =       "88",
+  pages =        "125--139",
+}
+
+@Article{simpson:mnd75,
+  author =       "R. B. Simpson",
+  title =        "A method for the numerical determination of
+                 bifurcation states of nonlinear systems of equations",
+  journal =      "SIAM J. Numer. Anal.",
+  year =         "1975",
+  volume =       "12",
+  number =       "3",
+  pages =        "439--451",
+  annote =       "bifurcation, numerical analysis",
+}
+
+@Article{singer:sob78,
+  author =       "D. Singer",
+  title =        "Stable Orbits and Bifurcations of Maps of the
+                 Interval",
+  journal =      "SIAM J. Appl. Math.",
+  year =         "1978",
+  volume =       "35",
+  number =       "2",
+  month =        sep,
+  pages =        "260--267",
+  annote =       "BIF",
+}
+
+@Article{stakgold:bsn71,
+  author =       "I. Stakgold",
+  title =        "Branching solutions of nonlinear equations",
+  journal =      Srev,
+  year =         "1971",
+  volume =       "13",
+  pages =        "289--332",
+  annote =       "BIF",
+}
+
+@Article{stefan:tse77,
+  author =       "P. Stefan",
+  title =        "A theorem of {S}arkovskii on the existence of
+                 periodic orbits of continuous endomorphisms of the
+                 real line",
+  journal =      "Comm. Math. Phys.",
+  year =         "1977",
+  volume =       "54",
+  pages =        "237--248",
+  annote =       "1D maps",
+}
+
+@Article{straffin:ppc78,
+  author =       "Jr. Straffin and D. Phillip",
+  title =        "Periodic Points of Continuous Functions",
+  journal =      "Mathematics Magazine",
+  year =         "1978",
+  volume =       "51",
+  number =       "2",
+  month =        mar,
+  pages =        "99--105",
+}
+
+@Article{sweers:sep89,
+  author =       "G. Sweers",
+  title =        "Semilinear elliptic problems on domains with corners",
+
+  journal =      "Comm. in PDE",
+  year =         "1989",
+  volume =       "14",
+  number =       "8 \& 9",
+  pages =        "1229--1247",
+  annote =       "PDE",
+}
+
+%
+% article-t
+%
+
+@Article{takac:abs92,
+  author = 	"P. {Tak\'{a}\v{c}}",
+  title = 	"Asymptotic behavior of strongly monotone time -
+                 periodic dynamical processes with symmetry",
+  journal = 	"JDE",
+  year = 	"1992",
+  volume = 	"100",
+  pages = 	"355--378",
+}
+
+@Article{turner:tcm75,
+  author =       "R. E. L. Turner",
+  title =        "Transversality and cone maps",
+  journal =      "Arch. Rat. Mech. Anal.",
+  year =         "1975",
+  volume =       "58",
+  number =       "58",
+  pages =        "151--179",
+}
+
+%
+% article-u
+%
+
+%
+% article-v
+%
+
+
+
+@Article{vorst:bfs92,
+  author = 	"H. A. van der Vorst",
+  title = 	"{BI-CGSTAB}: A fast and smoothly converging variant
+		 of {BI-CG} for the solution of nonsymmetric linear
+		 systems",
+  journal = 	"SIAM J. Sci. Stat. Comput.",
+  year = 	"1992",
+  volume = 	"13",
+  number = 	"2",
+  pages = 	"631--644",
+  annote = 	"nonsymmetric linear"
+}
+
+@Article{vorst:via91,
+  author =       "R. C. A. M. van der Vorst",
+  title =        "Variational identities and applications to
+                 differential systems",
+  journal =      "Arch. Rational Mech. Anal.",
+  year =         "1991",
+  volume =       "116",
+  number =       "4",
+  pages =        "375--398",
+  annote =       "pohozaev",
+}
+
+%
+% article-w
+%
+
+@Article{weber:nsh80,
+  author =       "H. Weber",
+  title =        "Numerical solution of {H}opf bifurcation problems",
+  journal =      "Math. Meth. in the Appl. Sc.",
+  year =         "1980",
+  volume =       "2",
+  pages =        "178--190",
+  annote =       "Hopf bifurcation, numerical analysis",
+}
+
+@Article{wolpert:pip81,
+  author =       "L. Wolpert",
+  title =        "Positional information and pattern formation",
+  journal =      "Phil. Trans. R. Soc. Lond.",
+  year =         "1981",
+  volume =       "295",
+  pages =        "441--450",
+  annote =       "Bio",
+}
+
+@Article{whitley:dds83,
+  author =       "D. Whitley",
+  title =        "Discrete dynamical systems in dimensions one and two",
+
+  journal =      "Bull. London Math. Soc.",
+  year =         "1983",
+  volume =       "15",
+  pages =        "177--217",
+  annote =       "1D maps",
+}
+
+%
+% article-y
+%
+
+@Article{yorke:pti75,
+  author =       "J. A. Yorke and T. Y. Li",
+  title =        "Period three implies chaos",
+  journal =      "Amer. Math. Monthly",
+  year =         "1975",
+  volume =       "82",
+  pages =        "985--992",
+  annote =       "1D maps",
+}
+
+%
+% article-x
+%
+
+@Article{xie:spb91,
+  author =       "Wenzheng Xie",
+  title =        "A sharp pointwise bound for functions with
+                 ${L}^2$-Laplacians and zero boundary values on
+                 arbitrary three dimensional domains",
+  journal =      "Indiana Univ. Math. Jour.",
+  year =         "1991",
+  volume =       "40",
+  number =       "4",
+  pages =        "1185--1192",
+  annote =       "sobolev",
+}
+
+%%%
+%%%  Unpublished
+%%%
+
+@Unpublished{,
+  author = 	"",
+  title = 	"",
+  note = 	"",
+  OPTyear = 	"",
+  OPTmonth = 	"",
+  OPTkeyword = 	"",
+  OPTannote = 	""
+}
+
+@Unpublished{carl:etw92,
+  author =       "S. Carl",
+  title =        "An envelope theorem for weak solutions of quasilinear
+                 elliptic boundary value problems",
+  note =         "preprint",
+}
+
+@Unpublished{doedel:nac88,
+  author =       "E. J. Doedel",
+  title =        "Numerical {A}nalysis and {C}ontrol of {B}ifurcation
+                 {P}roblems",
+  note =         "Course Notes",
+  year =         "1988",
+  month =        dec,
+  annote =       "numerical bifurcation",
+}
+
+@Unpublished{doedel:scp86,
+  author =       "E. J. Doedel and J. P. Kernevez",
+  title =        "Software for continuation problems in ordinary
+                 differential equations with applications",
+  year =         "1985",
+  note =         "preprint",
+  annote =       "numerical analysis, bifurcation",
+}
+
+
+%%% an example of a citation in a latex doc:
+
+%%% ~\cite{amann:fpe76,schmitt:bvp78,lions:eps82}
+
+
+%%% an example of the bib build command:
+
+%%%\newpage
+
+%%%\bibliography{/u/ma/mcgough/tex/main}
+%%%\bibliographystyle{plain}
+

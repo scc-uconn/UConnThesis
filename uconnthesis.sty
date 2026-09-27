@@ -1,0 +1,330 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  			UCONNTHESIS.STY	
+%%			    version 0.1
+%%           by Marcos O. Prates
+%%	
+%%       Style file for PhD theses (Statistics)
+%%		   for the University of Connecticut
+%%	            	 March, 2011
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+%\oddsidemargin 0.25in \evensidemargin 0.25in
+\oddsidemargin .25in
+\marginparwidth 40pt \marginparsep 10pt
+\topmargin 0pt \headsep .3in
+\textheight 8.3in \textwidth 6.2in
+\brokenpenalty=10000
+\font\Bold=cmbx10 scaled \magstep3
+\renewcommand{\baselinestretch}{2}  % (for wider spacing)
+
+% Modify the standard definition of chapter to start higher on the
+% page and put the page number in the upper left hand corner
+
+%    ****************************************
+%    *        CHAPTERS AND SECTIONS         *
+%    ****************************************
+%
+
+% \@makechapterhead {TEXT} : Makes the heading for the \chapter command.
+%
+
+\def\@makechapterhead#1{             % Heading for \chapter command
+  %\vspace*{50pt}                     % Space at top of text page.
+  { \parindent 0pt \raggedright
+    \ifnum \c@secnumdepth >\m@ne     % IF secnumdepth > -1 THEN
+      \huge\bf {\@chapapp{} \thechapter} % Print 'Chapter' and number.
+      \par
+      \vskip 20pt \fi                  % Space between number and title.
+    \Huge \bf {#1}\par                % Title.
+    \nobreak                         % TeX penalty to prevent page break.
+    \vskip 40pt                      % Space between title and text.
+  } }
+
+% \@makeschapterhead {TEXT} : Makes the heading for the \chapter* command.
+%
+
+\def\@makeschapterhead#1{             % Heading for \chapter* command
+  %\vspace*{50pt}                     % Space at top of page.
+  { \parindent 0pt \raggedright
+    \Huge \bf {#1} \par              % Title.
+    \nobreak                         % TeX penalty to prevent page break.
+    \vskip 40pt                      % Space between title and text.
+  } }
+
+\def\chapter{\clearpage      % Starts new page.
+   %\thispagestyle{plain}    % Default Page style of chapter page is 'plain'
+   \thispagestyle{myheadings}  % We change it to top right hand corner
+			     % Don't use headings here to avoid running head	
+   \global\@topnum\z@        % Prevents figures from going at top of page.
+   \@afterindentfalse        % Suppresses indent in first paragraph.  Change
+   \secdef\@chapter\@schapter}   % to \@afterindenttrue to have indent.
+%% End of CHAPTER modifications
+
+\def\cl@chapter{\@elt{section}\@elt{footnote}}
+\def\thefigure{\@arabic\c@figure}
+\def\thetable{\@arabic\c@table}
+%  CHAPEQN.STY - added Dec. 95
+%  Use this command to change the numbering of equations
+%  in your thesis.  LaTeX's default is to number equations
+%  sequentially through the whole document. This command
+%  will start the numbering afresh with each \chapter command
+%  This style file numbers equations in the form:
+%       chapterno.equationno
+\@addtoreset{equation}{chapter}
+\def\theequation{\thechapter.\arabic{equation}}
+
+%  Single counter for theorems and theorem-like environments:
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+
+% \def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
+%    \@floatpenalty-\@Miii\fi\def\@captype{#1}\ifinner
+%       \@parmoderr\@floatpenalty\z@
+%     \else\@next\@currbox\@freelist{\@tempcnta\csname ftype@#1\endcsname
+%        \multiply\@tempcnta\@xxxii\advance\@tempcnta\sixt@@n
+%        \@tfor \@tempa :=#2\do
+%                         {\if\@tempa h\advance\@tempcnta \@ne\fi
+%                          \if\@tempa t\advance\@tempcnta \tw@\fi
+%                          \if\@tempa b\advance\@tempcnta 4\relax\fi
+%                          \if\@tempa p\advance\@tempcnta 8\relax\fi
+%          }\global\count\@currbox\@tempcnta}\@fltovf\fi
+%     \global\setbox\@currbox\vbox\bgroup
+%     \def\baselinestretch{1}\@normalsize
+%     \boxmaxdepth\z@
+%     \hsize\columnwidth \@parboxrestore}
+% \long\def\@footnotetext#1{\insert\footins{\def\baselinestretch{1}\footnotesize
+%     \interlinepenalty\interfootnotelinepenalty
+%     \splittopskip\footnotesep
+%     \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+%     \hsize\columnwidth \@parboxrestore
+%    \edef\@currentlabel{\csname p@footnote\endcsname\@thefnmark}\@makefntext
+%     {\rule{\z@}{\footnotesep}\ignorespaces
+%       #1\strut}}}
+
+%
+%% GLOBAL VARIABLES :: USER INPUT
+%%
+
+\def\myNewDegreeShort#1{\gdef\@myNewDegreeShort{#1}}
+\def\myNewDegreeLong#1{\gdef\@myNewDegreeLong{#1}}
+\def\myPreviousDegreeShort#1{\gdef\@myPreviousDegreeShort{#1}}
+\def\myPreviousDegreeLong#1{\gdef\@myPreviousDegreeLong{#1}}
+\def\myMajorAdvisor#1{\gdef\@myMajorAdvisor{#1}}
+\def\myCoAdvisorA#1{\gdef\@myCoAdvisorA{#1}}
+\def\myCoAdvisorB#1{\gdef\@myCoAdvisorB{#1}}
+\def\myAssociateAdvisorA#1{\gdef\@myAssociateAdvisorA{#1}}
+\def\myAssociateAdvisorB#1{\gdef\@myAssociateAdvisorB{#1}}
+\def\myAssociateAdvisorC#1{\gdef\@myAssociateAdvisorC{#1}}
+\def\myAssociateAdvisorD#1{\gdef\@myAssociateAdvisorD{#1}}
+
+
+\def\name#1{\gdef\@name{#1}}
+
+\def\dept#1{\gdef\@dept{#1}}
+\def\degree#1{\gdef\@degree{#1}}
+\def\thesistype#1{\gdef\@thesistype{#1}}
+\def\submitdate#1{\gdef\@submitdate{#1}}
+\def\copyrightyear#1{\gdef\@copyrightyear{#1}} % \author, \title in report
+\def\@title{}\def\@author{}\def\@dept{}\def\@degree{}\def\@thesistype{}
+\def\@submitdate{\ifcase\the\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space \number\the\year}
+%\ifnum\month=12
+%    \@tempcnta=\year \advance\@tempcnta by 1
+%    \edef\@copyrightyear{\number\the\@tempcnta}
+%\else
+    \def\@copyrightyear{\number\the\year}
+%\fi
+\newif\ifcopyright \newif\iffigurespage \newif\iftablespage
+% Uncomment these lines if you want to include these pages
+%\copyrighttrue
+%\figurespagetrue
+%\tablespagetrue
+
+\def\abstractpage{%
+	\setcounter{page}{0}
+%    \chead{\@name \ \ - \ \ University of Connecticut \ \ - \ \ \number\year}
+%    \rhead{} \lhead{} \lfoot{} \cfoot{} \rfoot{}
+%    \renewcommand{\headrulewidth}{0.5pt}
+%    \renewcommand{\footrulewidth}{0pt}
+%    \thispagestyle{fancy}
+    \thispagestyle{empty}
+	\begin{center}
+		{\LARGE\bf\expandafter{\@title}}\\
+% original:	{\Bold\uppercase\expandafter{\@title}}
+        \vskip 12mm
+        \singlespacing
+        \@name, \@myNewDegreeShort\\
+         University of Connecticut, \number\year \\
+        \doublespacing
+		\vskip 12mm
+		{\large\bf\expandafter{ABSTRACT}}
+	\end{center}\vskip.1cm}
+
+\def\titlepage{%
+	\setcounter{page}{0}
+	\thispagestyle{empty}%
+	\begin{center}
+		{\LARGE\bf\expandafter{\@title}}\\
+% original:	{\Bold\uppercase\expandafter{\@title}}
+        \vskip 20mm
+		{\bf \expandafter{\@name}}\\
+        \vskip 15mm
+        \expandafter{\@myPreviousDegreeLong} \\
+	    \vskip 30mm
+        \vfill
+        \singlespacing
+		A \expandafter{\@thesistype}\\
+        Submitted in Partial Fulfillment of the \\
+		Requirements for the Degree of\\
+		\@degree \\
+		%(\expandafter{\@dept})\\
+		at the \\
+		 University of Connecticut\\[5mm]
+		%\@submitdate\\
+		\expandafter{\@copyrightyear}
+	\end{center}\vskip.5in\newpage}
+
+
+\def\copyrightpage{%
+  \begin{center}
+      \ \\
+      \vskip 20 mm
+      Copyright by \\
+      \vskip 20 mm
+      \@name
+      \vskip 123 mm
+      \number\year
+    \end{center}
+	\vfill\newpage}
+
+\long\def\signature#1{%
+
+  \begin{center}
+      {\large\bf\expandafter{APPROVAL PAGE}}
+      \vskip 5mm
+      \@degree \ Dissertation
+      \vskip 5mm
+      {\Large\bf\expandafter{\@title}}
+      \vskip 2mm
+      \singlespacing
+      Presented by \\
+      \@name, \@myPreviousDegreeShort
+      \doublespacing
+      \vskip 8mm
+      \vfill
+      \begin{tabular}{r c c}
+      
+      \ifthenelse{\isundefined{\@myMajorAdvisor}}{}%
+           {
+             Major Advisor     & & \underline{\hspace{77mm}} \\
+                               & & \@myMajorAdvisor          \\[1.5mm]
+           }
+      \ifthenelse{\isundefined{\@myCoAdvisorA}}{}%
+           {
+             Major Co-Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myCoAdvisorA     \\[1.5mm]
+           }
+      \ifthenelse{\isundefined{\@myCoAdvisorB}}{}%
+           {
+             Major Co-Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myCoAdvisorB     \\[1.5mm]
+           }         
+           \ifthenelse{\isundefined{\@myAssociateAdvisorA}}{}%
+           {
+             Associate Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myAssociateAdvisorA     \\[1.5mm]
+           }
+         \ifthenelse{\isundefined{\@myAssociateAdvisorB}}{}
+           {
+             Associate Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myAssociateAdvisorB     \\[1.5mm]
+           }
+         \ifthenelse{\isundefined{\@myAssociateAdvisorC}}{}
+           {
+             Associate Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myAssociateAdvisorC     \\[1.5mm]
+           }
+         \ifthenelse{\isundefined{\@myAssociateAdvisorD}{}}{}
+           {
+             Associate Advisor & & \underline{\hspace{77mm}} \\
+                               & & \@myAssociateAdvisorD     \\
+           }
+      \end{tabular}
+      \vfill
+      University of Connecticut\\
+      \number\year
+      \vfill
+    \end{center}
+}
+
+\def\firstpage{
+	\pagenumbering{roman}
+    \abstractpage
+	\pagestyle{myheadings}
+	}
+
+\def\beforepreface{
+    \newpage
+	\pagenumbering{roman}
+    %\abstractpage
+	\pagestyle{myheadings}
+	\titlepage
+	\copyrightpage
+    \signature
+	}
+
+\def\prefacesection#1{%
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}}
+
+\def\afterpreface{\newpage
+	\tableofcontents
+	\newpage
+	\iftablespage
+		{\addvspace{10pt}
+		\let\saveaddvspace=\addvspace
+		\def\addvspace##1{}
+		\listoftables
+		\let\addvspace=\saveaddvspace}
+		\newpage
+	\fi
+	\iffigurespage
+		{\addvspace{10pt}
+		\let\saveaddvspace=\addvspace
+		\def\addvspace##1{}
+		\listoffigures
+		\let\addvspace=\saveaddvspace}
+		\newpage
+	\fi
+
+	\pagenumbering{arabic}
+	\pagestyle{myheadings}}
+
+
+\def\thebibliography#1{\chapter*{Bibliography\@mkboth
+ {BIBLIOGRAPHY}{BIBLIOGRAPHY}}
+	 \addcontentsline{toc}{chapter}{Bibliography}
+	 \list
+	 {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
+	 \advance\leftmargin\labelsep
+	 \usecounter{enumi}}
+	 \def\newblock{\hskip .11em plus .33em minus .07em}
+	 \sloppy\clubpenalty4000\widowpenalty4000
+	 \sfcode`\.=1000\relax}
+	\let\endthebibliography=\endlist
+
+% Start with pagestyle{myheadings} in case front matter isn't processed
+\pagestyle{myheadings}
+\makeatother

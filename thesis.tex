@@ -1,0 +1,124 @@
+%% ====================================================================%%
+%%  Developed by Marcos O. Prates, March 2011.
+%%
+%%	Sample Driver file for use with uconnthesis.sty
+%% 	To print this document in the Math Dept,
+%%	do the following:
+%%  	latex main
+%%		bibtex main
+%%		latex main (you may have to do this twice at this point)
+%%		dvipr main
+%%	To run this sample, you will also need the following files
+%%		abs.tex, ack.tex,
+%%		chap1.tex, chap2.tex, appendix.tex	
+%%		thesis.bib	
+%% ====================================================================%%
+%%
+\documentclass[12pt]{report}
+
+%% Include nescessary packages for compilation (THE uconnthesis.sty must be always last)
+%% Feel free to add all nescessary package for latex files
+%% NOTE: the uconnthesisthesis style file should go AFTER all the other packages
+%% You may have conflicts if you call the amsthm.sty package after uconnthesis.sty
+\usepackage{amsbsy, amsmath, amssymb, setspace}
+\usepackage{natbib}
+\usepackage{amscd} % commutative diagrams made easy -  has to be loaded after amsmath
+\usepackage{amsthm}  % theorem, lemma, definition, ... -  has to be loaded after amsmath
+\usepackage{graphicx} % Imports figures : pdf, jpg, png, tif (one f)
+                      % Use the package graphics if you use eps files.
+                      % Warning : It is very difficult to use both graphics and graphicx.
+\usepackage{rotating}
+\usepackage{uconnthesis} % always put it last
+
+%%Input the extra nescessary definitions to compile
+%\input{definitions.tex}
+
+%% For drafts of one or more chapters, uncomment the relevant line
+%% by removing the leading percent %:
+%%
+%\includeonly{}                    % Only front matter and back matter
+%\includeonly{chap1}                % !  plus chapter 1
+%\includeonly{chap1,chap2}         %  plus chapter 1 and 2
+\includeonly{chap1,%             % BEWARE: First % kills white space
+             chap2,%             % plus chapters 1-4, appendix
+             chap3,%
+             chap4,%
+             appendix}
+%
+%\tracingstats=2                % show TeX memory usage
+
+
+\begin{document}
+%% Comment out items by inserting a percent % character
+%%Set Thesis main title
+\title{SPATIAL STATISTICS WITH APPLICATIONS}
+
+%%set author
+\name{Marcos O. Prates}
+
+%%set previous degrees (long and short version)
+\myPreviousDegreeLong{
+    B.A., Computational Mathematics, University of Connecticut, CT, USA, 2006 \\
+    M.A., Statistics, University of Connecticut, CT, USA, 2008}
+\myPreviousDegreeShort{B.A. Computational Mathematics, M.A. Statistics}
+
+%%Define type, degree (long and short version) and departament
+\degree{Doctor of Philosophy}
+\myNewDegreeShort{Ph.D.}
+\dept{Statistics}
+\thesistype{Dissertation}
+
+%%Include list of advisors
+\myMajorAdvisor{Major Advisor}
+\myAssociateAdvisorA{Advisor A}
+\myAssociateAdvisorB{Advisor B}
+%\myAssociateAdvisorC{Advisor C}
+%\myAssociateAdvisorD{Advisor D}
+
+%% You may want to change the next definitions if you are getting
+%% a different degree or writing a thesis instead of a dissertation
+
+%% Starts page numbering as i, ii, etc.
+%% Generate the first page and include abstract (from abs.tex)
+\firstpage
+\input abs
+
+%% Generate the nescessary pages (main, copyright and signature) before preface
+\beforepreface
+
+%% Generate preface sections
+\prefacesection{Dedication}
+\input ack
+
+\prefacesection{Acknowledgements}
+\input ack
+
+%%Generate the list of figures and table (comment if not nescessary)
+\figurespagetrue
+\tablespagetrue
+
+% Optional front page, made from source "notation.tex".
+% If you don't need it, then don't use it.
+
+%\optionalfront{Notation and Symbols}{\input{notation.tex}}
+
+%% Start the thesis itself, pages numbered 1, 2, etc.
+% Start normal page numbering. Parts and chapters follow.%
+\afterpreface
+\include{chap1}
+\include{chap2}
+%% Start the appendices:
+\appendix       % Chapters, sections are now appendix style
+\include{appendix}
+%
+% The choice of bibliography style is a major decision, jointly made
+% by you, your thesis advisor and the thesis editor. Common choices are
+% "siam", "acm", "amsplain", "plain", "chicago".
+
+
+% Correct the spacing for the bibliography
+\singlespacing
+\bibliographystyle{plainnat} %natbib has its own special version of plan
+\bibliography{thesis}
+
+\end{document}

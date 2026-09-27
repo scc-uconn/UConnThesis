@@ -1,0 +1,191 @@
+\chapter{Classical identities}\label{appendix}
+%\fixchapterheading
+\section*{Rellich's identity}\label{rellich.section}
+\setcounter{theorem}{0}
+%
+%
+
+Standard developments of Pohozaev's identity used an identity by
+Rellich~\cite{rellich:der40}, reproduced here.
+
+\begin{lemma}[Rellich]
+Given $L$ in divergence form and $a,d$ defined above, $u\in C^2
+(\Omega )$, we have
+\begin{equation}\label{rellich}
+\int_{\Omega}(-Lu)\nabla u\cdot (x-\overline{x})\, dx
+= (1-\frac{n}{2}) \int_{\Omega} a(\nabla u,\nabla u) \, dx
+-
+\frac{1}{2} \int_{\Omega}
+d(\nabla u, \nabla u) \, dx
+\end{equation}
+$$
++
+\frac{1}{2} \int_{\partial\Omega} a(\nabla u,\nabla u)(x-\overline{x})
+\cdot \nu  \, dS
+-
+\int_{\partial\Omega}
+a(\nabla u,\nu )\nabla u\cdot (x-\overline{x}) \, dS.
+$$
+\end{lemma}
+{\bf Proof:}\\
+There is no loss in generality to take $\overline{x} = 0$. First
+rewrite $L$:
+$$Lu = \frac{1}{2}\left[ \sum_{i}\sum_{j}
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\sum_{i}\sum_{j}
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right)
+\right]$$
+Switching the order of summation on the second term and relabeling
+subscripts, $j \rightarrow i$ and $i \rightarrow j$, then using the fact
+that $a_{ij}(x)$ is a symmetric matrix,
+gives the symmetric form needed to derive Rellich's identity.
+\begin{equation}
+Lu = \frac{1}{2} \sum_{i,j}\left[
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\frac{\partial}{\partial x_j}
+\left( a_{ij} \frac{\partial u}{\partial x_i} \right)
+\right].
+\end{equation}
+
+Multiplying $-Lu$ by $\frac{\partial u}{\partial x_k} x_k$ and integrating
+over $\Omega$, yields
+$$\int_{\Omega}(-Lu)\frac{\partial u}{\partial x_k} x_k \, dx=
+-\frac{1}{2} \int_{\Omega}
+\sum_{i,j}\left[
+\frac{\partial}{\partial x_i}
+\left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
+\frac{\partial}{\partial x_j}
+\left( a_{ij} \frac{\partial u}{\partial x_i} \right)
+\right]
+\frac{\partial u}{\partial x_k} x_k \, dx$$
+Integrating by parts (for integral theorems see~\cite[p. 20]
+{zeidler:nfa88IIa})
+gives
+$$= \frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j}
+\frac{\partial^2 u}{\partial x_k\partial x_i} +
+\frac{\partial u}{\partial x_i}
+\frac{\partial^2 u}{\partial x_k\partial x_j}
+\right] x_k \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \delta_{ik} +
+\frac{\partial u}{\partial x_i} \delta_{jk}
+\right] \frac{\partial u}{\partial x_k} \, dx
+$$
+$$- \frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] \frac{\partial u}{\partial x_k} x_k \, dx
+$$
+= $I_1 + I_2 + I_3$, where the unit normal vector is $\nu$.
+One may rewrite $I_1$ as
+$$I_1 = \frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \frac{\partial}{\partial x_k}\left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \, dx
+$$
+Integrating the first term by parts again yields
+$$I_1 = -\frac{1}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \nu_k \, dS
+$$
+$$
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) x_k \frac{\partial a_{ij}}{\partial x_k}\, dx.
+$$
+Summing over $k$ gives
+$$\int_{\Omega}(-Lu)(\nabla u\cdot x)\, dx =
+-\frac{n}{2} \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot \nu ) \, dS
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot  \nabla a_{ij}) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j,k} a_{ij} \left[
+\frac{\partial u}{\partial x_j}
+\frac{\partial u}{\partial x_k} \delta_{ik} +
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_k} \delta_{jk}
+\right] \, dx
+$$
+$$- \frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] (\nabla u\cdot x) \, dS.
+$$
+Combining the first and fourth term on the right-hand side
+simplifies the expression
+$$\int_{\Omega}(-Lu)(\nabla u\cdot x)\, dx
+=
+(1-\frac{n}{2}) \int_{\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) \, dx
+$$
+$$
++
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot \nu ) \, dS
+-
+\frac{1}{2} \int_{\Omega}
+\sum_{i,j} \left(
+\frac{\partial u}{\partial x_i}
+\frac{\partial u}{\partial x_j}
+\right) (x\cdot  \nabla a_{ij}) \, dx
+$$
+$$
+-
+\frac{1}{2} \int_{\partial\Omega}
+\sum_{i,j} a_{ij} \left[
+\frac{\partial u}{\partial x_j} \nu_{i} +
+\frac{\partial u}{\partial x_i} \nu_{j}
+\right] (\nabla u\cdot x) \, dS.
+$$
+Using the notation defined above, the result follows.
+
+
+%

@@ -1,0 +1,305 @@
+%%
+%% BOF definitions.tex
+%%
+
+
+%%
+%% BASIC FONT DECLARATIONS
+%%
+%% These shorthands are usually declared by the class 'article.cls' or 'book.cls'
+%% As we are not in such a class, we have to declare them ourselves.
+
+\def\it{\itshape}
+\def\sl{\slshape}
+\def\sc{\scshape}
+\def\tt{\texttt}
+\def\bf{\textbf}
+\def\rm{\rmdefault}
+
+
+%%
+%% DOUBLE LEFT LINE LETTERS
+%%
+
+\def\IE{\hbox {I \hskip -5.2pt {E}}}
+\def\IP{\hbox {I \hskip -5.2pt {P}}}
+
+\def\IR{\mathbb{R}}
+\def\IQ{\mathbb{Q}}
+\def\IN{\mathbb{N}}
+\def\IK{\mathbb{K}}
+\def\I1{\mathbb{1}}
+\def\IC{\mathbb{C}}
+\def\IS{\mathbb{S}}
+\def\ZZ{\mathbb{Z}}
+
+
+%%
+%% CALIGRAPHIC ALPHABET
+%%
+%% This is a caligraphic alphabet slightly curlier than with the standard {\cal A} command.
+
+\def\cA{\mathcal{A}}
+\def\cB{\mathcal{B}}
+\def\cC{\mathcal{C}}
+\def\cD{\mathcal{D}}
+\def\cE{\mathcal{E}}
+\def\cF{\mathcal{F}}
+\def\cG{\mathcal{G}}
+\def\cH{\mathcal{H}}
+\def\cI{\mathcal{I}}
+\def\cJ{\mathcal{J}}
+\def\cK{\mathcal{K}}
+\def\cL{\mathcal{L}}
+\def\cM{\mathcal{M}}
+\def\cN{\mathcal{N}}
+\def\cO{\mathcal{O}}
+\def\cP{\mathcal{P}}
+\def\cQ{\mathcal{Q}}
+\def\cR{\mathcal{R}}
+\def\cS{\mathcal{S}}
+\def\cT{\mathcal{T}}
+\def\cU{\mathcal{U}}
+\def\cV{\mathcal{V}}
+\def\cW{\mathcal{W}}
+\def\cX{\mathcal{X}}
+\def\cY{\mathcal{Y}}
+\def\cZ{\mathcal{Z}}
+
+
+%%
+%% VERY CALIGRAPHIC ALPHABET
+%%
+%% This caligraphic alphabet is quite curly. Don't use this one if you have thirty or so symbols of it on
+%% one page. Thechnically there's no problem, but it will look a little overdone in that case.
+
+\def\ccA{\mathscr{A}}
+\def\ccB{\mathscr{B}}
+\def\ccC{\mathscr{C}}
+\def\ccD{\mathscr{D}}
+\def\ccE{\mathscr{E}}
+\def\ccF{\mathscr{F}}
+\def\ccG{\mathscr{G}}
+\def\ccH{\mathscr{H}}
+\def\ccI{\mathscr{I}}
+\def\ccJ{\mathscr{J}}
+\def\ccK{\mathscr{K}}
+\def\ccL{\mathscr{L}}
+\def\ccM{\mathscr{M}}
+\def\ccN{\mathscr{N}}
+\def\ccO{\mathscr{O}}
+\def\ccP{\mathscr{P}}
+\def\ccQ{\mathscr{Q}}
+\def\ccR{\mathscr{R}}
+\def\ccS{\mathscr{S}}
+\def\ccT{\mathscr{T}}
+\def\ccU{\mathscr{U}}
+\def\ccV{\mathscr{V}}
+\def\ccW{\mathscr{W}}
+\def\ccX{\mathscr{X}}
+\def\ccY{\mathscr{Y}}
+\def\ccZ{\mathscr{Z}}
+
+
+%%
+%% LOGICAL OPREATORS
+%%
+
+\def\myOR {\ \ \ {\tt OR} \ \ \ }
+\def\myAND {\ \ \ {\tt AND} \ \ \ }
+\def\myand {\ \hbox{and}\ }
+\def\myor {\ \ \ \hbox{or} \ \ \ }
+
+
+%%
+%% LIMITS AND SUMS
+%%
+
+\def\limn{\lim_{n \to \infty}}
+\def\limk{\lim_{k \to \infty}}
+\def\limh{\lim_{h \to 0}}
+\def\limxinf{\lim_{x \to \infty}}
+\def\limninf{\lim_{n \to +\infty}}
+\def\limxc{\lim_{x \to c}}
+\def\limxalpha{\lim_{x \to \alpha}}
+\def\limx0{\lim_{x \to 0}}
+\def\sumkn{\sum_{k=0}^n}
+\def\sumkinfty{\sum_{k=0}^{\infty}}
+\def\sumninfty{\sum_{n=0}^{\infty}}
+\def\sumid{\sum_{i=1}^{d}}
+\def\sumijd{\sum_{i=1, j=1}^{d}}
+
+
+%%
+%% FUNCTIONS
+%%
+
+\def\e{\hbox{e}}
+\def\cosec{\hbox{cosec}}
+\def\cotan{\hbox{cotan}}
+\def\cotg{\hbox{cotg}}
+\def\arccot{\hbox{arccot}}
+\def\arcsec{\hbox{arcsec}}
+\def\arccosec{\hbox{arccosec}}
+\def\arcsinh{\hbox{arcsinh}}
+\def\arccosh{\hbox{arccosh}}
+\def\arctanh{\hbox{arctanh}}
+\def\arccoth{\hbox{arccoth}}
+
+
+%%
+%% PROBABILITY
+%%
+
+\def\erf{\hbox{erf}}
+\def\indicator#1{\mathbb{1}_{\{ #1\} }}
+\def\process#1#2{\{#1_{#2}\}_{#2}}
+
+
+%%
+%% DERIVATIVES
+%%
+
+\def\ddx#1{\frac{d{#1}}{dx}}
+\def\pdd#1#2{\frac{\partial {#1}}{\partial {#2}}}
+\def\pddtwo#1#2#3{\frac{\partial^2 {#1}}{\partial {#2} \partial {#3}}}
+
+
+%%
+%% INTEGRALS
+%%
+
+\def\intinfinf{\int_{-\infty}^{+\infty}}
+\def\intoinf{\int_{0}^{+\infty}}
+\def\intunitball{\underset{\| x \| \leq 1}{\int}}
+\def\intxyleq1{\underset{\| x - y  \| \leq 1}{\int}}
+\def\intxygeq1{\underset{\| x - y  \| \geq 1}{\int}}
+\def\intxizetaleq1{\underset{\| \xi - \zeta  \| \leq 1}{\int}}
+\def\intxizetageq1{\underset{\| \xi - \zeta \| \geq 1}{\int}}
+\def\intA{\underset{A}{\int}}
+\def\intRd{\underset{\IR^d}{\int}}
+\def\intt{\int_0^t\!\!}
+\def\doubleint#1{\int\limits_{#1}\!\!\!\!\int}
+\def\tripleint#1{\int\!\!\!\!\int\limits_{#1}\!\!\!\!\int}
+
+
+%%
+%% IR^d
+%%
+
+\def\point#1#2{\left({#1}_1 , \ldots , {#1}_{#2}\right)}
+\def\vector#1#2{\left<{#1}_1 , \ldots , {#1}_{#2}\right>}
+\renewcommand{\vec}{\overrightarrow}
+
+
+%%
+%% SKIP & CO
+%%
+
+\def\standardskip{\vskip 3mm}
+\def\miniskip{\vskip 2mm}
+\def\hyperquad{\quad\quad\quad\quad}
+
+
+%%
+%% PUTDATE
+%%
+%% Call \putdate at the beginning of a chapter. Then you know when the printout was compiled.
+
+\newcounter{hours}
+\newcounter{minutes}
+\newcommand\printtime{%
+  \setcounter{hours}{\the\time/60}%
+  \setcounter{minutes}{\the\time-\value{hours}*60}%
+  \ifthenelse{\value{hours} > 12}
+     {
+       \setcounter{hours}{\value{hours}-12}%
+       \thehours:\theminutes \ p.m.
+     }
+     {
+       \thehours:\theminutes \ a.m.
+     }
+}
+
+\def\putdate{{\tt Compiled on \the\month-\the\day-\the\year \ at\printtime} \\}
+
+
+%%
+%% MISCELLANEOUS
+%%
+
+\def\rmin{{r\hbox{-}}}
+\def\smin{{s\hbox{-}}}
+\def\tmin{{t\hbox{-}}}
+
+\def\cadlag{\hbox{c\`adl\`ag }}
+
+\def\inproduct#1#2{\langle ~ {#1} ~ | ~ {#2} ~ \rangle}
+
+\def\longto{\longrightarrow}
+\def\halflambda{{\scriptstyle\frac{\lambda}{2}}}
+
+\def\realline#1#2{ \[
+                     \begin{CD}
+                     {\hskip #1mm} @<<<${\hskip -12mm}$@>{\hskip #2mm}>>\\
+                     \end{CD}
+                     \]
+                   }
+
+\def\ovalbox#1#2{
+       \begin{flushright}
+       \Ovalbox{
+           \begin{minipage}{#1}
+             #2
+           \end{minipage}
+         }
+       \end{flushright}
+       }
+
+\def\mystretch{\ensuremath{\phantom{\displaystyle\int\limits_X}}}
+
+
+%%
+%% SPECIFIC Marc Corluy
+%%
+
+\def\intrS{\int\limits_0^r\!\!\!\int\limits_S}
+\def\intsS{\int\limits_0^s\!\!\!\int\limits_S}
+\def\inttS{\int\limits_0^t\!\!\!\int\limits_S}
+\def\intrD{\int\limits_0^r\!\!\!\int\limits_D}
+\def\intsD{\int\limits_0^s\!\!\!\int\limits_D}
+\def\inttD{\int\limits_0^t\!\!\!\int\limits_D}
+
+\def\sumid{\sum_{i=1}^d}
+\def\sumjd{\sum_{j=1}^d}
+\def\sumkd{\sum_{k=1}^d}
+\def\sumijd{\sum_{i,j=1}^d}
+\def\sumkld{\sum_{k,l=1}^d}
+\def\sumz{\sum_{z \in \ZZ^d}}
+
+\def\Cxhz{C_{\frac{x}{h},\frac{x}{h}+z}}
+\def\Cyhz{C_{\frac{y}{h},\frac{y}{h}+z}}
+\def\tCxhz{{\tilde C}_{\frac{x}{h},\frac{x}{h}+z}^{\varepsilon}}
+
+\def\tX{\tilde X}
+
+\def\Jumpp{\Gamma}
+
+%% MY DEFINITIONS
+
+\newcommand{\bm}[1]{{\boldsymbol {#1}}}
+\newcommand{\bZ}{{\bm Z}}
+\newcommand{\bz}{{\bm z}}
+\newcommand{\bY}{{\bm Y}}
+\newcommand{\by}{{\bm y}}
+\newcommand{\bX}{{\bm X}}
+\newcommand{\bx}{{\bm x}}
+\newcommand{\dif}{\mathrm{d}}%
+
+\newcommand{\Cov}{\mathrm{Cov}}%
+\newcommand{\transp}{\top}
+\newcommand{\diag}{\,\mathrm{diag}\,}%
+
+%%
+%% EOF definitions.tex
+%%

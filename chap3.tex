@@ -1,0 +1,189 @@
+\chapter{Additional Presentation Examples}
+\label{chap:presentation}
+This chapter supplements the original examples with tables, figures,
+algorithms, code, output, and reference formats. Replace the demonstration
+content with your research while retaining the patterns you need.
+
+
+\section{Writing style}
+Follow \citet{schifano2026statistical} when preparing the thesis. Their guide,
+\emph{Statistical Writing}, is available at
+\url{https://statds.github.io/stat-writing/}. Its chapters on writing tools and
+manuscript sections provide guidance on source preparation, mathematical
+exposition, and statistical reporting. University requirements govern the
+document layout and front matter.
+
+
+Introduce the research problem, explain the gap in existing work, and state the
+contribution. Define notation consistently and state assumptions before
+presenting theoretical results. The abstract should stand on its own, summarize
+the contribution, and avoid citations. Discuss the meaning of results rather
+than repeating every value from tables and figures.
+
+
+Treat equations as parts of sentences and punctuate them accordingly. Use
+descriptive labels and refer to equations with \verb|\eqref|. Refer to each
+table and figure in the text; give each an informative, self-contained caption.
+Use present tense for exposition and past tense for completed experiments.
+Treat ``data'' as plural and reserve ``significant'' for its statistical
+meaning.
+
+
+\section{Mathematical statements and proofs}
+\begin{definition}
+  For $n>0$ observations $x_1,\ldots,x_n\in\RR$, the sample mean is
+  \begin{equation}
+    \label{eq:sample-mean}
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i.
+  \end{equation}
+\end{definition}
+\begin{theorem}
+  \label{thm:constant-mean}
+  If every observation equals $c$, then $\bar{x}=c$.
+\end{theorem}
+\begin{proof}
+  Substitution in Equation~\eqref{eq:sample-mean} gives $nc/n=c$.
+\end{proof}
+\begin{corollary}
+  The sample mean of a sequence of zeros is zero.
+\end{corollary}
+\begin{proof}
+  Apply Theorem~\ref{thm:constant-mean} with $c=0$.
+\end{proof}
+Equation~\eqref{eq:centered-zero} shows that the centered observations sum to
+zero. An aligned derivation gives:
+\begin{align}
+  \sum_{i=1}^{n}(x_i-\bar{x}) &= \sum_{i=1}^{n} x_i - n \bar{x}
+  \notag\\
+  &= 0.\label{eq:centered-zero}
+\end{align}
+
+
+\section{Differentiation and Integration}
+Use \verb|\dd| from the \texttt{physics} package for the upright differential
+operator in derivatives and integration measures. For example,
+\[
+  \frac{\dd}{\dd x} x^2 = 2x,
+  \qquad
+  \int_0^1 x^2 \dd{x} = \frac{1}{3}.
+\]
+
+
+\section{Lists}
+\begin{itemize}
+  \item Describe the research question.
+  \item Explain the method and assumptions.
+  \item Present results and their limitations.
+\end{itemize}
+\begin{enumerate}
+  \item Read the observations.
+  \item Calculate their mean.
+  \item Check the calculation against a known example.
+\end{enumerate}
+\begin{description}
+  \item[Input] A nonempty sequence of observations.
+  \item[Output] Its arithmetic mean.
+\end{description}
+
+
+\section{Tables and figures}
+Table captions conventionally precede the table; figure captions follow the
+illustration. Put labels after captions and refer to them by label.
+Table~\ref{tab:sample-data} summarizes the values plotted in
+Figure~\ref{fig:sample-data}.
+\begin{table}[tbp]
+  \centering
+  \caption{Three observations, $x_1 = 1$, $x_2 = 2$, and $x_3 = 3$,
+  and their arithmetic mean.}\label{tab:sample-data}
+  \begin{tabular}{lr}
+    \toprule
+    Quantity & Value \\
+    \midrule
+    First observation & 1 \\
+    Second observation & 2 \\
+    Third observation & 3 \\
+    Sample mean & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{figure}[tbp]
+  \centering
+  \begin{picture}(80,40)
+    \put(10,8){\vector(1,0){60}}
+    \put(10,8){\vector(0,1){28}}
+    \put(70,3){\makebox(0,0){$i$}}
+    \put(5,35){\makebox(0,0){$x_i$}}
+    \put(25,16){\circle*{2}}
+    \put(40,24){\circle*{2}}
+    \put(55,32){\circle*{2}}
+    \put(9,16){\line(1,0){2}}
+    \put(9,24){\line(1,0){2}}
+    \put(9,32){\line(1,0){2}}
+    \put(6,16){\makebox(0,0){1}}
+    \put(6,24){\makebox(0,0){2}}
+    \put(6,32){\makebox(0,0){3}}
+    \put(25,4){\makebox(0,0){1}}
+    \put(40,4){\makebox(0,0){2}}
+    \put(55,4){\makebox(0,0){3}}
+  \end{picture}
+  \caption{Observation values $x_i = i$ for indices $i = 1, 2, 3$.
+  The arithmetic mean of these values is 2.}
+  \label{fig:sample-data}
+\end{figure}
+Figure~\ref{fig:sample-data} illustrates the input to
+Algorithm~\ref{alg:sample-mean}.
+
+
+\section{Algorithms}
+Use a numbered algorithm float for pseudocode, with explicit inputs, outputs,
+and line numbers.
+\begin{algorithm}[tbp]
+  \caption{Calculate the sample mean}\label{alg:sample-mean}
+  \begin{algorithmic}[1]
+    \Require Observations $x_1,\ldots,x_n$, where $n>0$
+    \Ensure The sample mean $\bar{x}$
+    \State $s\gets 0$
+    \For{$i\gets 1,\ldots,n$}
+      \State $s \gets s + x_i$
+    \EndFor
+    \State \Return $s/n$
+  \end{algorithmic}
+\end{algorithm}
+
+
+\section{Code and output}
+Listing~\ref{lst:mean-code} displays the R source in \texttt{code/mean.R}.
+It calculates the mean of three observations. Compiling the thesis displays
+this source file; it does not execute R. Listing~\ref{lst:mean-output} reads
+the recorded output from \texttt{code/mean-output.txt}. Refresh that file
+when the code changes.
+\lstinputlisting[
+  language=R,
+  numbers=left,
+  caption={Calculate the mean in R.},
+  label={lst:mean-code}
+]{code/mean.R}
+\lstinputlisting[
+  caption={Recorded output of the mean calculation.},
+  label={lst:mean-output}
+]{code/mean-output.txt}
+
+
+\section{Reference formats}
+Examples include a journal article \citep{adler1965topological}, a book
+\citep{lamport1994latex}, a book chapter \citep{cullum1986practical}, an edited
+volume
+\citep{cullum1986large}, a technical report \citep{amann1974lectures}, a
+conference
+paper \citep{vaswani2017attentiona}, an arXiv preprint
+\citep{vaswani2017attentionb}, a newsletter issue \citep{rnews2001news}, a
+newsletter
+article \citep{hornik2001editorial}, a manual \citep{venables2026introduction},
+a website
+\citep{rfoundationndproject}, a wiki page \citep{wikipediandbibtex}, and a
+dissertation \citep{mcgough1993solution}. These illustrate citation formats
+rather
+than a research literature review. The conference and arXiv entries describe
+versions of the same work; normally cite the version actually used. For
+changing web pages, record the access date; for wiki pages, use a permanent
+revision link in final work.

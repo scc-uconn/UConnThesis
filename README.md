@@ -21,13 +21,15 @@ On Windows or without Make, run this from the source directory:
 latexmk -gg -bibtex -pdf -interaction=nonstopmode -halt-on-error -file-line-error thesis.tex
 ```
 
-MiKTeX users may need to install Perl for `latexmk`. Make is optional on Windows;
-the command above works without a Unix shell. Windows execution has not yet
-been tested directly.
+MiKTeX users may need to install Perl for `latexmk`. Make is optional on
+Windows; the command above works without a Unix shell. Windows execution has
+not yet been tested directly.
 
 On Overleaf, upload the source files, select `thesis.tex` as the main document,
 and use pdfLaTeX. `make clean` removes auxiliary files while preserving the PDF;
-`make distclean` removes the PDF too.
+`make distclean` also removes the PDF and the generated R tex, knitr setup,
+and figures. The next `make` regenerates them from the Rnw sources and
+requires R and knitr. To clean only generated R files, use `make -C Rnw clean`.
 
 ## Customize
 
@@ -39,27 +41,27 @@ For two co-major advisors, comment out `\myMajorAdvisor` and uncomment both
 `\myCoAdvisorA` and `\myCoAdvisorB`. Each appears as a Co-Major Advisor on the
 approval page, with a separate signature line when signature lines are enabled.
 The example enables `\signaturelinestrue` for a printed committee copy.
-Comment it out for an approval page listing names, following the Registrar sample.
+Comment it out for an approval page listing names, following the Registrar
+sample.
 
 Replace `abs.tex`, `dedication.tex`, and `ack.tex` with your own text. The
 dissertation abstract is required, unnumbered, and limited to 350 words.
 Use multiple paragraphs when they improve readability; the limit applies to
-the whole abstract. In this style, an abstract within the limit may span two pages.
-The historical teaching examples are retained and corrected where necessary. `chap3.tex` adds
-worked examples of proofs, lists, equations, tables, a drawn figure, pseudocode,
-R source code, recorded output, and varied reference types. The listings read
-`code/mean.R` and `code/mean-output.txt`; compilation does not execute R.
-To refresh the output, run `Rscript --vanilla code/mean.R` and record its
-printed output in `code/mean-output.txt`.
-Edit `chap1.tex`, `chap2.tex`, `chap3.tex`, and `appendix.tex`; add further
-chapters with
-`\include{filename}`. Keep packages and shared commands in `preamble.tex` and
+the whole abstract. In this style, an abstract within the limit may span two
+pages.
+Chapter 1 introduces sampling, bias, and the sample mean alongside basic LaTeX
+examples. Chapter 2 works through normal-mean estimation and confidence
+intervals. Chapter 3 demonstrates statistical reporting, tables, figures,
+and mean-calculation and bootstrap algorithms. The first appendix derives
+properties of the sample variance; the second shows executed R code and output.
+Edit `chap1.tex`, `chap2.tex`, `chap3.tex`, `appendix.tex`, and
+`appendix-code.tex`; add further chapters with `\include{filename}`. Keep packages and shared commands in `preamble.tex` and
 references in `thesis.bib`. Bibliography examples cover journal articles, books,
 book chapters, edited volumes, technical reports, conference papers, arXiv
 preprints, newsletters, manuals, websites, wiki pages, and dissertations.
 References use the `apalike` bibliography style with `natbib` citations.
 Keep only cited entries in `thesis.bib`, sorted by key. Use keys such as
-`adler1965topological`: surname, year, and first title word. Use `nd` for an
+`morris2019using`: surname, year, and first title word. Use `nd` for an
 undated work and `a`/`b` to distinguish otherwise identical keys. Write field
 values directly rather than maintaining `@String` abbreviation definitions.
 Classic BibTeX uses `@misc` for online sources. Since `apalike` ignores the
@@ -72,7 +74,7 @@ theorems, cross-references, a table, and a self-contained vector figure.
 To review selected chapters, uncomment one `\includeonly` example in
 `thesis.tex`: `\includeonly{chap1}` builds Chapter 1, while
 `\includeonly{chap1,chap3}` builds Chapters 1 and 3. Other files loaded with
-`\include`, including the appendix, are skipped. Keep the `\include` commands
+`\include`, including both appendices, are skipped. Keep the `\include` commands
 in place so you can return to a full build without editing the chapter list.
 Front matter and files loaded with `\input` are still included, and the
 bibliography is generated from the draft's citations.
@@ -86,6 +88,49 @@ to check final numbering and cross-references.
 Comment out `\figurespagetrue` or `\tablespagetrue` if those lists are
 unnecessary.
 
+## R chunks and generated appendix
+
+`Rnw/mean-ci.Rnw` calculates a normal-mean confidence interval;
+`Rnw/bootstrap.Rnw` demonstrates bootstrap resampling and its distribution.
+Each file runs independently. The folder's Makefile discovers every `.Rnw`
+file and uses a `%.tex: %.Rnw` rule to run knitr. `appendix-code.tex` inputs
+both generated tex files. Edit the Rnw sources rather than generated tex.
+`Rnw/build.R` uses knitr's default LaTeX renderer. Its generated setup is saved
+in `Rnw/knitr-preamble.tex` and loaded by `preamble.tex`.
+
+To regenerate the appendix, install R and `knitr` (once, with
+`install.packages("knitr")`), then run:
+
+```sh
+make -C Rnw
+```
+
+To force execution of every chunk, use `make -C Rnw rebuild` or `make r-code`.
+The root `make` command regenerates the appendix when its Rnw source, rendering
+script, or Makefile changes, then builds the PDF. CI always regenerates it.
+The examples calculate a normal-mean interval and a seeded percentile bootstrap
+interval; the appendix records R and knitr versions used for generation.
+An R chunk also plots the empirical cumulative distribution of bootstrap
+means. Knitr generates its caption and label; the appendix cross-references
+the figure, and a shorter caption appears in the list of figures. Generated
+vector PDFs are saved in a separate subfolder of `Rnw/figures/` for each
+source. Use `make r-code` to regenerate figures that have been removed.
+
+The generated tex is included in the repository so the sample can also be
+compiled directly with LaTeX without R. That direct build uses the saved output
+and does not update it. On Windows without Make, regenerate first with:
+
+```text
+cd Rnw
+Rscript --vanilla build.R --preamble
+Rscript --vanilla build.R mean-ci.Rnw mean-ci.tex
+Rscript --vanilla build.R bootstrap.Rnw bootstrap.tex
+cd ..
+```
+
+Then run the `latexmk` command above. R and `knitr` are required only when
+regenerating the R appendix, not for compiling its existing generated tex.
+
 ## Formatting status
 
 This starter currently follows the dissertation front-matter sequence. Changing
@@ -97,7 +142,8 @@ including their sample documents and any department-specific requirements.
 
 The legacy package has not been certified against all current specifications.
 Layout has been updated against the Registrar specifications and July 2026
-Times New Roman dissertation sample: at least one-inch margins, unnumbered abstract,
+Times New Roman dissertation sample: at least one-inch margins, unnumbered
+abstract,
 Roman preliminary pages, Arabic body pages, and an advisory committee page
 with optional signature lines.
 Its pdfLaTeX output uses Type 1 fonts and is not a tagged, accessible PDF.
@@ -135,7 +181,8 @@ inherited material until its reuse rights are clarified.
 
 ## Contributing
 
-Preserve the teaching examples and keep new examples self-contained. Explain formatting changes with
+Preserve the teaching examples and keep new examples self-contained. Explain
+formatting changes with
 references to official requirements. Run a clean build, inspect the PDF, and
 check for unresolved references or citations before proposing a change.
 GitHub Actions builds the sample on pushes and pull requests and retains the

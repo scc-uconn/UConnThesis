@@ -1,0 +1,26 @@
+% Packages and shared commands. Keep chapter files focused on content.
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{physics} % \dd is the differential operator.
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{flafter} % Place floats after their source, never before introduction.
+\usepackage[section]{placeins} % Keep floats within their explanatory section.
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{uconnthesis}
+\usepackage[pdfusetitle,hidelinks]{hyperref}
+\AtBeginDocument{\hypersetup{pdfauthor={\thesisauthor}}}
+
+\newcommand{\RR}{\mathbb{R}}
+
+\setlength{\unitlength}{1mm}
+\lstset{
+  basicstyle=\ttfamily\small,
+  numberstyle=\tiny,
+  xleftmargin=2em,
+  frame=single,
+  breaklines=true
+}

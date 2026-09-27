@@ -7,18 +7,19 @@
 %%		   for the University of Connecticut
 %%	            	 March, 2011
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{uconnthesis}[2026/09/27 UConn thesis style]
+\RequirePackage{setspace}
+\RequirePackage{ifthen}
 \makeatletter
-%\oddsidemargin 0.25in \evensidemargin 0.25in
-\oddsidemargin .25in
-\marginparwidth 40pt \marginparsep 10pt
-\topmargin 0pt \headsep .3in
-\textheight 8.3in \textwidth 6.2in
+% UConn minimum margins: one inch on every side of US Letter paper.
+% Leave room for descenders and math subscripts at the bottom text boundary.
+\RequirePackage[letterpaper,margin=1in,bottom=1.15in,footskip=.65in]{geometry}
 \brokenpenalty=10000
-\font\Bold=cmbx10 scaled \magstep3
-\renewcommand{\baselinestretch}{2}  % (for wider spacing)
+\AtBeginDocument{\doublespacing}
 
-% Modify the standard definition of chapter to start higher on the
-% page and put the page number in the upper left hand corner
+% Chapter headings begin near the top of the text area.
+% The plain page style places page numbers at the bottom center.
 
 %    ****************************************
 %    *        CHAPTERS AND SECTIONS         *
@@ -53,7 +54,7 @@
 
 \def\chapter{\clearpage      % Starts new page.
    %\thispagestyle{plain}    % Default Page style of chapter page is 'plain'
-   \thispagestyle{myheadings}  % We change it to top right hand corner
+   \thispagestyle{plain}  % Bottom-centered page number
 			     % Don't use headings here to avoid running head	
    \global\@topnum\z@        % Prevents figures from going at top of page.
    \@afterindentfalse        % Suppresses indent in first paragraph.  Change
@@ -63,13 +64,7 @@
 \def\cl@chapter{\@elt{section}\@elt{footnote}}
 \def\thefigure{\@arabic\c@figure}
 \def\thetable{\@arabic\c@table}
-%  CHAPEQN.STY - added Dec. 95
-%  Use this command to change the numbering of equations
-%  in your thesis.  LaTeX's default is to number equations
-%  sequentially through the whole document. This command
-%  will start the numbering afresh with each \chapter command
-%  This style file numbers equations in the form:
-%       chapterno.equationno
+% Equations are numbered within chapters as chapter.equation.
 \@addtoreset{equation}{chapter}
 \def\theequation{\thechapter.\arabic{equation}}
 
@@ -79,12 +74,16 @@
 \newtheorem{claim}[theorem]{Claim}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{example}[theorem]{Example}
+\theoremstyle{plain}
 \newtheorem{figger}[theorem]{Figure}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{prop}[theorem]{Proposition}
+\theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
+\theoremstyle{plain}
 
 
 % \def\@xfloat#1[#2]{\ifhmode \@bsphack\@floatpenalty -\@Mii\else
@@ -128,7 +127,7 @@
 \def\myAssociateAdvisorD#1{\gdef\@myAssociateAdvisorD{#1}}
 
 
-\def\name#1{\gdef\@name{#1}}
+\def\name#1{\gdef\@name{#1}\gdef\thesisauthor{#1}}
 
 \def\dept#1{\gdef\@dept{#1}}
 \def\degree#1{\gdef\@degree{#1}}
@@ -152,136 +151,141 @@
 %\figurespagetrue
 %\tablespagetrue
 
+% Abstract pages are unnumbered, including continuation pages.
+\def\ps@uconnabstract{%
+  \def\@oddhead{\hfil\@name\ -- University of Connecticut, \@copyrightyear\hfil}%
+  \let\@evenhead\@oddhead
+  \def\@oddfoot{}\def\@evenfoot{}}
 \def\abstractpage{%
-	\setcounter{page}{0}
-%    \chead{\@name \ \ - \ \ University of Connecticut \ \ - \ \ \number\year}
-%    \rhead{} \lhead{} \lfoot{} \cfoot{} \rfoot{}
-%    \renewcommand{\headrulewidth}{0.5pt}
-%    \renewcommand{\footrulewidth}{0pt}
-%    \thispagestyle{fancy}
-    \thispagestyle{empty}
-	\begin{center}
-		{\LARGE\bf\expandafter{\@title}}\\
-% original:	{\Bold\uppercase\expandafter{\@title}}
-        \vskip 12mm
-        \singlespacing
-        \@name, \@myNewDegreeShort\\
-         University of Connecticut, \number\year \\
-        \doublespacing
-		\vskip 12mm
-		{\large\bf\expandafter{ABSTRACT}}
-	\end{center}\vskip.1cm}
+  \pagestyle{uconnabstract}\thispagestyle{empty}
+  \begin{center}
+    \begin{minipage}{.82\textwidth}
+      \centering\singlespacing
+      {\LARGE\bfseries \@title\par}
+    \end{minipage}\par
+    \vspace{12mm}
+    \singlespacing
+    \@name, \@myNewDegreeShort\par
+    University of Connecticut, \@copyrightyear\par
+    \vspace{12mm}
+    {\large\bfseries ABSTRACT\par}
+  \end{center}
+  \vspace{4mm}
+  \doublespacing
+}
 
+% A centered title block with deliberate spacing between related groups.
 \def\titlepage{%
-	\setcounter{page}{0}
-	\thispagestyle{empty}%
-	\begin{center}
-		{\LARGE\bf\expandafter{\@title}}\\
-% original:	{\Bold\uppercase\expandafter{\@title}}
-        \vskip 20mm
-		{\bf \expandafter{\@name}}\\
-        \vskip 15mm
-        \expandafter{\@myPreviousDegreeLong} \\
-	    \vskip 30mm
-        \vfill
-        \singlespacing
-		A \expandafter{\@thesistype}\\
-        Submitted in Partial Fulfillment of the \\
-		Requirements for the Degree of\\
-		\@degree \\
-		%(\expandafter{\@dept})\\
-		at the \\
-		 University of Connecticut\\[5mm]
-		%\@submitdate\\
-		\expandafter{\@copyrightyear}
-	\end{center}\vskip.5in\newpage}
-
+  \setcounter{page}{1}
+  \thispagestyle{empty}
+  \vspace*{12mm}
+  \begin{center}
+    \begin{minipage}{.82\textwidth}
+      \centering\singlespacing
+      {\LARGE\bfseries \@title\par}
+    \end{minipage}\par
+    \vspace{20mm}
+    {\bfseries \@name\par}
+    \vspace{8mm}
+    \singlespacing
+    \@myPreviousDegreeLong\par
+  \end{center}
+  \vfill
+  \begin{center}
+    \singlespacing
+    A \@thesistype\par
+    Submitted in Partial Fulfillment of the\par
+    Requirements for the Degree of\par
+    \@degree\par
+    at the\par
+    University of Connecticut\par
+    \vspace{5mm}
+    \@copyrightyear\par
+  \end{center}
+  \clearpage
+}
 
 \def\copyrightpage{%
+  \begingroup
+  \vspace*{\fill}
   \begin{center}
-      \ \\
-      \vskip 20 mm
-      Copyright by \\
-      \vskip 20 mm
-      \@name
-      \vskip 123 mm
-      \number\year
-    \end{center}
-	\vfill\newpage}
+    Copyright \copyright\ \@copyrightyear\ by \@name\par
+    All rights reserved.\par
+  \end{center}
+  \vspace*{\fill}
+  \clearpage
+  \endgroup
+}
 
-\long\def\signature#1{%
-
+% Enable ruled signature spaces for a printed committee copy when needed.
+% The default advisory committee page lists names, as in the Registrar sample.
+\newif\ifsignaturelines
+\signaturelinesfalse
+\def\uconnadvisor#1#2{%
+  \ifx#2\@undefined
+  \else
+    \ifsignaturelines
+      #1 & \rule{\linewidth}{.4pt} \\
+         & #2 \\[3mm]
+    \else
+      #1 & #2 \\[6mm]
+    \fi
+  \fi}
+\def\signature{%
+  \begingroup
   \begin{center}
-      {\large\bf\expandafter{APPROVAL PAGE}}
-      \vskip 5mm
-      \@degree \ Dissertation
-      \vskip 5mm
-      {\Large\bf\expandafter{\@title}}
-      \vskip 2mm
-      \singlespacing
-      Presented by \\
-      \@name, \@myPreviousDegreeShort
-      \doublespacing
-      \vskip 8mm
-      \vfill
-      \begin{tabular}{r c c}
-      
-      \ifthenelse{\isundefined{\@myMajorAdvisor}}{}%
-           {
-             Major Advisor     & & \underline{\hspace{77mm}} \\
-                               & & \@myMajorAdvisor          \\[1.5mm]
-           }
-      \ifthenelse{\isundefined{\@myCoAdvisorA}}{}%
-           {
-             Major Co-Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myCoAdvisorA     \\[1.5mm]
-           }
-      \ifthenelse{\isundefined{\@myCoAdvisorB}}{}%
-           {
-             Major Co-Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myCoAdvisorB     \\[1.5mm]
-           }         
-           \ifthenelse{\isundefined{\@myAssociateAdvisorA}}{}%
-           {
-             Associate Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myAssociateAdvisorA     \\[1.5mm]
-           }
-         \ifthenelse{\isundefined{\@myAssociateAdvisorB}}{}
-           {
-             Associate Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myAssociateAdvisorB     \\[1.5mm]
-           }
-         \ifthenelse{\isundefined{\@myAssociateAdvisorC}}{}
-           {
-             Associate Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myAssociateAdvisorC     \\[1.5mm]
-           }
-         \ifthenelse{\isundefined{\@myAssociateAdvisorD}{}}{}
-           {
-             Associate Advisor & & \underline{\hspace{77mm}} \\
-                               & & \@myAssociateAdvisorD     \\
-           }
-      \end{tabular}
-      \vfill
-      University of Connecticut\\
-      \number\year
-      \vfill
-    \end{center}
+    {\large\bfseries APPROVAL PAGE\par}
+    \vspace{5mm}
+    \@degree\ \@thesistype\par
+    \vspace{5mm}
+    {\Large\bfseries \@title\par}
+    \vspace{8mm}
+    \singlespacing
+    Presented by\par
+    \@name, \@myPreviousDegreeShort\par
+  \end{center}
+  \vfill
+  \begin{center}
+    \singlespacing
+    Approved by\par
+    \vspace{8mm}
+    \begin{tabular}{@{}r@{\hspace{6mm}}p{77mm}@{}}
+      \uconnadvisor{Major Advisor}{\@myMajorAdvisor}
+      \uconnadvisor{Co-Major Advisor}{\@myCoAdvisorA}
+      \uconnadvisor{Co-Major Advisor}{\@myCoAdvisorB}
+      \uconnadvisor{Associate Advisor}{\@myAssociateAdvisorA}
+      \uconnadvisor{Associate Advisor}{\@myAssociateAdvisorB}
+      \uconnadvisor{Associate Advisor}{\@myAssociateAdvisorC}
+      \uconnadvisor{Associate Advisor}{\@myAssociateAdvisorD}
+    \end{tabular}
+  \end{center}
+  \vfill
+  \begin{center}
+    \singlespacing
+    University of Connecticut\par
+    \@copyrightyear\par
+  \end{center}
+  \clearpage
+  \endgroup
 }
 
 \def\firstpage{
+    % Reserve space inside the margins for abstract continuation headers.
+    \newgeometry{margin=1in,bottom=1.15in,includehead,headheight=15pt,
+      headsep=12pt,footskip=.65in}
+    \@ifpackageloaded{hyperref}{\hypersetup{pageanchor=false}}{}
 	\pagenumbering{roman}
     \abstractpage
-	\pagestyle{myheadings}
 	}
 
 \def\beforepreface{
-    \newpage
+    \restoregeometry
+    \@ifpackageloaded{hyperref}{\hypersetup{pageanchor=true}}{}
 	\pagenumbering{roman}
     %\abstractpage
-	\pagestyle{myheadings}
-	\titlepage
-	\copyrightpage
+	\pagestyle{plain}
+	\begingroup\titlepage\endgroup
+	\ifcopyright\copyrightpage\fi
     \signature
 	}
 
@@ -290,6 +294,8 @@
 	\addcontentsline{toc}{chapter}{#1}}
 
 \def\afterpreface{\newpage
+	\renewcommand{\contentsname}{Table of Contents}
+	\begingroup\singlespacing
 	\tableofcontents
 	\newpage
 	\iftablespage
@@ -309,13 +315,15 @@
 		\newpage
 	\fi
 
+	\endgroup
+	\doublespacing
 	\pagenumbering{arabic}
-	\pagestyle{myheadings}}
+	\pagestyle{plain}}
 
 
-\def\thebibliography#1{\chapter*{Bibliography\@mkboth
- {BIBLIOGRAPHY}{BIBLIOGRAPHY}}
-	 \addcontentsline{toc}{chapter}{Bibliography}
+\def\thebibliography#1{\chapter*{References\@mkboth
+ {REFERENCES}{REFERENCES}}
+	 \addcontentsline{toc}{chapter}{References}
 	 \list
 	 {[\arabic{enumi}]}{\settowidth\labelwidth{[#1]}\leftmargin\labelwidth
 	 \advance\leftmargin\labelsep
@@ -325,6 +333,6 @@
 	 \sfcode`\.=1000\relax}
 	\let\endthebibliography=\endlist
 
-% Start with pagestyle{myheadings} in case front matter isn't processed
-\pagestyle{myheadings}
+% Use bottom-centered page numbers when front matter is omitted.
+\pagestyle{plain}
 \makeatother

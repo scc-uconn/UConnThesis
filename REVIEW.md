@@ -109,3 +109,17 @@ the historical mathematical results or every inherited bibliographic field.
 Windows execution and the remote GitHub Actions job have not been tested in
 this review. Master's thesis sequencing is not implemented by changing the
 degree name alone.
+
+## Follow-up: build automation audit
+
+Generated figure dependencies are now recorded in per-source `.d` files.
+Missing figures or metadata trigger regeneration through the generic Rnw
+pattern rule. Failed knitting cannot leave a target tex file that Make might
+mistake for a successful build. CI cleans all generated outputs before
+building and requires nonempty PDF, LaTeX log, and BibTeX log files.
+
+Behavioral checks in `tests/check_rnw.py` exercise discovery, unchanged and
+changed inputs, deleted figures, missing metadata and tex, repeated failures,
+and a parallel rebuild after cleaning. They use temporary copies of Rnw.
+Captions and figure labels are explicit LaTeX commands in the Rnw source;
+knitr generates the plot, not those captions.

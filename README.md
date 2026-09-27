@@ -111,10 +111,19 @@ script, or Makefile changes, then builds the PDF. CI always regenerates it.
 The examples calculate a normal-mean interval and a seeded percentile bootstrap
 interval; the appendix records R and knitr versions used for generation.
 An R chunk also plots the empirical cumulative distribution of bootstrap
-means. Knitr generates its caption and label; the appendix cross-references
-the figure, and a shorter caption appears in the list of figures. Generated
-vector PDFs are saved in a separate subfolder of `Rnw/figures/` for each
-source. Use `make r-code` to regenerate figures that have been removed.
+means. The R chunk generates the plot; explicit LaTeX commands set its caption
+and label. The appendix cross-references the figure, and a shorter caption
+appears in the list of figures. Generated vector PDFs are saved in a separate
+subfolder of `Rnw/figures/` for each source. Generated `.d` files record figure dependencies, so deleting a figure
+triggers regeneration on the next `make`. Missing dependency metadata also
+triggers a knit. `make r-code` forces regeneration of every chunk and figure.
+
+Knitting finishes in a temporary file before publishing generated tex. A
+failed knit removes the target tex and dependency metadata, so the next build
+cannot silently reuse failed output. CI starts with `make distclean`, rebuilds
+all outputs, and checks that the PDF and logs exist before inspecting warnings.
+Run `python3 tests/check_rnw.py` to exercise discovery, dependency tracking,
+failure recovery, cleaning, and parallel R builds in temporary copies.
 
 The generated tex is included in the repository so the sample can also be
 compiled directly with LaTeX without R. That direct build uses the saved output

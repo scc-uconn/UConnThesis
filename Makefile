@@ -1,18 +1,15 @@
-FILE = thesis
+FILE ?= thesis
+LATEXMK ?= latexmk
 
-TEX = pdflatex
-BIBTEX = bibtex
+.PHONY: all clean distclean
+# Start a clean rebuild so deleted inputs cannot be masked by an old PDF.
+all:
+	$(LATEXMK) -gg -bibtex -pdf -interaction=nonstopmode -halt-on-error -file-line-error $(FILE).tex
 
-.PHONY: clean
-
-# all: $(FILE).pdf
-
-
-$(FILE).pdf: $(FILE).tex $(FILE).bib
-	$(TEX) $(FILE)
-	$(BIBTEX) $(FILE)
-	while grep -e 'Rerun to get' -e 'run LaTeX again' *.log ; do $(TEX) $(FILE) ; done
-
-
+# Remove auxiliary files; preserve the PDF.
 clean:
-	rm *.aux *.blg *.out *.bbl *.log *.backup *.lof *.lot *.toc $(FILE).pdf
+	$(LATEXMK) -c $(FILE).tex
+
+# Remove auxiliary files and the PDF.
+distclean:
+	$(LATEXMK) -C $(FILE).tex

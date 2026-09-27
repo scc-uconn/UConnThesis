@@ -1,3 +1,7 @@
+Historical introduction (2017). For current build and customization
+instructions, read README.md. In particular, make clean preserves the PDF;
+make distclean removes it. The text below is retained for attribution.
+
 Hello!
 
 My name is Greg and I am writing this brief introduction to this UConn thesis

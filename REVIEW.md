@@ -1,0 +1,76 @@
+# Template review — September 27, 2026
+
+The sample is a teaching template for a doctoral dissertation. It is not yet
+ready to be advertised as compliant with every current UConn submission rule.
+
+## Sources checked
+
+- [UConn dissertation specifications](https://registrar.uconn.edu/graduation/doctoral-degrees/)
+  and the linked Times New Roman sample.
+- [Statistical Writing: LaTeX and references](https://statds.github.io/stat-writing/ch-tools.html).
+- Publisher records for the
+  [Joseph–Lundgren article](https://link.springer.com/article/10.1007/BF00250508)
+  and [Rellich article](https://link.springer.com/article/10.1007/BF01181459).
+
+## Corrections made
+
+- Restored the abstract's title hierarchy and ABSTRACT heading. Explained that
+  350 words is the total limit, multiple paragraphs are preferable when useful,
+  and the abstract may span two pages in this style.
+- Kept the abstract unnumbered, with continuation headers inside the one-inch
+  margins. Restored the normal page geometry before the title page.
+- Retained the revised title and approval pages, copyright symbol, and optional
+  signature lines. Checked a committee with all seven supported advisor slots.
+- Set the contents and lists in single spacing, avoiding a second contents
+  page holding only the appendix and references. Body text remains double-spaced.
+- Kept floats after their source and within their explanatory sections. Added
+  values to the figure's vertical scale and moved listing numbers inside the
+  left margin.
+- Used upright text for definitions and examples. Required a nonempty sample
+  in the sample-mean definition and corrected duplicated names in citations.
+- Corrected the appendix proof's boundary measure to `\dd{S}` and its
+  divergence term to `-n/2`. Removed redundant spacing before differentials.
+  Retained sentence punctuation on displayed equations.
+- Added PDF title/author metadata, navigation bookmarks, and linked references.
+  Disabled page destinations on the unnumbered abstract to avoid duplicates
+  when preliminary numbering restarts.
+- Preserved the 23 cited bibliography entries and uniform keys. Corrected the
+  Joseph–Lundgren journal name, expanded Rellich's journal name, added their
+  verified DOIs, and removed an unsupported update date for the writing guide.
+- Extended the CI warning check to catch pdfTeX destination warnings.
+
+## Verification
+
+The full PDF was inspected across all pages, with changed layouts and stress
+cases inspected again at larger resolution. Clean builds were checked for
+LaTeX, package, pdfTeX, BibTeX, overfull, and underfull warnings.
+
+Temporary copies exercised an exactly 350-word abstract in multiple paragraphs,
+all seven advisor slots with copyright omitted, and `\includeonly{chap1}`.
+All built without warnings. The 350-word abstract occupied two unnumbered pages.
+Extracted PDF text coordinates were checked against all four text margins,
+including abstract continuation headers and listing numbers. Page numbers were
+checked for the suppressed title, consecutive Roman preliminaries, and
+consecutive Arabic text, appendix, and reference pages.
+
+The bibliography keys exactly match the citations: no unused entries,
+duplicates, string definitions, or old annotations. Chapter packages and shared
+commands remain in the preamble. R listings remain recorded examples; executable
+R chunks are deferred.
+
+## Remaining submission gaps
+
+UConn currently requires embedded TrueType fonts. The pdfLaTeX build embeds
+Type 1 fonts, so it does **not** meet that requirement. Replacing the font and
+engine configuration is still necessary before claiming submission compliance.
+
+The PDF is not tagged. UConn's WCAG 2.1 requirement takes effect for Spring 2027
+graduates. Metadata, bookmarks, readable captions, and labeled axes improve the
+document but do not establish accessibility compliance; semantic tagging and
+an accessibility review remain necessary.
+
+This review covers layout and teaching-source consistency. It does not certify
+the historical mathematical results or every inherited bibliographic field.
+Windows execution and the remote GitHub Actions job have not been tested in
+this review. Master's thesis sequencing is not implemented by changing the
+degree name alone.

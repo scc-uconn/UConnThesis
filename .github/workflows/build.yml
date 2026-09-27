@@ -10,12 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install LaTeX tools
+      - name: Install LaTeX and R tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended texlive-science
+          sudo apt-get install -y --no-install-recommends latexmk texlive-latex-extra texlive-fonts-recommended texlive-science r-base-core r-cran-knitr
       - name: Build sample
         run: |
+          make r-code
           make
           if grep -E 'LaTeX Warning|Package .* Warning|pdfTeX warning|Overfull|Underfull' thesis.log; then
             exit 1
@@ -32,3 +33,5 @@ jobs:
             thesis.pdf
             thesis.log
             thesis.blg
+            Rnw/*.tex
+            Rnw/figures/**/*.pdf

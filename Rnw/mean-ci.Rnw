@@ -1,0 +1,16 @@
+% Generated with knitr; edit this Rnw source and rebuild, not the output tex.
+\section{Normal-mean interval}
+The following chunk calculates the summary statistics and confidence interval
+for the illustrative observations in Chapter~\ref{chap:normal-mean}.
+The units are arbitrary.
+
+<<normal-mean>>=
+x <- c(1, 2, 3)
+n <- length(x)
+x_bar <- mean(x)
+s <- sd(x)
+se <- s / sqrt(n)
+ci <- x_bar + c(-1, 1) * qt(0.975, df = n - 1) * se
+round(c(n = n, mean = x_bar, sd = s, se = se,
+        lower = ci[1], upper = ci[2]), 3)
+@

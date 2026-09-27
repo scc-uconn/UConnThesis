@@ -1,4 +1,4 @@
-% Examples adapted from Leslie Lamport and Jeff McGough.
+% Basic LaTeX examples adapted from Leslie Lamport.
 \chapter{Introduction}
 \label{introduction}
 
@@ -10,10 +10,12 @@ For writing conventions, follow \citet{schifano2026statistical}, available at
 requirements govern thesis formatting.
 
 
-\section{Basic LaTeX Examples}
+\section{Basic LaTeX examples}
+These source examples illustrate conventions described by
+\citet{lamport1994latex}.
 
 
-\subsection{Ordinary Text}
+\subsection{Ordinary text}
 
 
 The ends of words and sentences are marked by spaces. It doesn't matter how
@@ -77,9 +79,10 @@ lines.
 Footnotes\footnote{This is an example of a footnote.} pose no problem.
 
 
-\LaTeX\ is good at typesetting mathematical formulas like $ x-3y = 7 $ or
+\LaTeX\ is good at typesetting mathematical formulas like
+$\widehat{\mu}=\bar{x}$ or
 \[
-  a_{1} > x^{2n} / y^{2n} > x'.
+  \operatorname{SE}(\overline{X}) = \sigma/\sqrt{n}.
 \]
 
 
@@ -87,7 +90,7 @@ Remember that a letter like $x$ is a formula when it denotes a mathematical
 symbol, and should be treated as one.
 
 
-\subsection{Displayed Text}
+\subsection{Displayed text}
 
 
 Text is displayed by indenting it from the left margin.
@@ -170,132 +173,81 @@ You can even display poetry.
 Displayed formulas may occupy one or several lines. Use the environments
 provided by \texttt{amsmath} for multiline equations.
 \[
-  x' + y^{2} = z_{i}^{2}.
+  Y_i = \beta_0+\beta_1 x_i+\varepsilon_i.
 \]
 Don't start a paragraph with a displayed equation, nor make one a paragraph by
 itself.
 
 
-\section{Mathematical Statements}
+\section{Sampling and estimation}
+Suppose a study records independent observations $X_1,\ldots,X_n$ from a
+population with mean $\mu$ and variance $\sigma^2$, where $n\geq 1$ and
+$0<\sigma^2<\infty$. The estimand is the population mean. An estimator is a
+rule applied to the random sample; an estimate is its value for the observed
+data. This distinction separates uncertainty before sampling from a number
+reported after analysis \citep{wasserman2004all}.
 
 
-An unnumbered equation such as $\gamma = 0$ can be set inline. The source is
-\verb"$\gamma = 0$". A displayed version uses
-
-
-\begin{verbatim}
-\[
-  \gamma = 0.
-\]
-\end{verbatim}
-
-
-Use the \texttt{equation} environment for numbered equations. The theorem,
-lemma, and corollary environments are defined in \texttt{uconnthesis.sty}.
-Their use is illustrated below.
-
-
-The Gelfand problem is the following elliptic boundary value problem:
+\begin{definition}[Bias]
+  The bias of an estimator $T$ of $\mu$, when its expectation exists, is
+  \[
+    \operatorname{Bias}_{\mu}(T) = \mathbb{E}_{\mu}(T)-\mu.
+  \]
+  An estimator is unbiased when its bias is zero for every population in the
+  specified model.
+\end{definition}
+The sample mean is the estimator
 \begin{equation}
-  \label{gelfand}
-  \begin{array}{rl}
-    \Delta u + \lambda e^u = 0, &
-    x \in \Omega,\\
-    u=0, & x \in \partial\Omega.
-  \end{array}
+  \label{eq:random-sample-mean}
+  \overline{X} = \frac{1}{n}\sum_{i=1}^{n}X_i.
 \end{equation}
-The previous equation had a label. It may be referenced as
-equation~\eqref{gelfand}.
-\section{History of the Gelfand problem}
-According to \citet[p. 46]{bebernes1989mathematical}, Gelfand
-was ``the first to make an in-depth study'' of \eqref{gelfand}. Following this
-statement
-they briefly outline the history of the Gelfand problem.
-\begin{quote}
-  For dimension $n=1$, \citet{liouville1853sur} first studied and
-  found an explicit solution in 1853. For $n=2$, \citet{bratu1914sur}
-  found an explicit solution in 1914.
-  \citet{frankkamanetski1955diffusion}
-  rediscovered these results in his development of thermal explosion theory.
-  \citet{joseph1973quasilinear} gave an elementary proof via
-  phase plane analysis of the multiple existence of solutions for dimensions
-  $n\geq 3$.
-\end{quote}
-A boundary-value system can be presented as follows
-\citep{zeidler1988nonlinear}:
-\begin{equation*}
-  \begin{array}{rcll}
-    \operatorname{div} j& = &f, &x\in\Omega ,\\
-    u& = & g_1, & x\in\partial\Omega_1 , \\
-    j \cdot \nu & = & g_2, & x\in\partial\Omega_2 ,
-  \end{array}
-\end{equation*}
-where
-\begin{equation*}
-  j = h(|\nabla u|^2) \nabla u,
-\end{equation*}
-and $\Omega$ is a bounded domain in ${\mathbb R}^n$ with smooth boundary
-$\partial\Omega = \overline{\partial\Omega_1}\cup \overline{\partial\Omega_2}$,
-$\partial\Omega_1 \cap \partial\Omega_2 = \emptyset$ and $\nu$ is the normal
-vector to $\partial\Omega$.
-\begin{lemma}
-  Assuming that $\partial\Omega_2 = \emptyset$ and that $h(t) = 1$, we have
-  \[
-    \begin{array}{lr}
-      \Delta u = f, & x\in\Omega ,\\
-      u =  g_1, & x\in\partial\Omega .
-    \end{array}
-  \]
+Equation~\eqref{eq:random-sample-mean} uses uppercase letters for random
+variables. Lowercase $x_i$ and $\bar{x}$ denote their observed values.
 
 
-\end{lemma}
-
-
-\begin{corollary}
-  If, in addition, $g_1 = 0$, then
-  \[
-    \begin{array}{lr}
-      \Delta u = f, & x\in\Omega ,\\
-      u =  0, & x\in\partial\Omega .
-    \end{array}
-  \]
-
-
-\end{corollary}
-
-
-\section{Fundamental results}
-The following theorem illustrates a named mathematical statement with nested
-lists. Its citation identifies the source of the result.
-
-
-\begin{theorem}[Joseph--Lundgren~\citeyearpar{joseph1973quasilinear}]
-  Boundary value problem \eqref{gelfand} has positive radial solutions $u$ on
-  the unit ball which depend on $n$ and $\lambda$ in the following manner.
-  \begin{enumerate}
-    \item For $n=1,2$, there exists $\lambda^* >0$ such that
-    \begin{enumerate}
-      \item for $0< \lambda < \lambda^*$ there are two positive
-      solutions,
-      \item for $\lambda =\lambda^*$ there is a unique solution, and
-      \item for $\lambda > \lambda^*$ there are no solutions.
-    \end{enumerate}
-    \item For $3\leq n \leq 9$, let $\overline{\lambda}=2(n-2)$; then
-    there exist positive constants $\lambda_*$, $\lambda^*$ with
-    $0< \lambda_* < \overline{\lambda} < \lambda^*$, such that
-    \begin{enumerate}
-      \item for $\lambda = \lambda^*$ there is a unique solution,
-      \item for $\lambda > \lambda^*$ there are no solutions,
-      \item for $\lambda = \overline{\lambda}$ there are countably
-        infinitely many solutions,
-      \item for $\lambda \in (\lambda_*,\lambda^*)$, $\lambda \neq
-      \overline{\lambda}$, there is a finite number of solutions,
-      \item for $0 < \lambda < \lambda_*$ there is a unique solution.
-    \end{enumerate}
-    \item For $n\geq 10$, let $\lambda^* = 2(n-2)$; then
-    \begin{enumerate}
-      \item for $\lambda \geq \lambda^*$ there are no solutions,
-      \item for $\lambda \in (0,\lambda^*)$ there is a unique solution.
-    \end{enumerate}
-  \end{enumerate}
+\begin{theorem}[Properties of the sample mean]
+  \label{thm:sample-mean-properties}
+  Under the stated sampling assumptions, $\overline{X}$ is unbiased for $\mu$
+  and has variance $\sigma^2/n$.
 \end{theorem}
+\begin{proof}
+  Linearity of expectation gives
+  \[
+    \mathbb{E}(\overline{X})
+    = \frac{1}{n}\sum_{i=1}^{n}\mathbb{E}(X_i) = \mu.
+  \]
+  Independence makes the pairwise covariances zero, so
+  \[
+    \operatorname{Var}(\overline{X})
+    = \frac{1}{n^2}\sum_{i=1}^{n}\operatorname{Var}(X_i)
+    = \frac{\sigma^2}{n}.
+  \]
+\end{proof}
+\begin{corollary}[Precision and sample size]
+  Under the assumptions of Theorem~\ref{thm:sample-mean-properties}, the
+  standard error of $\overline{X}$ is $\sigma/\sqrt{n}$. Multiplying the
+  sample size by four halves this standard error.
+\end{corollary}
+\begin{proof}
+  Take the square root of the variance and replace $n$ by $4n$.
+\end{proof}
+The standard error describes variation across samples. It differs from the
+population standard deviation, which describes variation among individuals.
+When $\sigma$ is unknown, estimate it rather than reporting the formula as
+though the population variance were known.
+
+
+\section{Assumptions and interpretation}
+Unbiasedness alone does not establish that an estimator is useful. Report its
+variability, the assumptions behind its uncertainty calculation, and the
+population to which the conclusions apply. Independence deserves particular
+attention when observations come from repeated measurements or clusters.
+Chapter~\ref{chap:normal-mean} develops a confidence interval under an explicit
+normal sampling model.
+
+
+\begin{remark}
+  Increasing sample size reduces sampling variability under this model. It
+  does not automatically remove selection bias, measurement error, or model
+  misspecification.
+\end{remark}

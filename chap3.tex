@@ -1,6 +1,6 @@
-\chapter{Additional Presentation Examples}
+\chapter{Statistical Reporting Examples}
 \label{chap:presentation}
-This chapter supplements the original examples with tables, figures,
+This chapter illustrates statistical presentation with tables, figures,
 algorithms, code, output, and reference formats. Replace the demonstration
 content with your research while retaining the patterns you need.
 
@@ -21,7 +21,8 @@ the contribution, and avoid citations. Discuss the meaning of results rather
 than repeating every value from tables and figures.
 
 
-Treat equations as parts of sentences and punctuate them accordingly. Use
+Treat equations as parts of sentences and punctuate them accordingly. Before
+a displayed equation, ``is'' is sufficient; ``is given by'' is unnecessary. Use
 descriptive labels and refer to equations with \verb|\eqref|. Refer to each
 table and figure in the text; give each an informative, self-contained caption.
 Use present tense for exposition and past tense for completed experiments.
@@ -59,13 +60,34 @@ zero. An aligned derivation gives:
 \end{align}
 
 
-\section{Differentiation and Integration}
+\section{Differentiation and integration}
+A probability density with two cases is
+\begin{equation}
+  \label{eq:piecewise-density}
+  f(x) =
+  \begin{cases}
+    2x, & 0<x<1, \\
+    0, & \text{otherwise}.
+  \end{cases}
+\end{equation}
+The comma after the first condition separates the cases; the period after
+``otherwise'' ends the sentence. Keep this punctuation inside the cases
+rather than adding another period after the closing brace.
+
+
 Use \verb|\dd| from the \texttt{physics} package for the upright differential
-operator in derivatives and integration measures. For example,
+operator in derivatives and integration measures. For a random variable
+with density $f(x)=2x$ on $0<x<1$ and zero elsewhere, normalization gives
 \[
-  \frac{\dd}{\dd x} x^2 = 2x,
-  \qquad
-  \int_0^1 x^2 \dd{x} = \frac{1}{3}.
+  \int_0^1 f(x)\dd{x}=\int_0^1 2x\dd{x}=1.
+\]
+Its expectation is obtained by integrating $x$ against the density:
+\[
+  \mathbb{E}(X)=\int_0^1 x f(x)\dd{x}=\frac{2}{3}.
+\]
+Within the support, the logarithmic derivative is
+\[
+  \frac{\dd}{\dd x}\log f(x)=\frac{1}{x}.
 \]
 
 
@@ -87,6 +109,12 @@ operator in derivatives and integration measures. For example,
 
 
 \section{Tables and figures}
+For figure and table style tips, follow the guidance in
+\emph{Statistical Writing} \citep{schifano2026statistical}, available at
+\url{https://statds.github.io/stat-writing/}. Use that guide when preparing
+plots, formatting tables, and writing captions for your thesis.
+
+
 Table captions conventionally precede the table; figure captions follow the
 illustration. Put labels after captions and refer to them by label.
 Table~\ref{tab:sample-data} summarizes the values plotted in
@@ -151,29 +179,39 @@ and line numbers.
 \end{algorithm}
 
 
-\section{Code and output}
-Listing~\ref{lst:mean-code} displays the R source in \texttt{code/mean.R}.
-It calculates the mean of three observations. Compiling the thesis displays
-this source file; it does not execute R. Listing~\ref{lst:mean-output} reads
-the recorded output from \texttt{code/mean-output.txt}. Refresh that file
-when the code changes.
-\lstinputlisting[
-  language=R,
-  numbers=left,
-  caption={Calculate the mean in R.},
-  label={lst:mean-code}
-]{code/mean.R}
-\lstinputlisting[
-  caption={Recorded output of the mean calculation.},
-  label={lst:mean-output}
-]{code/mean-output.txt}
+Algorithm~\ref{alg:bootstrap-mean} illustrates a resampling method rather
+than a simple arithmetic calculation. The percentile interval uses quantiles
+of the bootstrap means. Its adequacy depends on the sampling setting and
+should be assessed rather than assumed \citep{wasserman2004all}.
+\begin{algorithm}[tbp]
+  \caption{Percentile bootstrap interval for the mean}
+  \label{alg:bootstrap-mean}
+  \begin{algorithmic}[1]
+    \Require Observations $x_1,\ldots,x_n$, $n\geq 1$, $B\geq 1$,
+    and $0<\alpha<1$
+    \Ensure Lower and upper percentile endpoints
+    \For{$b\gets 1,\ldots,B$}
+      \State Sample $n$ observations with replacement from $x_1,\ldots,x_n$
+      \State Store their mean as $\bar{x}^{*(b)}$
+    \EndFor
+    \State \Return Empirical quantiles at $\alpha/2$ and $1-\alpha/2$
+  \end{algorithmic}
+\end{algorithm}
+
+
+\section{Code and generated output}
+Appendix~\ref{app:r-code} contains executable R chunks and their output,
+including an implementation of Algorithm~\ref{alg:bootstrap-mean}. The chunks
+are maintained in an Rnw file and rendered with \texttt{knitr}; the resulting
+LaTeX is included in the appendix. Keep longer computational details there
+and use the main chapters to explain methods and interpret results.
 
 
 \section{Reference formats}
-Examples include a journal article \citep{adler1965topological}, a book
-\citep{lamport1994latex}, a book chapter \citep{cullum1986practical}, an edited
+Examples include a journal article \citep{morris2019using}, a book
+\citep{wasserman2004all}, a book chapter \citep{neal2011mcmc}, an edited
 volume
-\citep{cullum1986large}, a technical report \citep{amann1974lectures}, a
+\citep{brooks2011handbook}, a technical report \citep{breiman1999random}, a
 conference
 paper \citep{vaswani2017attentiona}, an arXiv preprint
 \citep{vaswani2017attentionb}, a newsletter issue \citep{rnews2001news}, a
@@ -181,7 +219,7 @@ newsletter
 article \citep{hornik2001editorial}, a manual \citep{venables2026introduction},
 a website
 \citep{rfoundationndproject}, a wiki page \citep{wikipediandbibtex}, and a
-dissertation \citep{mcgough1993solution}. These illustrate citation formats
+dissertation \citep{efron1964problems}. These illustrate citation formats
 rather
 than a research literature review. The conference and arXiv entries describe
 versions of the same work; normally cite the version actually used. For

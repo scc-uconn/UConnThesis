@@ -1,158 +1,65 @@
-\chapter{Classical identities}
-\label{app:identities}
-\section*{Rellich's identity}
+\chapter{Derivations for Mean and Variance Estimation}
+\label{app:variance}
 
 
-Standard developments of Pohozaev's identity used an identity by
-\citet{rellich1940darstellung}, reproduced here.
+This appendix supports the variance estimate used in
+Chapter~\ref{chap:normal-mean}. Suppose $X_1,\ldots,X_n$ are independent and
+identically distributed with mean $\mu$ and finite variance $\sigma^2$, where
+$n\geq 2$. The results here do not require a normal distribution.
 
 
-Let $\Omega \subset \RR^n$ be a bounded domain with smooth boundary and
-outward unit normal $\nu$. Let $A(x) = (a_{ij}(x))$ be a symmetric matrix
-with continuously differentiable entries, and fix $\overline{x} \in \RR^n$.
-Define the divergence-form operator
-\[
-  Lu = \sum_{i,j=1}^{n}
-    \frac{\partial}{\partial x_i}
-    \left(a_{ij} \frac{\partial u}{\partial x_j}\right).
-\]
-For vectors $v,w \in \RR^n$, define
-\begin{align*}
-  a(v,w) &= \sum_{i,j=1}^{n} a_{ij}(x) v_i w_j, \\
-  d(v,w) &= \sum_{i,j=1}^{n}
-    \bigl[(x - \overline{x}) \cdot \nabla a_{ij}(x)\bigr] v_i w_j.
-\end{align*}
-The spatial argument is suppressed in $a(v,w)$ and $d(v,w)$. Repeated indices
-in the derivation below are summed from 1 to $n$.
-
-
-\begin{lemma}[Rellich]
-  For $u \in C^2(\overline{\Omega})$, the following identity holds:
-  \begin{multline}
-    \label{eq:rellich}
-    \int_{\Omega}(-Lu)\nabla u\cdot (x-\overline{x})\dd{x}
-    = (1-\frac{n}{2}) \int_{\Omega} a(\nabla u,\nabla u) \dd{x}
-    -
-    \frac{1}{2} \int_{\Omega}
-    d(\nabla u, \nabla u) \dd{x}
-    \\
-    + \frac{1}{2} \int_{\partial\Omega} a(\nabla u,\nabla u)(x-\overline{x})
-    \cdot \nu \dd{S} - \int_{\partial\Omega} a(\nabla u,\nu )\nabla u\cdot
-    (x-\overline{x}) \dd{S}.
-  \end{multline}
-
-
+\section{Centering the observations}
+\begin{lemma}[Sum of squares decomposition]
+  \label{lem:sum-squares}
+  For any real numbers $x_1,\ldots,x_n$ and $a\in\RR$,
+  \begin{equation}
+    \label{eq:sum-squares}
+    \sum_{i=1}^{n}(x_i-a)^2
+    = \sum_{i=1}^{n}(x_i-\bar{x})^2+n(\bar{x}-a)^2.
+  \end{equation}
 \end{lemma}
 \begin{proof}
-  There is no loss in generality to take $\overline{x} = 0$. First rewrite $L$:
-  \[
-    Lu = \frac{1}{2}\left[ \sum_{i}\sum_{j} \frac{\partial}{\partial x_i}
-    \left( a_{ij} \frac{\partial u}{\partial x_j} \right) + \sum_{i}\sum_{j}
-    \frac{\partial}{\partial x_i} \left( a_{ij} \frac{\partial u}{\partial x_j}
-    \right) \right].
-  \]
-
-
-  Switching the order of summation on the second term and relabeling
-  subscripts, $j \rightarrow i$ and $i \rightarrow j$, then using the fact
-  that $a_{ij}(x)$ is a symmetric matrix, gives the symmetric form needed to
-  derive Rellich's identity.
-  \[
-    Lu = \frac{1}{2} \sum_{i,j}\left[
-    \frac{\partial}{\partial x_i}
-    \left( a_{ij} \frac{\partial u}{\partial x_j} \right) +
-    \frac{\partial}{\partial x_j}
-    \left( a_{ij} \frac{\partial u}{\partial x_i} \right)
-    \right].
-  \]
-
-
-  Multiplying $-Lu$ by $(\partial u / \partial x_k) x_k$ and integrating
-  over $\Omega$ yields
-  \[
-    \int_{\Omega}(-Lu)\frac{\partial u}{\partial x_k} x_k \dd{x}= -\frac{1}{2}
-    \int_{\Omega} \sum_{i,j}\left[ \frac{\partial}{\partial x_i} \left( a_{ij}
-    \frac{\partial u}{\partial x_j} \right) + \frac{\partial}{\partial x_j}
-    \left( a_{ij} \frac{\partial u}{\partial x_i} \right) \right]
-    \frac{\partial u}{\partial x_k} x_k \dd{x}.
-  \]
-
-
-  Integrating by parts (for integral theorems see~\citep[p. 20]
-  {zeidler1988nonlinear}) gives
-  \begin{multline*}
-    \int_{\Omega} (-Lu) \frac{\partial u}{\partial x_k} x_k \dd{x}
-    = \\
-    \frac{1}{2} \int_{\Omega} \sum_{i,j} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \frac{\partial^2 u}{\partial x_k\partial x_i} +
-    \frac{\partial u}{\partial x_i} \frac{\partial^2 u}{\partial x_k\partial
-    x_j} \right] x_k \dd{x} \\
-    + \frac{1}{2} \int_{\Omega} \sum_{i,j} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \delta_{ik} + \frac{\partial u}{\partial x_i} \delta_{jk}
-    \right] \frac{\partial u}{\partial x_k} \dd{x} \\
-    - \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \nu_{i} + \frac{\partial u}{\partial x_i} \nu_{j} \right]
-    \frac{\partial u}{\partial x_k} x_k \dd{S}.
-  \end{multline*}
-  The integral equals $I_1 + I_2 + I_3$, where the unit normal vector is $\nu$.
-  One may rewrite $I_1$ as
-  \[
-    I_1 = \frac{1}{2} \int_{\Omega} \sum_{i,j} a_{ij} \frac{\partial}{\partial
-    x_k}\left( \frac{\partial u}{\partial x_i} \frac{\partial u}{\partial x_j}
-    \right) x_k \dd{x}.
-  \]
-  Integrating the first term by parts again yields
-  \begin{multline*}
-    I_1 = -\frac{n}{2} \int_{\Omega} \sum_{i,j} a_{ij} \left( \frac{\partial
-    u}{\partial x_i} \frac{\partial u}{\partial x_j} \right) \dd{x} +
-    \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left( \frac{\partial
-    u}{\partial x_i} \frac{\partial u}{\partial x_j} \right) x_k \nu_k \dd{S}
-    \\
-    - \frac{1}{2} \int_{\Omega} \sum_{i,j} \left( \frac{\partial u}{\partial
-    x_i} \frac{\partial u}{\partial x_j} \right) x_k \frac{\partial
-    a_{ij}}{\partial x_k}\dd{x}.
-  \end{multline*}
-
-
-  Substituting $I_1$, $I_2$, and $I_3$ gives
-  \begin{multline*}
-    \int_{\Omega}(-Lu)(\nabla u\cdot x)\dd{x} = -\frac{n}{2} \int_{\Omega}
-    \sum_{i,j} a_{ij} \left( \frac{\partial u}{\partial x_i} \frac{\partial
-    u}{\partial x_j} \right) \dd{x} \\
-    + \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left( \frac{\partial
-    u}{\partial x_i} \frac{\partial u}{\partial x_j} \right) (x\cdot \nu )
-    \dd{S} - \frac{1}{2} \int_{\Omega} \sum_{i,j} \left( \frac{\partial
-    u}{\partial
-    x_i} \frac{\partial u}{\partial x_j} \right)
-    (x\cdot \nabla a_{ij}) \dd{x} \\
-    + \frac{1}{2} \int_{\Omega} \sum_{i,j,k} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \frac{\partial u}{\partial x_k} \delta_{ik} +
-    \frac{\partial u}{\partial x_i} \frac{\partial u}{\partial x_k} \delta_{jk}
-    \right] \dd{x} \\
-    - \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \nu_{i} + \frac{\partial u}{\partial x_i} \nu_{j} \right]
-    (\nabla u\cdot x) \dd{S}.
-  \end{multline*}
-
-
-  Combining the first and fourth integrals on the right-hand side gives
-  \begin{multline*}
-    \int_{\Omega}(-Lu)(\nabla u\cdot x)\dd{x} = (1-\frac{n}{2}) \int_{\Omega}
-    \sum_{i,j} a_{ij} \left( \frac{\partial u}{\partial x_i} \frac{\partial
-    u}{\partial x_j} \right) \dd{x} \\
-    + \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left( \frac{\partial
-    u}{\partial x_i} \frac{\partial u}{\partial x_j} \right) (x\cdot \nu )
-    \dd{S} - \frac{1}{2} \int_{\Omega} \sum_{i,j} \left( \frac{\partial
-    u}{\partial
-    x_i} \frac{\partial u}{\partial x_j} \right)
-    (x\cdot \nabla a_{ij}) \dd{x} \\
-    - \frac{1}{2} \int_{\partial\Omega} \sum_{i,j} a_{ij} \left[ \frac{\partial
-    u}{\partial x_j} \nu_{i} + \frac{\partial u}{\partial x_i} \nu_{j} \right]
-    (\nabla u\cdot x) \dd{S}.
-  \end{multline*}
-
-
-  The definitions of $a$ and $d$ give Identity~\eqref{eq:rellich}.
-
-
+  Write $x_i-a=(x_i-\bar{x})+(\bar{x}-a)$ and expand:
+  \begin{align*}
+    \sum_{i=1}^{n}(x_i-a)^2
+      &= \sum_{i=1}^{n}(x_i-\bar{x})^2 \\
+      &\quad +2(\bar{x}-a)\sum_{i=1}^{n}(x_i-\bar{x})
+        +n(\bar{x}-a)^2.
+  \end{align*}
+  The middle term is zero because centered observations sum to zero, proving
+  Equation~\eqref{eq:sum-squares}.
 \end{proof}
+
+
+\section{Estimating the population variance}
+Apply Lemma~\ref{lem:sum-squares} to the random sample with $a=\mu$.
+Taking expectations in Equation~\eqref{eq:sum-squares} and using
+Theorem~\ref{thm:sample-mean-properties} gives
+\begin{align*}
+  \mathbb{E}\left[\sum_{i=1}^{n}(X_i-\overline{X})^2\right]
+    &= \sum_{i=1}^{n}\mathbb{E}\bigl[(X_i-\mu)^2\bigr]
+       -n\mathbb{E}\bigl[(\overline{X}-\mu)^2\bigr] \\
+    &= n\sigma^2-n\frac{\sigma^2}{n} \\
+    &= (n-1)\sigma^2.
+\end{align*}
+Consequently, $S^2$ in Chapter~\ref{chap:normal-mean} is unbiased for
+$\sigma^2$. Division by $n$ instead would give expectation
+$(n-1)\sigma^2/n$. This correction concerns unbiasedness of the variance
+estimate; it does not make $S$ unbiased for $\sigma$.
+
+
+\section{Bias and mean squared error}
+For an estimator $T$ with finite second moment, its mean squared error (MSE)
+for estimating $\mu$ is
+\begin{equation}
+  \label{eq:mse-decomposition}
+  \operatorname{MSE}_{\mu}(T)
+  = \mathbb{E}_{\mu}\bigl[(T-\mu)^2\bigr]
+  = \operatorname{Var}_{\mu}(T)
+    +\bigl[\mathbb{E}_{\mu}(T)-\mu\bigr]^2.
+\end{equation}
+To verify Equation~\eqref{eq:mse-decomposition}, write
+$T-\mu=(T-\mathbb{E}_{\mu}T)+(\mathbb{E}_{\mu}T-\mu)$, square, and take
+expectations. The cross term vanishes. Thus precision and bias both matter
+when comparing estimators; unbiasedness alone does not guarantee the smallest
+MSE.

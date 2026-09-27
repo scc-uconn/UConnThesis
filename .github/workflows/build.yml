@@ -13,11 +13,17 @@ jobs:
       - name: Install LaTeX and R tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends latexmk texlive-latex-extra texlive-fonts-recommended texlive-science r-base-core r-cran-knitr
+          sudo apt-get install -y --no-install-recommends \
+            latexmk texlive-latex-extra texlive-fonts-recommended \
+            texlive-science r-base-core r-cran-knitr
       - name: Build sample
         run: |
-          make r-code
+          make distclean
           make
+          python3 tests/check_rnw.py
+          test -s thesis.pdf
+          test -s thesis.log
+          test -s thesis.blg
           if grep -E 'LaTeX Warning|Package .* Warning|pdfTeX warning|Overfull|Underfull' thesis.log; then
             exit 1
           fi

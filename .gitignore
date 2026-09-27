@@ -12,6 +12,7 @@
 *.synctex.gz
 *.backup
 /thesis.pdf
+/Rnw/*.d
 
 # macOS metadata
 .DS_Store
